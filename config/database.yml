@@ -6,9 +6,10 @@
 #
 default: &default
   adapter: mysql2
+  encoding: utf8mb4
   pool: 5
-  user: root
-  password: Manhnghia1
+  username: <%= ENV['SQL_USERNAME'] %>
+  password: <%= ENV['SQL_PASSWORD'] %>
 
 development:
   <<: *default
