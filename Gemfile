@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem "devise"
 gem 'mysql2'
 gem 'rubocop-airbnb', require: false
 group :development, :test do
