@@ -1,0 +1,44 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "LMSBook", "#", id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "SIGNUP", "#" %></li>
+        <li><%= link_to "LOGIN", "#" %></li>
+      </ul>
+    </nav>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><%= link_to "HOME", "#" %></li>
+      <li><%= link_to "LIBRARY", "#" %>
+        <ul class="sub-menu">
+          <li><%= link_to "LITERARY", "#" %></li>
+          <li><%= link_to "SWORD HERO", "#" %></li>
+          <li><%= link_to "TEEN", "#" %></li>
+          <li><%= link_to "NOVEL", "#" %></li>
+          <li><%= link_to "DREAMY", "#" %></li>
+          <li><%= link_to "GHOST STORY", "#" %></li>
+          <li><%= link_to "DETECTIVE", "#" %></li>
+          <li><%= link_to "HISTORY", "#" %></li>
+          <li><%= link_to "ECONOMY", "#" %></li>
+          <li><%= link_to "SOCIETY", "#" %></li>
+          <li><%= link_to "SCIENCE", "#" %></li>
+          <li><%= link_to "PSYCHOLOGY", "#" %></li>
+        </ul>
+      </li>
+      <li><%= link_to "AUTHORS", "#" %>
+        <ul class="sub-menu">
+          <li><%= link_to "SHORT STORY", "#" %></li>
+          <li><%= link_to "LONG STORY", "#" %></li>
+        </ul>
+      </li>
+      <li><%= link_to "PUBLISHERS", "#" %>
+                 <ul class="sub-menu">
+          <li><%= link_to "DOMESTIC", "#" %></li>
+          <li><%= link_to "FOREIGN", "#" %></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>
