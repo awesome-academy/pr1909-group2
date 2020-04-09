@@ -30,4 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layout:
+    footer:
+      About & Terms of Service: 'About & Terms of Service'
+      Posting Instructions: 'Posting Instructions'
+      Standard Spelling When Writing: 'Standard Spelling When Writing'
+      Tutorial Pay: 'Tutorial Pay'
+      Contact: "Contact"
