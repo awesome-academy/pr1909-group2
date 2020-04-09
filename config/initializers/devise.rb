@@ -8,6 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
+  # config.secret_key = 'fef5d22d4ed53b15b4a40b20781e55bf82ba90430d1d6c5b240d7cd350a89e14c8d147bdd88a40e4c337aab00780b18572e5fabcb506ac2a695dbaf50611bb1a'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -88,7 +89,7 @@ Devise.setup do |config|
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
   config.skip_session_storage = [:http_auth]
-  config.scoped_views = true
+
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
   # requests for sign in and sign up, you need to get a new CSRF token
@@ -113,6 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
+  # config.pepper = '4679cb8de1a507bc7153a65ed997895e0689417d73cc3e12e1cabaa4a8dea21a80a68a993b82fb52d87f163b7a646a78fd20d3c00391442b2ec7fb9c0f972462'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -230,7 +232,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
