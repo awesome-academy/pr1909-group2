@@ -32,8 +32,8 @@
 en:
   layout:
     footer:
-      About & Terms of Service: 'About & Terms of Service'
-      Posting Instructions: 'Posting Instructions'
-      Standard Spelling When Writing: 'Standard Spelling When Writing'
-      Tutorial Pay: 'Tutorial Pay'
-      Contact: "Contact"
+      about_&_terms_of_service: 'About & Terms of Service'
+      posting_instructions: 'Posting Instructions'
+      standard_spelling_when_writing: 'Standard Spelling When Writing'
+      tutorial_pay: 'Tutorial Pay'
+      contact: "Contact"
