@@ -1,8 +1,8 @@
 vi:
   layout:
     footer:
-      about_&_terms_of_service: 'Giới thiệu & Điều khoản dịch vụ'
+      terms: 'Giới thiệu & Điều khoản dịch vụ'
       posting_instructions: 'Hướng dẫn đăng truyện'
-      standard_spelling_when_writing: 'Chuẩn chính tả khi viết văn'
-      tutorial_pay: 'Hướng dẫn trả phí'
+      correctly_writing: 'Chuẩn chính tả khi viết văn'
+      pay_instructions: 'Hướng dẫn trả phí'
       contact: "Liên hệ"
