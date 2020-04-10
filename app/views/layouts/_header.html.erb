@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "LMSBook", "http://localhost:3000", id: "logo" %>
+    <%= link_to "LMSBook", root_path, id: "logo" %>
     <nav>
       <% if user_signed_in? %>
       <ul class="nav navbar-nav navbar-right">
@@ -17,7 +17,7 @@
 
   <div id="menu">
     <ul>
-      <li><%= link_to t("header.home"), "http://localhost:3000" %></li>
+      <li><%= link_to t("header.home"), root_path %></li>
       <li><%= link_to t("header.library"), "#" %>
         <ul class="sub-menu">
           <li><%= link_to t("header.literary"), "#" %></li>
@@ -31,13 +31,13 @@
           <li><%= link_to t("header.cultural"), "#" %></li>
           <li><%= link_to t("header.science"), "#" %></li>
           <li><%= link_to t("header.psychological"), "#" %></li>
-          <li><%= link_to t("header.life skills"), "#" %></li>
+          <li><%= link_to t("header.life_skills"), "#" %></li>
         </ul>
       </li>
       <li><%= link_to t("header.author"), "#" %>
         <ul class="sub-menu">
-          <li><%= link_to t("header.short story"), "#" %></li>
-          <li><%= link_to t("header.long story"), "#" %></li>
+          <li><%= link_to t("header.short_story"), "#" %></li>
+          <li><%= link_to t("header.long_story"), "#" %></li>
         </ul>
       </li>
       <li><%= link_to t("header.publisher"), "#" %>

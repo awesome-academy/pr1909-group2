@@ -7,18 +7,18 @@
     <%= f.text_field :name, class: "form-control" %>
   </div>
   <ul>
-    <li><%= t("signup.name") %></li>
-    <li><%= t("signup.name_a") %></li>
-    <li><%= t("signup.name_b") %></li>
-    <li><%= t("signup.name_c") %></li>
+    <li><%= t("signup.name_not_be_blank") %></li>
+    <li><%= t("signup.minimum_name") %></li>
+    <li><%= t("signup.maximum_name") %></li>
+    <li><%= t("signup.characters_name") %></li>
   </ul>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
   <ul>
-    <li><%= t("signup.email") %></li>
-    <li><%= t("signup.email_a") %></li>
+    <li><%= t("signup.email_not_be_blank") %></li>
+    <li><%= t("signup.maximum_email") %></li>
   </ul>
   <div class="field">
     <%= f.label :password %>
