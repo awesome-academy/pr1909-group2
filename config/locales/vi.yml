@@ -40,3 +40,6 @@ vi:
     account: "Bạn chưa có tài khoản?"
   login:
     login: "Đăng Nhập"
+  admin:
+    user_management: "Quản Lí User"
+    profile: "Thông tin cá nhân"
