@@ -70,3 +70,7 @@ en:
     account: "Do not have an account?"
   login:
     login: "Login"
+  admin:
+    user_management: "User Management"
+    account: "Account"
+    profile: "Profile"
