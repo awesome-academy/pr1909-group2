@@ -10,6 +10,9 @@ class Book < ApplicationRecord
   has_many :users, through: :book_users
   mount_uploader :image, ImageUploader
 
-  TYPE_BOOK = ["Văn Học", "Teen", "Tiểu Thuyết", "Kỳ Ảo", "Truyện Trinh Thám",
- "Kinh dị", "Lịch sử", "Kinh Tế", "Văn hóa", "Khoa học", "Tâm Lí", "Kỹ năng sống"]
+  TYPE_BOOK = [
+    "Văn Học", "Teen", "Tiểu Thuyết", "Kỳ Ảo", "Truyện Trinh Thám",
+    "Kinh dị", "Lịch sử", "Kinh Tế", "Văn hóa", "Khoa học", "Tâm Lí",
+    "Kỹ năng sống",
+  ].freeze
 end
