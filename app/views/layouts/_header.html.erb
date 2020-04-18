@@ -26,18 +26,9 @@
       <li><%= link_to t("header.home"), root_path %></li>
       <li><%= link_to t("header.library"), "#" %>
         <ul class="sub-menu">
-          <li><%= link_to t("header.literary"), "#" %></li>
-          <li><%= link_to "TEEN", "#" %></li>
-          <li><%= link_to t("header.novel"), "#" %></li>
-          <li><%= link_to t("header.dreamy"), "#" %></li>
-          <li><%= link_to t("header.horror"), "#" %></li>
-          <li><%= link_to t("header.mystery"), "#" %></li>
-          <li><%= link_to t("header.history"), "#" %></li>
-          <li><%= link_to t("header.economy"), "#" %></li>
-          <li><%= link_to t("header.cultural"), "#" %></li>
-          <li><%= link_to t("header.science"), "#" %></li>
-          <li><%= link_to t("header.psychological"), "#" %></li>
-          <li><%= link_to t("header.life_skills"), "#" %></li>
+          <% Book::TYPE_BOOK.each do |book| %>
+            <li><%= link_to book, root_path(type_book: book) %></li>
+          <% end %>
         </ul>
       </li>
       <li><%= link_to t("header.author"), "#" %>
