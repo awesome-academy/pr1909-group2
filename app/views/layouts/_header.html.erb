@@ -9,8 +9,13 @@
             Tài Khoản <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
+              <% if current_user && current_user.admin? %>
+                <li><%= link_to t("admin.user_management"), users_path  %></li>
+                <li><%= link_to "Create BOok", new_book_path %></li>
+              <% end %>
             <li><%= link_to t("admin.profile"), edit_user_registration_path %></li>
             <li><%= link_to t("header.logout"), destroy_user_session_path %></li>
+          </ul>
       </ul>
       <% else %>
         <ul class= "nav navbar-nav navbar-right">
@@ -43,9 +48,6 @@
           <li><%= link_to t("header.foreign"), "#" %></li>
         </ul>
       </li>
-      <% if current_user && current_user.admin? %>
-      <li><%= link_to t("admin.user_management"), users_path  %></li>
-      <% end %>
     </ul>
   </div>
 </header>
