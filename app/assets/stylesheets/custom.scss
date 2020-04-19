@@ -105,3 +105,10 @@ input {
 .edit{
   margin-left: 35px;
 }
+.container {
+  min-height:100%;
+  position:relative;
+}
+#footer {
+  position:absolute;
+}

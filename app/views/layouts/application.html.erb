@@ -8,14 +8,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <div class="container-fluid">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
+  <div class="container_a">
     <%= render "layouts/header" %>
-    <%= yield %>
-  <%= render "layouts/footer" %>
-  </body>
+    <body>
+      <div class="container-fluid">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+      <%= yield %>
+    </body>
+    <div id="footer">
+    <%= render "layouts/footer" %>
+    </div>
+  </div>
 </html>
