@@ -7,7 +7,7 @@ class Book < ApplicationRecord
   has_many :author_book_publishers
   has_many :authors, through: :author_book_publishers
   has_many :publishers, through: :author_book_publishers
-  has_many :users, through: :book_users
+  has_many :users, through: :book_users, dependent: :destroy
   mount_uploader :image, ImageUploader
 
   TYPE_BOOK = [

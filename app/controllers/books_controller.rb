@@ -1,6 +1,11 @@
 class BooksController < ApplicationController
   def show
-    @book = Book.find_by id: params[:id]
+    if (Book.find_by id: params[:id]).nil?
+      flash[:danger] = "Không Tồn Tại Sách!"
+      redirect_to root_path
+    else
+      @book = Book.find_by id: params[:id]
+    end
   end
 
   def index

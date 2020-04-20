@@ -1,8 +1,8 @@
 <% provide :title, "LMS" %>
-<ul class="books">
+<ul class="books-container">
   <% @books.each do |book| %>
   <li>
-    <ul class="bookss">
+    <ul class="books">
       <li>
         <%= link_to image_tag(book.image.url), book %>
       </li>
