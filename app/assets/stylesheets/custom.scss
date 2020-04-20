@@ -144,3 +144,15 @@ input, textarea, select, .uneditable-input {
     padding: 10px 0;
   }
 }
+.navbar-inverse .navbar-nav2 > li > a {
+  color: red;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+}
+.navbar-inverse .navbar-nav1 > li > a {
+  color: black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+}
