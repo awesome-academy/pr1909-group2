@@ -45,3 +45,7 @@ vi:
   admin:
     user_management: "Quản Lí User"
     profile: "Thông tin cá nhân"
+  show:
+    edit_book: "Chỉnh Sửa Sách"
+  index:
+    delete: "Xóa"

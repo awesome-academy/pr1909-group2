@@ -76,3 +76,7 @@ en:
     user_management: "User Management"
     account: "Account"
     profile: "Profile"
+  show:
+    edit_book: "Update Book"
+  index:
+    delete: "Delete"
