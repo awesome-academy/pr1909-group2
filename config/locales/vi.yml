@@ -48,4 +48,6 @@ vi:
   show:
     edit_book: "Chỉnh Sửa Sách"
   index:
-    delete: "Xóa"
+    delete: "Xóa" 
+  q:
+    name_cont: "Tên"

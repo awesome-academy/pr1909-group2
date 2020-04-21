@@ -79,4 +79,6 @@ en:
   show:
     edit_book: "Update Book"
   index:
-    delete: "Delete"
+    delete: "Delete" 
+  q:
+    name_cont: "Name"
