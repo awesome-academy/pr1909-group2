@@ -1,0 +1,18 @@
+<% provide(:title, @book.name) %>
+<div class="container-showbook">
+  <div id="title">
+    <h2>
+      <%= @book.name %>
+    </h2>
+  </div>
+
+  <div id="image">
+    <%= image_tag @book.image.url if @book.image? %>
+  </div>
+
+  <div id="describe">
+    <h3>
+      <%= @book.describe %>
+    </h3>
+  </div>
+</div>

@@ -29,6 +29,8 @@ vi:
     long_story: "Truyện dài"
     domestic: "Trong nước"
     foreign: "Ngoại quốc"
+    user: "Tài Khoản"
+    create_book: "Tạo Sách"
   signup:
     signup: "Đăng Kí"
     name_not_be_blank: "Tên không được để trống"

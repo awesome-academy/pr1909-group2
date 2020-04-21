@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_09_123238) do
+ActiveRecord::Schema.define(version: 2020_04_15_075921) do
 
-  create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "author_book_publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "author_id", null: false
+    t.bigint "book_id", null: false
+    t.bigint "publisher_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_author_book_publishers_on_author_id"
+    t.index ["book_id"], name: "index_author_book_publishers_on_book_id"
+    t.index ["publisher_id"], name: "index_author_book_publishers_on_publisher_id"
+  end
+
+  create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "country"
     t.integer "age"
@@ -20,23 +31,33 @@ ActiveRecord::Schema.define(version: 2020_04_09_123238) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "book_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_book_users_on_book_id"
+    t.index ["user_id"], name: "index_book_users_on_user_id"
+  end
+
+  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "describe"
     t.float "price"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "type_book"
   end
 
-  create_table "publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -50,4 +71,9 @@ ActiveRecord::Schema.define(version: 2020_04_09_123238) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "author_book_publishers", "authors"
+  add_foreign_key "author_book_publishers", "books"
+  add_foreign_key "author_book_publishers", "publishers"
+  add_foreign_key "book_users", "books"
+  add_foreign_key "book_users", "users"
 end

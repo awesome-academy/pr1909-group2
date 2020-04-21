@@ -112,3 +112,47 @@ input {
 #footer {
   position:absolute;
 }
+.container-showbook {
+  margin-top: 30px;
+  width: 65%;
+  height: 100%;
+  border: 1px solid red;
+}
+#title {
+  text-align: center;
+}
+#image {
+  margin-top: 30px;
+  margin-left: 60px;
+}
+input, textarea, select, .uneditable-input {
+  border: 1px solid black;
+  background-color: #f1f1f1;
+}
+.books-container li {
+  display: inline-table;
+}
+.books li {
+  display: block;
+}
+
+.books-container {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+  }
+}
+.navbar-inverse .navbar-nav2 > li > a {
+  color: red;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+}
+.navbar-inverse .navbar-nav1 > li > a {
+  color: black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+}
