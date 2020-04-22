@@ -45,7 +45,8 @@ vi:
     login: "Đăng Nhập"
   admin:
     user_management: "Quản Lí User"
-    profile: "Thông tin cá nhân"
+    edit_profile: "Chỉnh sửa hồ sơ"
+    personal_information: "Thông tin cá nhân"
   show:
     edit_book: "Chỉnh Sửa Sách"
   index:
