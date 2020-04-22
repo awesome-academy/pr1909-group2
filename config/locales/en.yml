@@ -61,6 +61,7 @@ en:
     foreign: "Foreign"
     user: "User"
     create_book: "Create Book"
+    search_book: "Search Book"
   signup:
     name_not_be_blank: "Name can not be blank!"
     minimum_name: "Minimum name is 6 characters"
@@ -79,6 +80,6 @@ en:
   show:
     edit_book: "Update Book"
   index:
-    delete: "Delete" 
+    delete: "Delete"
   q:
     name_cont: "Name"

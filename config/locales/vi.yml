@@ -31,6 +31,7 @@ vi:
     foreign: "Ngoại quốc"
     user: "Tài Khoản"
     create_book: "Tạo Sách"
+    search_book: "Tìm Sách"
   signup:
     signup: "Đăng Kí"
     name_not_be_blank: "Tên không được để trống"
@@ -48,6 +49,6 @@ vi:
   show:
     edit_book: "Chỉnh Sửa Sách"
   index:
-    delete: "Xóa" 
+    delete: "Xóa"
   q:
     name_cont: "Tên"

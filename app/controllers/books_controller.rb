@@ -9,7 +9,9 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = params[:type_book].present? ? index_by_type(params[:type_book]) : Book.all
+    @q = Book.ransack(params[:q])
+    @books = params[:type_book].present? ? index_by_type(params[:type_book]) :
+    @q.result.page(params[:page])
   end
 
   def new

@@ -1,4 +1,12 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <% provide :title, "LMS" %>
+  <%= search_form_for @q, url: books_path, method: :get do |f| %>
+    <%= f.label :name_cont, t("header.search_book") %>
+    <%= f.search_field :name_cont %>
+    <%= button_tag do %>
+      <i class="fa fa-search-plus" style="height: 12px;width: 21px;color: black;"></i>
+    <% end %>
+  <% end %>
 <ul class="books-container">
   <% @books.each do |book| %>
   <li>
@@ -16,4 +24,3 @@
   </li>
   <% end %>
 </ul>
-
