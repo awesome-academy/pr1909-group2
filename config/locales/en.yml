@@ -76,10 +76,14 @@ en:
   admin:
     user_management: "User Management"
     account: "Account"
-    profile: "Profile"
+    edit_profile: "Edit Profile"
+    personal_information: "Personal information"
   show:
     edit_book: "Update Book"
   index:
     delete: "Delete"
   q:
     name_cont: "Name"
+  show:
+    name: "Name: "
+    back: "Back"
