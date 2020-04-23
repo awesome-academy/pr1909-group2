@@ -53,3 +53,6 @@ vi:
     delete: "Xóa"
   q:
     name_cont: "Tên"
+  show:
+    name: "Tên: "
+    back: "Quay Lại"

@@ -84,3 +84,6 @@ en:
     delete: "Delete"
   q:
     name_cont: "Name"
+  show:
+    name: "Name: "
+    back: "Back"

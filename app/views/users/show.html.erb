@@ -1,8 +1,9 @@
 <% provide(:title, "Thông tin cá nhân") %>
 <ul class="users">
   <h1> 
-    <p> Tên: <%= @user.name %> </p>
+    <span><%= t("show.name") %></span>
+    <span><%=@user.name%></span>
     <p> Email: <%= @user.email %> </p>
-    <%= link_to "Back", :back ,class: "btn btn-primary" %>
+    <%= link_to t("show.back"), :back ,class: "btn btn-primary" %>
   </h1>
   
