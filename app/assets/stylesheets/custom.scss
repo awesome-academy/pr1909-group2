@@ -92,16 +92,6 @@ input {
   margin-left: 35px;
 }
 
-.users {
- list-style: none;
- margin: 0;
- li {
-   overflow: auto;
-   padding: 10px 0;
-   border-bottom: 1px solid $gray-lighter;
- }
-}
-
 .edit{
   margin-left: 35px;
 }
@@ -164,3 +154,22 @@ input, textarea, select, .uneditable-input {
   width: 22%;
   margin-bottom: 28px;
 }
+.users {
+ list-style: none;
+ margin: 0;
+ li {
+   overflow: auto;
+   padding: 10px 0;
+   border-bottom: 1px solid $gray-lighter;
+ }
+} 
+.show {
+ list-style: none;
+ margin: 0;
+ li {
+   overflow: auto;
+   
+   border-bottom: 1px solid $gray-lighter;
+ }
+} 
+
