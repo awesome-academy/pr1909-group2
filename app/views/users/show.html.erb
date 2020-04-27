@@ -1,9 +1,16 @@
 <% provide(:title, "Thông tin cá nhân") %>
-<ul class="users">
-  <h1> 
-    <span><%= t("show.name") %></span>
-    <span><%=@user.name%></span>
-    <p> Email: <%= @user.email %> </p>
-    <%= link_to t("show.back"), :back ,class: "btn btn-primary" %>
+<ul class="show">
+  <h1>
+	<p><u>Tài Khoản của tôi</u></p>
+    <table border="1"style="font-family: -webkit-body;font-size: 90%;background: aliceblue;">
+            <tr>
+                <td><span><%= t("show.name") %></span>
+    <span><%=@user.name%></span></td>
+            </tr>
+            <tr>
+            	<td>Email: <%= @user.email %></td>
+            </tr>
+    </table>
   </h1>
+    <%= link_to t("show.back"), :back ,class: "btn btn-primary" %>
   

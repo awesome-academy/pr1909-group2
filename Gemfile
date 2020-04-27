@@ -49,7 +49,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "pg"
   gem "rails_12factor"
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
