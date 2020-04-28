@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_075921) do
+ActiveRecord::Schema.define(version: 2020_04_28_020837) do
+
+  create_table "author_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "author_id", null: false
+    t.bigint "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_author_books_on_author_id"
+    t.index ["book_id"], name: "index_author_books_on_book_id"
+  end
+
+  create_table "author_publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "author_id", null: false
+    t.bigint "publisher_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_author_publishers_on_author_id"
+    t.index ["publisher_id"], name: "index_author_publishers_on_publisher_id"
+  end
 
   create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -18,6 +36,15 @@ ActiveRecord::Schema.define(version: 2020_04_15_075921) do
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "book_publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.bigint "publisher_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_book_publishers_on_book_id"
+    t.index ["publisher_id"], name: "index_book_publishers_on_publisher_id"
   end
 
   create_table "book_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -60,6 +87,12 @@ ActiveRecord::Schema.define(version: 2020_04_15_075921) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "author_books", "authors"
+  add_foreign_key "author_books", "books"
+  add_foreign_key "author_publishers", "authors"
+  add_foreign_key "author_publishers", "publishers"
+  add_foreign_key "book_publishers", "books"
+  add_foreign_key "book_publishers", "publishers"
   add_foreign_key "book_users", "books"
   add_foreign_key "book_users", "users"
 end
