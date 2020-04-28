@@ -12,17 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_04_15_075921) do
 
-  create_table "author_book_publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "author_id", null: false
-    t.bigint "book_id", null: false
-    t.bigint "publisher_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["author_id"], name: "index_author_book_publishers_on_author_id"
-    t.index ["book_id"], name: "index_author_book_publishers_on_book_id"
-    t.index ["publisher_id"], name: "index_author_book_publishers_on_publisher_id"
-  end
-
   create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "country"
@@ -66,14 +55,11 @@ ActiveRecord::Schema.define(version: 2020_04_15_075921) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.boolean "admin", default: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "author_book_publishers", "authors"
-  add_foreign_key "author_book_publishers", "books"
-  add_foreign_key "author_book_publishers", "publishers"
   add_foreign_key "book_users", "books"
   add_foreign_key "book_users", "users"
 end
