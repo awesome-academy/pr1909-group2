@@ -6,10 +6,12 @@ class Book < ApplicationRecord
   has_many :book_users
   has_many :users, through: :book_users, dependent: :destroy
   has_many :author_books
-  has_many :authors, through: :author_books
+  has_many :authors, through: :author_books, dependent: :destroy
   has_many :book_publishers
-  has_many :publishers, through: :book_publishers
+  has_many :publishers, through: :book_publishers, dependent: :destroy
   mount_uploader :image, ImageUploader
+  accepts_nested_attributes_for :author_books
+  accepts_nested_attributes_for :book_publishers
 
   TYPE_BOOK = [
     "Văn Học", "Teen", "Tiểu Thuyết", "Kỳ Ảo", "Truyện Trinh Thám",

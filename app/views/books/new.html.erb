@@ -1,21 +1,50 @@
-<% provide(:title, 'Create Book') %>
-<h1>Create Book</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<% provide(:title, t("header.create_book")) %>
+<h1 id="create-book"><%= t("header.create_book") %></h1>
+<div class="row1">
+  <div class="col-md-61 col-md-offset-3">
     <%= form_for @book do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control" %>
-      <%= f.label :type %>
-      <%= f.select :type_book, Book::TYPE_BOOK.map { |c| c } %>
-      <br>
-      <%= f.label :describe %>
-      <%= f.text_field :describe, class: "form-control" %>
-      <%= f.label :price %>
-      <%= f.number_field :price, class: "form-control" %>
-      <span class="picture">
-        <%= f.file_field :image %>
-      </span>
-      <%= f.submit "Create my book", class: "btn btn-primary" %>
+      <div class="book">
+        <h1><%= t("book.new.book") %></h1>
+        <%= f.label :name, t("show.name") %>
+        <%= f.text_field :name, class: "form-control" %>
+        <%= f.label :type, t("book.new.type") %>
+        <%= f.select :type_book, Book::TYPE_BOOK.map { |c| c } %>
+        <br>
+        <%= f.label :describe, t("book.new.describe") %>
+        <%= f.text_field :describe, class: "form-control" %>
+        <%= f.label :price, t("book.new.price") %>
+        <%= f.number_field :price, class: "form-control" %>
+        <span class="picture">
+          <%= f.file_field :image %>
+        </span>
+      </div>
+      <div class="author">
+        <h1><%= t("book.new.author") %></h1>
+        <%= f.fields_for :author_books do |author_books| %>
+          <%= author_books.fields_for :author do |author| %>
+            <%= author.label :name, t("show.name") %>
+            <%= author.text_field :name, class: "form-control" %>
+            <%= author.label :country, t("book.new.country") %>
+            <%= author.text_field :country, class: "form-control" %>
+            <%= author.label :age, t("book.new.age") %>
+            <%= author.number_field :age, class: "form-control" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="publisher">
+        <h1><%= t("book.new.publisher") %></h1>
+        <%= f.fields_for :book_publishers do |book_publishers| %>
+          <%= book_publishers.fields_for :publisher do |publisher| %>
+            <%= publisher.label :name, t("show.name") %>
+            <%= publisher.text_field :name, class: "form-control" %>
+            <%= publisher.label :address, t("book.new.address") %>
+            <%= publisher.text_field :address, class: "form-control" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div id="button-book">
+        <%= f.submit t("header.create_book"), class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 </div>

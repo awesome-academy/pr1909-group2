@@ -56,3 +56,14 @@ vi:
   show:
     name: "Tên: "
     back: "Quay Lại"
+  book:
+    new:
+      country: "Quốc Tịch"
+      age: "Tuổi"
+      address: "Địa Chỉ"
+      type: "Thể Loại"
+      describe: "Mô Tả"
+      price: "Giá Tiền"
+      author: "Tác Giả"
+      publisher: "Nhà Xuất Bản"
+      book: "Sách"

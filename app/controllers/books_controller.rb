@@ -16,6 +16,8 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @book.author_books.build.build_author
+    @book.book_publishers.build.build_publisher
   end
 
   def create
@@ -51,6 +53,8 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:name, :describe, :price, :image, :type_book)
+    params.require(:book).permit(:name, :describe, :price, :image, :type_book,
+    author_books_attributes: [:id, :book_id, :author_id, author_attributes: [:id, :name, :country, :age]],
+    book_publishers_attributes: [:id, :book_id, :publisher_id, publisher_attributes: [:id, :name, :address]])
   end
 end
