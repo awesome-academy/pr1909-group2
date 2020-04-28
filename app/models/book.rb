@@ -4,10 +4,11 @@ class Book < ApplicationRecord
   validates :price, presence: true
   validates :image, presence: true
   has_many :book_users
-  has_many :author_book_publishers
-  has_many :authors, through: :author_book_publishers
-  has_many :publishers, through: :author_book_publishers
   has_many :users, through: :book_users, dependent: :destroy
+  has_many :author_books
+  has_many :authors, through: :author_books
+  has_many :book_publishers
+  has_many :publishers, through: :book_publishers
   mount_uploader :image, ImageUploader
 
   TYPE_BOOK = [
