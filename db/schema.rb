@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_115433) do
+ActiveRecord::Schema.define(version: 2020_05_07_064525) do
 
   create_table "author_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "author_id", null: false
@@ -84,7 +84,9 @@ ActiveRecord::Schema.define(version: 2020_04_28_115433) do
     t.string "name"
     t.boolean "admin"
     t.datetime "delete_at"
+    t.datetime "deleted_at"
     t.index ["delete_at"], name: "index_users_on_delete_at"
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
