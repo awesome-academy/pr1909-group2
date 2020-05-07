@@ -87,3 +87,14 @@ en:
   show:
     name: "Name: "
     back: "Back"
+  book:
+    new:
+      country: "Country"
+      age: "Age"
+      address: "Address"
+      type: "Type"
+      describe: "Describe"
+      price: "Price"
+      author: "Author"
+      publisher: "Publisher"
+      book: "Book"

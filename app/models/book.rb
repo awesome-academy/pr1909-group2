@@ -9,6 +9,8 @@ class Book < ApplicationRecord
   has_many :authors, through: :author_books
   has_many :book_publishers
   has_many :publishers, through: :book_publishers
+  accepts_nested_attributes_for :author_books
+  accepts_nested_attributes_for :book_publishers
   mount_uploader :image, ImageUploader
 
   TYPE_BOOK = [
