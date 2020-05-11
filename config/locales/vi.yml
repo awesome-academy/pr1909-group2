@@ -32,6 +32,7 @@ vi:
     user: "Tài Khoản"
     create_book: "Tạo Sách"
     search_book: "Tìm Sách"
+    create_publisher: "Tạo NXB"
   signup:
     signup: "Đăng Kí"
     name_not_be_blank: "Tên không được để trống"
@@ -68,3 +69,7 @@ vi:
       publisher: "Nhà Xuất Bản"
       book: "Sách"
       image: "Ảnh"
+  publisher:
+    new:
+      name: "Tên"
+      address: "Địa chỉ"

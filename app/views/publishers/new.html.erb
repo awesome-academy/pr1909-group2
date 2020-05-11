@@ -1,0 +1,12 @@
+<% provide(:title, t("header.create_publisher")) %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @publisher do |f| %>
+      <%= f.label :name, t("publisher.new.name") %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :address, t("publisher.new.address") %>
+      <%= f.text_field :address, class: "form-control" %>
+      <%= f.submit t("header.create_publisher"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
