@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     delete 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
     match '/users/:id', to: 'users#show', via: 'get'
     resources :books
+    resources :publishers
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

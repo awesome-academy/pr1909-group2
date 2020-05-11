@@ -62,6 +62,7 @@ en:
     user: "User"
     create_book: "Create Book"
     search_book: "Search Book"
+    create_publisher: "Create Publisher"
   signup:
     name_not_be_blank: "Name can not be blank!"
     minimum_name: "Minimum name is 6 characters"
@@ -99,3 +100,7 @@ en:
       publisher: "Publisher"
       book: "Book"
       image: "Image"
+  publisher:
+    new:
+      name: "Name"
+      address: "Address"
