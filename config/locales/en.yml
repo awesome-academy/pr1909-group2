@@ -85,7 +85,7 @@ en:
   q:
     name_cont: "Name"
   show:
-    name: "Name: "
+    name: "Name Book"
     back: "Back"
   book:
     new:
@@ -98,3 +98,4 @@ en:
       author: "Author"
       publisher: "Publisher"
       book: "Book"
+      image: "Image"

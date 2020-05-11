@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :list_authors, only: %i(new edit)
-  before_action :list_publishers, only: %i(new edit)
+  before_action :list_authors, only: %i(new edit create)
+  before_action :list_publishers, only: %i(new edit create)
   def show
     if (Book.find_by id: params[:id]).nil?
       flash[:danger] = "Không Tồn Tại Sách!"
@@ -28,6 +28,7 @@ class BooksController < ApplicationController
       flash[:success] = "Create book success!"
       redirect_to @book
     else
+      flash[:danger] = "The data entry is missing!"
       render :new
     end
   end
@@ -61,10 +62,10 @@ class BooksController < ApplicationController
   end
 
   def list_authors
-    @authors = Author.all.select(:id, :name).map { |author| [author.name, author.id] }
+    @authors = Author.all.map { |author| [author.name, author.id] }
   end
 
   def list_publishers
-    @publishers = Publisher.all.select(:id, :name).map { |publisher| [publisher.name, publisher.id] }
+    @publishers = Publisher.all.map { |publisher| [publisher.name, publisher.id] }
   end
 end

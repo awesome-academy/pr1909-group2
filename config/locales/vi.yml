@@ -54,7 +54,7 @@ vi:
   q:
     name_cont: "Tên"
   show:
-    name: "Tên: "
+    name: "Tên Sách"
     back: "Quay Lại"
   book:
     new:
@@ -67,3 +67,4 @@ vi:
       author: "Tác Giả"
       publisher: "Nhà Xuất Bản"
       book: "Sách"
+      image: "Ảnh"
