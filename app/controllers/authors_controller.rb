@@ -9,6 +9,7 @@ class AuthorsController < ApplicationController
       flash[:success] = "Create author success!"
       redirect_to @author
     else
+      flash[:danger] = "The data entry is missing!"
       render :new
     end
   end
