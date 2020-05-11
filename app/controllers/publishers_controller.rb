@@ -9,6 +9,7 @@ class PublishersController < ApplicationController
       flash[:success] = "Create publisher success!"
       redirect_to @publisher
     else
+      flash[:danger] = "The data entry is missing!"
       render :new
     end
   end
