@@ -33,6 +33,7 @@ vi:
     create_book: "Tạo Sách"
     search_book: "Tìm Sách"
     create_publisher: "Tạo NXB"
+    create_author: "Tạo Tác Giả"
   signup:
     signup: "Đăng Kí"
     name_not_be_blank: "Tên không được để trống"
@@ -73,3 +74,8 @@ vi:
     new:
       name: "Tên"
       address: "Địa chỉ"
+  author:
+    new:
+      name: "Tên"
+      country: "Quốc TỊch"
+      age: "Tuổi"
