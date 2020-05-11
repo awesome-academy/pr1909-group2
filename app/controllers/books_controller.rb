@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :list_authors, only: %i(new edit create)
+  before_action :list_publishers, only: %i(new edit create)
   def show
     if (Book.find_by id: params[:id]).nil?
       flash[:danger] = "Không Tồn Tại Sách!"
@@ -16,6 +18,8 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @book.author_books.build.build_author
+    @book.book_publishers.build.build_publisher
   end
 
   def create
@@ -24,6 +28,7 @@ class BooksController < ApplicationController
       flash[:success] = "Create book success!"
       redirect_to @book
     else
+      flash[:danger] = "The data entry is missing!"
       render :new
     end
   end
@@ -51,6 +56,16 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:name, :describe, :price, :image, :type_book)
+    params.require(:book).permit(:name, :describe, :price, :image, :type_book, author_ids: [], publisher_ids: [],
+    author_books_attributes: [:id, :book_id, :author_id, author_attributes: [:id, :name, :country, :age]],
+    book_publishers_attributes: [:id, :book_id, :publisher_id, publisher_attributes: [:id, :name, :address]])
+  end
+
+  def list_authors
+    @authors = Author.all.map { |author| [author.name, author.id] }
+  end
+
+  def list_publishers
+    @publishers = Publisher.all.map { |publisher| [publisher.name, publisher.id] }
   end
 end

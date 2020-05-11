@@ -85,5 +85,17 @@ en:
   q:
     name_cont: "Name"
   show:
-    name: "Name: "
+    name: "Name Book"
     back: "Back"
+  book:
+    new:
+      country: "Country"
+      age: "Age"
+      address: "Address"
+      type: "Type"
+      describe: "Describe"
+      price: "Price"
+      author: "Author"
+      publisher: "Publisher"
+      book: "Book"
+      image: "Image"

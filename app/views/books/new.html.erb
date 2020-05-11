@@ -1,21 +1,31 @@
-<% provide(:title, 'Create Book') %>
-<h1>Create Book</h1>
+<% provide(:title, t("header.create_book")) %>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @book do |f| %>
-      <%= f.label :name %>
+      <%= f.label :name, t("show.name") %>
       <%= f.text_field :name, class: "form-control" %>
-      <%= f.label :type %>
+      <%= f.label :type, t("book.new.type") %>
       <%= f.select :type_book, Book::TYPE_BOOK.map { |c| c } %>
       <br>
-      <%= f.label :describe %>
+      <%= f.label :describe, t("book.new.describe") %>
       <%= f.text_field :describe, class: "form-control" %>
-      <%= f.label :price %>
+      <%= f.label :price, t("book.new.price") %>
       <%= f.number_field :price, class: "form-control" %>
+      <h3><%= t("book.new.image") %></h3>
       <span class="picture">
         <%= f.file_field :image %>
       </span>
-      <%= f.submit "Create my book", class: "btn btn-primary" %>
+  <h3><%= t("book.new.author") %></h3>
+    <div class="form-group">
+      <%= f.select :author_ids, options_for_select(@authors&.map{|key, value|
+      [key, value]}), {include_blank: true}, {class: "chosen-select", multiple: "true"} %>
+    </div>
+  <h3><%= t("book.new.publisher") %></h3>
+    <div class="form-group">
+      <%= f.select :publisher_ids, options_for_select(@publishers&.map{|key, value|
+      [key, value]}), {include_blank: true}, {class: "chosen-select", multiple: "true"} %>
+    </div>
+    <%= f.submit t("header.create_book"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

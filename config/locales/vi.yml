@@ -54,5 +54,17 @@ vi:
   q:
     name_cont: "Tên"
   show:
-    name: "Tên: "
+    name: "Tên Sách"
     back: "Quay Lại"
+  book:
+    new:
+      country: "Quốc Tịch"
+      age: "Tuổi"
+      address: "Địa Chỉ"
+      type: "Thể Loại"
+      describe: "Mô Tả"
+      price: "Giá Tiền"
+      author: "Tác Giả"
+      publisher: "Nhà Xuất Bản"
+      book: "Sách"
+      image: "Ảnh"
