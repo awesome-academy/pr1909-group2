@@ -1,0 +1,14 @@
+<% provide(:title, t("header.create_author")) %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @author do |f| %>
+      <%= f.label :name, t("author.new.name") %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :country, t("author.new.country") %>
+      <%= f.text_field :country, class: "form-control" %>
+      <%= f.label :age, t("author.new.age") %>
+      <%= f.number_field :age, class: "form-control" %>
+      <%= f.submit t("header.create_author"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

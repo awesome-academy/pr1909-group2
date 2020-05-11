@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     match '/users/:id', to: 'users#show', via: 'get'
     resources :books
     resources :publishers
+    resources :authors
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
