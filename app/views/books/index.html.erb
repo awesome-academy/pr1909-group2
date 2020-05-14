@@ -2,9 +2,14 @@
 <% provide :title, "LMS" %>
   <%= search_form_for @q, url: books_path, method: :get do |f| %>
     <%= f.label :name_cont, t("header.search_book") %>
-    <%= f.search_field :name_cont %>
+    <%= f.search_field :name_cont, class: "search-book-name" %>
+    <%= f.select :type_book_eq, Book::TYPE_BOOK.map { |c| c }, include_blank: true %>
+    <b>GIÁ TIỀN: </b>
+    <%= f.number_field :price_gteq %>
+    <b>Đến</b>
+    <%= f.number_field :price_lteq %>
     <%= button_tag do %>
-      <i class="fa fa-search-plus" style="height: 12px;width: 21px;color: black;"></i>
+      <i class="fa fa-search" style="height: 12px;width: 21px;color: black;"></i>
     <% end %>
   <% end %>
 <ul class="books-container">
