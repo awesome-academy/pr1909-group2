@@ -5,9 +5,9 @@ class Book < ApplicationRecord
   validates :image, presence: true
   has_many :book_users
   has_many :users, through: :book_users, dependent: :destroy
-  has_many :author_books
+  has_many :author_books, dependent: :destroy
   has_many :authors, through: :author_books
-  has_many :book_publishers
+  has_many :book_publishers, dependent: :destroy
   has_many :publishers, through: :book_publishers
   accepts_nested_attributes_for :author_books
   accepts_nested_attributes_for :book_publishers
