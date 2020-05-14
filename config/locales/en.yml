@@ -101,6 +101,9 @@ en:
       publisher: "Publisher"
       book: "Book"
       image: "Image"
+    index:
+      price: "Price"
+      to: "To"
   publisher:
     new:
       name: "Name"

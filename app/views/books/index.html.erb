@@ -4,9 +4,9 @@
     <%= f.label :name_cont, t("header.search_book") %>
     <%= f.search_field :name_cont, class: "search-book-name" %>
     <%= f.select :type_book_eq, Book::TYPE_BOOK.map { |c| c }, include_blank: true %>
-    <b>GIÁ TIỀN: </b>
+    <b><%= t("book.index.price") %></b>
     <%= f.number_field :price_gteq %>
-    <b>Đến</b>
+    <b><%= t("book.index.to") %></b>
     <%= f.number_field :price_lteq %>
     <%= button_tag do %>
       <i class="fa fa-search" style="height: 12px;width: 21px;color: black;"></i>
