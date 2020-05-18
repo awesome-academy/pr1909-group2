@@ -113,3 +113,6 @@ en:
       name: "Name"
       country: "Country"
       age: "Age"
+    index:
+      author: "Author"
+      home: "Home"

@@ -16,6 +16,11 @@ class AuthorsController < ApplicationController
 
   def show
     @author = Author.find_by id: params[:id]
+    @books = @author.books
+  end
+
+  def index
+    @authors = Author.all
   end
 
   private

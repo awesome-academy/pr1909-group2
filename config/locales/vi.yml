@@ -80,5 +80,10 @@ vi:
   author:
     new:
       name: "Tên"
-      country: "Quốc TỊch"
+      country: "Quốc Tịch"
+      age: "Tuổi"
+    index:
+      author: "Tác giả"
+      home: "Trang chủ"
+      country: "Quốc tịch"
       age: "Tuổi"
