@@ -101,14 +101,14 @@ input {
   margin-top: 30px;
   width: 65%;
   height: 100%;
-  border: 1px solid red;
 }
 #title {
   text-align: center;
 }
 #image {
-  margin-top: 30px;
-  margin-left: 60px;
+  margin-top: 10px;
+  margin-left: 20px;
+  float: left;
 }
 input, textarea, select, .uneditable-input {
   border: 1px solid black;
@@ -167,7 +167,6 @@ input, textarea, select, .uneditable-input {
    border-bottom: 1px solid $gray-lighter;
  }
 }
-
 .search-book-name{
   width: 150px;
 }
@@ -291,4 +290,23 @@ input, textarea, select, .uneditable-input {
 }
 .type-cart-1 a:hover {
   color: red;
+}
+#text-show-book-1 {
+  color: blue;
+  float: left;
+  list-style: none;
+  margin-left: 35px;
+}
+#text-show-book-2 {
+  float: left;
+  margin-top: -5px;
+}
+#tab-image {
+  padding-left: 200px;
+}
+.edit-book {
+  list-style-type: none;
+}
+#text-show-book-3 {
+  padding-top: 8px;
 }
