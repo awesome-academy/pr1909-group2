@@ -70,6 +70,9 @@ vi:
       publisher: "Nhà Xuất Bản"
       book: "Sách"
       image: "Ảnh"
+    index:
+      price: "Giá Tiền"
+      to: "Đến"
   publisher:
     new:
       name: "Tên"
