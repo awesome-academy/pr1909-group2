@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  include CustomHelper
-
   protected
 
   def configure_permitted_parameters
@@ -22,5 +20,9 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: I18n.locale }
+  end
+
+  def index_by_type(type)
+    Book.where(type_book: type)
   end
 end
