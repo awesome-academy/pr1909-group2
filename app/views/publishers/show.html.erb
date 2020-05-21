@@ -1,1 +1,29 @@
-<%= @publisher.name %>
+<% provide(:title, @publisher.name) %>
+<div id="text-show-1">
+  <li><%= link_to t("author.index.home"), root_path %></li>
+</div>
+<div id="text-show-2">
+  <h6>&nbsp>>&nbsp <%= @publisher.name %></h6>
+</div>
+<hr>
+<hr>
+<div id="text-index-3">
+  <h4><b><%= @publisher.name %></b></h4>
+</div>
+<ul class="books-container">
+  <% @books.each do |book| %>
+  <li>
+    <ul class="books">
+      <li>
+        <%= link_to image_tag(book.image.url), book %>
+      </li>
+      <li>
+        <%= link_to book.name, book %>
+        <% if current_user.try(:admin?) %>
+          | <%= link_to t("index.delete"), book, method: :delete %>
+        <% end %>
+      </li>
+    </ul>
+  </li>
+  <% end %>
+</ul>

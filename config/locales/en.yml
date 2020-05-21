@@ -108,6 +108,9 @@ en:
     new:
       name: "Name"
       address: "Address"
+    index:
+      publisher: "Publisher"
+      address: "Address"
   author:
     new:
       name: "Name"
