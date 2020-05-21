@@ -245,13 +245,24 @@ input, textarea, select, .uneditable-input {
 #text-cart-1 {
   float: left;
 }
-#content-1 {
+#content-2 {
   margin-left: 3%;
   margin-top: 3%;
-  width: 50%;
+  width: 80%;
   height: 100%;
   background-color: #FBFBEF;
 }
-#content-2 {
-  float: right;
+#content-3 {
+  float: left;
+  width: 20%;
+  margin-top: -1px;
+  margin-left: -150px;
+  background-color: #FBFBEF;
+}
+#button-cart input {
+  width: 100%;
+}
+#content-1 {
+  float: left;
+  width: 80%;
 }
