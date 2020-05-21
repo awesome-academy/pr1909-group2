@@ -24,6 +24,9 @@
         <% if current_user.try(:admin?) %>
           | <%= link_to t("index.delete"), book, method: :delete %>
         <% end %>
+        <div id="button-cart">
+          <%= button_to t("book.index.add_cart"), line_items_path(:book_id => book) %>
+        </div>
       </li>
     </ul>
   </li>

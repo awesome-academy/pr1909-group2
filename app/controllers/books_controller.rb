@@ -14,6 +14,7 @@ class BooksController < ApplicationController
     @q = Book.ransack(params[:q])
     @books = params[:type_book].present? ? index_by_type(params[:type_book]) :
     @q.result.page(params[:page])
+    @cart = current_cart
   end
 
   def new
