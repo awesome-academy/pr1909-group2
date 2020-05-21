@@ -6,7 +6,7 @@ class CreateBookUsers < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
-    add_index :book_users, :user_id
-    add_index :book_users, :book_id
+    add_index :book_users, :user_id, name: 'aaaa'
+    add_index :book_users, :book_id, name: 'vvvv'
   end
 end
