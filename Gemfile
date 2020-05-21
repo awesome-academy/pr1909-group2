@@ -5,8 +5,8 @@ ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3', '~> 1.4'
+# Use mysql2 as the database for Active Record
+#gem 'mysql2', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem "devise"
-gem 'mysql2'
+gem 'mysql2', '>= 0.4.4'
 gem 'rubocop-airbnb', require: false
 gem 'bootstrap-sass'
 gem 'jquery-rails'
@@ -40,7 +40,7 @@ gem "carrierwave"
 gem 'mini_magick'
 gem "ransack"
 gem 'rubyzip', '>= 1.2.1'
-gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
+gem 'caxlsx'
 gem 'axlsx_rails'
 gem "coffee-rails"
 gem "paranoia"
