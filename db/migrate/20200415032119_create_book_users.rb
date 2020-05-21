@@ -9,4 +9,6 @@ class CreateBookUsers < ActiveRecord::Migration[6.0]
     add_index :book_users, :user_id, name: 'speeduser'
     add_index :book_users, :book_id, name: 'speedbook'
   end
+  add_index :book_users, :user_id, :column, name: 'index user'
+  add_index :book_users, :user_id, :column, name: 'index book'
 end
