@@ -41,7 +41,7 @@ gem 'mini_magick'
 gem "ransack"
 gem 'rubyzip', '>= 1.2.1'
 gem 'caxlsx'
-gem 'axlsx_rails'
+gem 'caxlsx_rails'
 gem "coffee-rails"
 gem "paranoia"
 gem "chosen-rails"
