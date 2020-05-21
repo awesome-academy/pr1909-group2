@@ -174,3 +174,48 @@ input, textarea, select, .uneditable-input {
 input, textarea, select, .uneditable-input {
   width: 100px;
 }
+
+#text-show-1 {
+  color: blue;
+  float: left;
+  list-style: none;
+  margin-left: 3%;
+}
+#text-show-2 {
+  float: left;
+  margin-top: -5px;
+}
+#text-index-3 {
+  margin-left: 3%;
+}
+.table-author {
+  border: 2px solid #bbbbbb;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 15px;
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+#th-table {
+  background: #2E3D4A;
+  color: #fff;
+  font-weight: bold;
+  height: 35px;
+}
+#th-table th {
+  padding-left: 12px;
+}
+#th-table-1 {
+  height: 90px;
+  width: 800px;
+}
+#th-table-2 {
+  height: 90px;
+}
+#th-table-1 a {
+  margin-left: 10px;
+}
+#th-table-2 p {
+  margin-left: 10px;
+}
