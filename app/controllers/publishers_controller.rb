@@ -16,6 +16,11 @@ class PublishersController < ApplicationController
 
   def show
     @publisher = Publisher.find_by id: params[:id]
+    @books = @publisher.books
+  end
+
+  def index
+    @publishers = Publisher.all
   end
 
   private

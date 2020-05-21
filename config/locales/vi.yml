@@ -77,6 +77,9 @@ vi:
     new:
       name: "Tên"
       address: "Địa chỉ"
+    index:
+      publisher: "Nhà xuất bản"
+      address: "Địa chỉ"
   author:
     new:
       name: "Tên"
