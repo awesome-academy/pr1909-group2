@@ -12,7 +12,7 @@ class Book < ApplicationRecord
   accepts_nested_attributes_for :author_books
   accepts_nested_attributes_for :book_publishers
   mount_uploader :image, ImageUploader
-  has_many :line_items
+  has_many :line_items, dependent: :destroy
   before_destroy :check_if_has_line_item
 
   TYPE_BOOK = [

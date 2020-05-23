@@ -10,6 +10,13 @@
   <hr>
   <div id="container-show-cart-1">
     <div id="content-1">
+      <div class="type-cart-1">
+        <ul>
+          <li><h3><%= link_to "Giỏ Hàng", cart_path(current_cart) %></h3></li>
+          <li id="li-2"><h3><%= link_to "Đang Giao", '#' %></h3></li>
+          <li><h3><%= link_to "Đã Giao", orders_path %></h3></li>
+        </ul>
+      </div>
       <div id="show-cart-1">
         <div id="text-cart-1">
           <h4><i>Tổng số sản phẩm: <%= @cart.line_items.length %></i></h4>
@@ -56,3 +63,4 @@
       </div>
     </div>
 </div>
+

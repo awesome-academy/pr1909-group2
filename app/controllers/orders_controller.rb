@@ -4,13 +4,18 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @orders = current_cart.order.build order_params
-    if @orders.save
+    @order = current_cart.order.build order_params
+    @order.add_line_items_from_cart(current_cart)
+    if @order.save
       flash[:success] = "Create order success!"
-      redirect_to '/'
+      redirect_to cart_path(current_cart)
     else
       render :new
     end
+  end
+
+  def index
+    @orders = Order.paginate(:page => params[:page], :per_page => 10).order('created_at desc')
   end
 
   private

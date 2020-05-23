@@ -231,7 +231,7 @@ input, textarea, select, .uneditable-input {
 #show-cart-1 {
   width: 80%;
   margin-left: 3%;
-  background-color: #FBFBEF;
+  background-color: #f4f4f4;
   height: 35px;
 }
 #container-show-cart {
@@ -250,14 +250,14 @@ input, textarea, select, .uneditable-input {
   margin-top: 3%;
   width: 80%;
   height: 100%;
-  background-color: #FBFBEF;
+  background-color: #f4f4f4;
 }
 #content-3 {
   float: left;
   width: 20%;
   margin-top: -1px;
   margin-left: -150px;
-  background-color: #FBFBEF;
+  background-color: #f4f4f4;
 }
 #button-cart input {
   width: 100%;
@@ -265,4 +265,30 @@ input, textarea, select, .uneditable-input {
 #content-1 {
   float: left;
   width: 80%;
+}
+.type-cart-1 {
+  width: 80%;
+  height: 60px;
+  background-color: #f4f4f4;
+  margin-left: 3%;
+  margin-bottom: 20px;
+}
+.type-cart-1 ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.type-cart-1 li {
+  display: inline-block;
+  width: 140px;
+}
+#li-2 {
+  width: 160px;
+}
+.type-cart-1 a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+.type-cart-1 a:hover {
+  color: red;
 }
