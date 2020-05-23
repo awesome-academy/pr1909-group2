@@ -8,7 +8,7 @@ class CartsController < ApplicationController
     @cart.destroy
     session[:cart_id] = nil
     flash[:success] = "Cart clear!"
-    redirect_to carts_url
+    redirect_to cart_url(current_cart)
   end
 
   def index

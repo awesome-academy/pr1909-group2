@@ -30,7 +30,7 @@ class LineItemsController < ApplicationController
     redirect_to line_items_url
   end
 
-private
+  private
 
   def set_line_item
     @line_item = LineItem.find(params[:id])
