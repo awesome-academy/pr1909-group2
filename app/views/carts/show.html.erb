@@ -1,0 +1,66 @@
+<% provide(:title, "Giỏ Hàng") %>
+<div id="container-show-cart">
+  <div id="text-show-1">
+    <li><%= link_to t("author.index.home"), root_path %></li>
+  </div>
+  <div id="text-show-2">
+    <h6> &nbsp>>&nbspGiỏ hàng</h6>
+  </div>
+  <hr>
+  <hr>
+  <div id="container-show-cart-1">
+    <div id="content-1">
+      <div class="type-cart-1">
+        <ul>
+          <li><h3><%= link_to "Giỏ Hàng", cart_path(current_cart) %></h3></li>
+          <li id="li-2"><h3><%= link_to "Đang Giao", '#' %></h3></li>
+          <li><h3><%= link_to "Đã Giao", orders_path %></h3></li>
+        </ul>
+      </div>
+      <div id="show-cart-1">
+        <div id="text-cart-1">
+          <h4><i>Tổng số sản phẩm: <%= @cart.line_items.length %></i></h4>
+        </div>
+        <div id="button-show-cart">
+        <%= button_to 'Delete',
+              @cart,
+              :method => :delete,
+              data: {:confirm => 'Are you sure?'} %>
+        </div>
+      </div>
+      <div id="content-2">
+        <h4>Sản phẩm được thêm vào giỏ hàng</h4>
+        <table>
+          <% @cart.line_items.each do |item| %>
+            <% if @current_item != nil %>
+              <% if @current_item.id == line_item.id %>
+            <tr id="current_item">
+              <% else %>
+            <tr>
+              <% end %>
+            <% end %>
+              <td><h2><%= item.quantity %>x&nbsp</h2></td>
+              <td><h2><%= item.book.name %></h2></td>
+              <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+            </tr>
+          <% end %>
+          <hr>
+        </table>
+      </div>
+    </div>
+      <div id="content-3">
+        <hr>
+        <h4>Thông tin đơn hàng</h4>
+        <tr class="total_line">
+          <td colspan="2">Tổng tiền: </td>
+          <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+        </tr>
+        <div id="button-cart">
+          <%= button_to 'Xác nhận đặt hàng',
+                new_order_path,
+                :method => :get %><br>
+        </div>
+      </div>
+    </div>
+</div>
+

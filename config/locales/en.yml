@@ -104,6 +104,7 @@ en:
     index:
       price: "Price"
       to: "To"
+      add_cart: "Add to cart"
   publisher:
     new:
       name: "Name"

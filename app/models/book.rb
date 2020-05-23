@@ -12,10 +12,23 @@ class Book < ApplicationRecord
   accepts_nested_attributes_for :author_books
   accepts_nested_attributes_for :book_publishers
   mount_uploader :image, ImageUploader
+  has_many :line_items, dependent: :destroy
+  before_destroy :check_if_has_line_item
 
   TYPE_BOOK = [
     "Văn Học", "Teen", "Tiểu Thuyết", "Kỳ Ảo", "Truyện Trinh Thám",
     "Kinh dị", "Lịch sử", "Kinh Tế", "Văn hóa", "Khoa học", "Tâm Lí",
     "Kỹ năng sống",
   ].freeze
+
+  private
+
+  def check_if_has_line_item
+    if line_items.empty?
+      return true
+    else
+      errors.add(:base, 'This book has a LineItem')
+      return false
+    end
+  end
 end

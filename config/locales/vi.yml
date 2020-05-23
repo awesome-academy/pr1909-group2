@@ -73,6 +73,7 @@ vi:
     index:
       price: "Giá Tiền"
       to: "Đến"
+      add_cart: "Thêm vào giỏ hàng"
   publisher:
     new:
       name: "Tên"

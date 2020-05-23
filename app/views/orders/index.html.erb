@@ -1,0 +1,32 @@
+<% provide(:title, t("author.index.author")) %>
+<div id="text-show-1">
+  <li><%= link_to t("author.index.home"), root_path %></li>
+</div>
+<div id="text-show-2">
+  <h6> &nbsp>>&nbsp<%= t("publisher.index.publisher") %></h6>
+</div>
+<hr>
+<hr>
+<div id="text-index-3">
+  <h4><b><%= t("publisher.index.publisher") %></b></h4>
+</div>
+<hr>
+<table class="table-author" border="2">
+  <tr id="th-table">
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Pay type</th>
+    <th colspan="3"></th>
+  </tr>
+  <% @orders.each do |order| %>
+    <tr>
+      <td id="th-table-1"><%= order.name %></td>
+      <td id="th-table-2"><%= order.address %></td>
+      <td id="th-table-2"><%= order.email %></td>
+      <td id="th-table-2"><%= order.pay_type %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<p><%= will_paginate @orders %></p>
