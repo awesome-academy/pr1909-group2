@@ -34,6 +34,7 @@ vi:
     search_book: "Tìm Sách"
     create_publisher: "Tạo NXB"
     create_author: "Tạo Tác Giả"
+    order_management: "Quản lí đơn hàng"
   signup:
     signup: "Đăng Kí"
     name_not_be_blank: "Tên không được để trống"
@@ -91,3 +92,24 @@ vi:
       home: "Trang chủ"
       country: "Quốc tịch"
       age: "Tuổi"
+  cart:
+    show:
+      cart: "Giỏ hàng"
+      delivery: "Đang giao"
+      already_delivered: "Đã Giao"
+      the_number_of_products: "Tổng số sản phẩm: "
+      delete: "Xóa"
+      product_added_to_cart: "Sản phẩm được thêm vào giỏ hàng"
+      information_product: "Thông tin đơn hàng"
+      total_money: "Tổng tiền: "
+      order_confirmation: "Xác nhận đặt hàng"
+  order:
+    index:
+      name: "Tên"
+      name_book: "Tên Sách"
+      address: "Địa chỉ"
+      pay_type: "Ngân hàng"
+      status: "Trạng thái"
+      confirm_delivered: "Xác nhận giao hàng"
+    show:
+      purchase_history: "Lịch sử mua hàng"

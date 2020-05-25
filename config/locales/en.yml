@@ -64,6 +64,7 @@ en:
     search_book: "Search Book"
     create_publisher: "Create Publisher"
     create_author: "Create Author"
+    order_management: "Order management"
   signup:
     name_not_be_blank: "Name can not be blank!"
     minimum_name: "Minimum name is 6 characters"
@@ -120,3 +121,24 @@ en:
     index:
       author: "Author"
       home: "Home"
+  cart:
+    show:
+      cart: "Cart"
+      delivery: "Delivery"
+      already_delivered: "Already delivered"
+      the_number_of_products: "The number of products"
+      delete: "Delete"
+      product_added_to_cart: "Product added to cart"
+      information_product: "Information product"
+      total_money: "Total money"
+      order_confirmation: "order confirmation"
+  order:
+    index:
+      name: "Name"
+      name_book: "Name Book"
+      address: "Address"
+      pay_type: "Pay type"
+      status: "Status"
+      confirm_delivered: "Confirm delivered"
+    show:
+      purchase_history: "Purchase history"
