@@ -82,15 +82,3 @@ end
   Publisher.create!(name: name,
                     address: address)
 end
-30.times do |n|
-  book_id = rand(1..10)
-  author_id = rand(1..30)
-  AuthorBook.create!(book_id: book_id,
-                      author_id: author_id)
-end
-30.times do |n|
-  book_id = rand(1..10)
-  publisher_id = rand (1..30)
-  BookPublisher.create!(book_id: book_id,
-                        publisher_id: publisher_id)
-end
