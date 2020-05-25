@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_085325) do
+ActiveRecord::Schema.define(version: 2020_05_25_043905) do
 
   create_table "author_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "author_id", null: false
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_085325) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "cart_id"
+    t.string "status", default: "Đang Giao"
   end
 
   create_table "publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|

@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
 
   def create
     @order = current_cart.order.build order_params
-    @order.add_line_items_from_cart(current_cart)
     if @order.save
       flash[:success] = "Create order success!"
       redirect_to cart_path(current_cart)
@@ -14,8 +13,29 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @cart = current_cart.line_items
+    if current_user&.admin?
+      @orders_active = Order.all
+    else
+      @orders_active = current_cart.order.where(status: "Đã Giao")
+    end
+  end
+
   def index
-    @orders = Order.paginate(:page => params[:page], :per_page => 10).order('created_at desc')
+    @cart = current_cart.line_items
+    if current_user&.admin?
+      @orders = Order.all
+    else
+      @orders = current_cart.order.where(status: "Đang Giao")
+    end
+  end
+
+  def active
+    order = Order.find params[:order_id]
+    order.update(status: "Đã Giao")
+    redirect_to root_path
+    flash[:success] = "Active Success!"
   end
 
   private

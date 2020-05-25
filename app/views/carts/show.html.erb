@@ -4,7 +4,7 @@
     <li><%= link_to t("author.index.home"), root_path %></li>
   </div>
   <div id="text-show-2">
-    <h6> &nbsp>>&nbspGiỏ hàng</h6>
+    <h6>&nbsp>>&nbsp<%= t("cart.show.cart") %></h6>
   </div>
   <hr>
   <hr>
@@ -12,24 +12,24 @@
     <div id="content-1">
       <div class="type-cart-1">
         <ul>
-          <li><h3><%= link_to "Giỏ Hàng", cart_path(current_cart) %></h3></li>
-          <li id="li-2"><h3><%= link_to "Đang Giao", '#' %></h3></li>
-          <li><h3><%= link_to "Đã Giao", orders_path %></h3></li>
+          <li><h3><%= link_to t("cart.show.cart"), cart_path(current_cart) %></h3></li>
+          <li id="li-2"><h3><%= link_to t("cart.show.delivery"), orders_path %></h3></li>
+          <li><h3><%= link_to t("cart.show.already_delivered"), order_path %></h3></li>
         </ul>
       </div>
       <div id="show-cart-1">
         <div id="text-cart-1">
-          <h4><i>Tổng số sản phẩm: <%= @cart.line_items.length %></i></h4>
+          <h4><i><%= t("cart.show.the_number_of_products") %> <%= @cart.line_items.length %></i></h4>
         </div>
         <div id="button-show-cart">
-        <%= button_to 'Delete',
+        <%= button_to t("cart.show.delete"),
               @cart,
               :method => :delete,
               data: {:confirm => 'Are you sure?'} %>
         </div>
       </div>
       <div id="content-2">
-        <h4>Sản phẩm được thêm vào giỏ hàng</h4>
+        <h4><%= t("cart.show.product_added_to_cart") %></h4>
         <table>
           <% @cart.line_items.each do |item| %>
             <% if @current_item != nil %>
@@ -50,13 +50,13 @@
     </div>
       <div id="content-3">
         <hr>
-        <h4>Thông tin đơn hàng</h4>
+        <h4><%= t("cart.show.information_product") %></h4>
         <tr class="total_line">
-          <td colspan="2">Tổng tiền: </td>
+          <td colspan="2"><%= t("cart.show.total_money") %></td>
           <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
         </tr>
         <div id="button-cart">
-          <%= button_to 'Xác nhận đặt hàng',
+          <%= button_to t("cart.show.order_confirmation"),
                 new_order_path,
                 :method => :get %><br>
         </div>

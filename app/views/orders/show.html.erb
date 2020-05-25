@@ -3,12 +3,12 @@
   <li><%= link_to t("author.index.home"), root_path %></li>
 </div>
 <div id="text-show-2">
-  <h6> &nbsp>>&nbsp<%= t("cart.show.delivery") %></h6>
+  <h6> &nbsp>>&nbsp<%= t("order.show.purchase_history") %></h6>
 </div>
 <hr>
 <hr>
 <div id="text-index-3">
-  <h4><b><%= t("cart.show.delivery") %></b></h4>
+  <h4><b><%= t("order.show.purchase_history") %></b></h4>
 </div>
 <hr>
 <table class="table-author" border="2">
@@ -20,10 +20,10 @@
     <th><%= t("order.index.pay_type") %></th>
     <th><%= t("order.index.status") %></th>
     <% if current_user.admin? %>
-     <th>Admin</th>
+      <th>Admin</th>
     <% end %>
   </tr>
-  <% @orders.each do |order| %>
+  <% @orders_active.each do |order| %>
     <tr>
       <td id="th-table-1"><%= order.name %></td>
       <% @cart.each do |item| %>
@@ -40,4 +40,3 @@
   <% end %>
 </table>
 <br>
-
