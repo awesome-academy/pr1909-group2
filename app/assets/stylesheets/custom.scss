@@ -306,7 +306,11 @@ input, textarea, select, .uneditable-input {
 }
 .edit-book {
   list-style-type: none;
+  margin-left: 70px;
 }
 #text-show-book-3 {
   padding-top: 8px;
+}
+.edit-book a {
+  color: red;
 }

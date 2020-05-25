@@ -25,12 +25,12 @@
       <hr>
         <h5>Giá tiền:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= @book.price %></h5>
       <hr>
+      <% if current_user.try(:admin?) %>
+        <ul class="edit-book">
+          <li><%= link_to t("show.edit_book"), edit_book_path %></li>
+        </ul>
+      <% end %>
     </div>
-    <% if current_user.try(:admin?) %>
-      <ul class="edit-book">
-        <li><%= link_to t("show.edit_book"), edit_book_path %></li>
-      </ul>
-    <% end %>
     <div id="text-show-book-3">
       <h2><b>Giới Thiệu Truyện:</b></h2>
     </div>
