@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   validates :name, presence: true, length: { maximum: 100 }
-  validates :describe, presence: true, length: { maximum: 500 }
+  validates :describe, presence: true, length: { maximum: 5000 }
   validates :price, presence: true
   validates :image, presence: true
   has_many :book_users

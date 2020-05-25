@@ -7,10 +7,6 @@ class BooksController < ApplicationController
       redirect_to root_path
     else
       @book = Book.find_by id: params[:id]
-      author_book = AuthorBook.find_by(book_id: @book.id)
-      @author = author_book.author
-      book_publishers = BookPublisher.find_by(book_id: @book.id)
-      @publisher = book_publishers.publisher
     end
   end
 

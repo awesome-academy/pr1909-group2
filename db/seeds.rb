@@ -57,6 +57,16 @@ b10 = Book.create!(name:  "Bức tranh Việt Nam",
                  price: 44000,
                  type_book: "Văn Học",
                  image: Rails.root.join("public/uploads/book/image/5/tranh-phong-canh-lang-que-viet-nam-4.jpg").open)
+b11 = Book.create!(name:  "Bức tranh",
+                 describe: "Harry đang chờ đợi ở trường Privet Drive. Hội Phượng Hoàng sắp đến hộ tống nó ra đi an toàn",
+                 price: 44000,
+                 type_book: "Văn Học",
+                 image: Rails.root.join("public/uploads/book/image/5/tranh-phong-canh-lang-que-viet-nam-4.jpg").open)
+b12 = Book.create!(name:  "Bức tranh 3",
+                 describe: "Harry đang chờ đợi ở trường Privet Drive. Hội Phượng Hoàng sắp đến hộ tống nó ra đi an toàn",
+                 price: 44000,
+                 type_book: "Văn Học",
+                 image: Rails.root.join("public/uploads/book/image/5/tranh-phong-canh-lang-que-viet-nam-4.jpg").open)
 30.times do |n|
   name = Faker::Name.name
   country = Faker::Address.country
