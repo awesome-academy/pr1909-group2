@@ -1,20 +1,39 @@
 <% provide(:title, @book.name) %>
-<div class="container-showbook">
-  <div id="title">
-    <h2>
-      <%= @book.name %>
-    </h2>
+  <div id="text-show-book-1">
+    <li><%= link_to "Trang chủ", root_path %></li>
   </div>
 
-  <div id="image">
-    <%= image_tag @book.image.url if @book.image? %>
+  <div id="text-show-book-2">
+    <h6>&nbsp>>&nbsp<%= @book.name %></h6>
   </div>
-    <% if current_user.try(:admin?) %>
-      <ul class="edit-book">
-        <li><%= link_to t("show.edit_book"), edit_book_path %></li>
-      </ul>
-    <% end %>
-
+  <hr>
+  <hr>
+  <div class="container-showbook">
+    <div id="title">
+      <h2>
+        <%= @book.name %>
+      </h2>
+    </div>
+    <div id="image">
+      <%= image_tag @book.image.url if @book.image? %>
+    </div>
+    <div id="tab-image">
+      <hr>
+        <h5>Tác giả:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to @author.name , @author %></h5>
+      <hr>
+        <h5>Nhà xuất bản:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to @publisher.name, @publisher %></h5>
+      <hr>
+        <h5>Giá tiền:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= @book.price %></h5>
+      <hr>
+      <% if current_user.try(:admin?) %>
+        <ul class="edit-book">
+          <li><%= link_to t("show.edit_book"), edit_book_path %></li>
+        </ul>
+      <% end %>
+    </div>
+    <div id="text-show-book-3">
+      <h2><b>Giới Thiệu Truyện:</b></h2>
+    </div>
   <div id="describe">
     <h3>
       <%= @book.describe %>
