@@ -19,7 +19,7 @@
     <th>Email</th>
     <th><%= t("order.index.pay_type") %></th>
     <th><%= t("order.index.status") %></th>
-    <% if current_user.admin? %>
+    <% if current_user&.admin? %>
      <th>Admin</th>
     <% end %>
   </tr>
@@ -33,7 +33,7 @@
       <td id="th-table-2"><%= order.email %></td>
       <td id="th-table-2"><%= order.pay_type %></td>
       <td id="th-table-2"><%= order.status %></td>
-      <% if current_user.admin? %>
+      <% if current_user&.admin? %>
         <td id="th-table-2"><%= link_to t("order.index.cartonfirm_delivered"), orders_active_path(order_id: order.id) %> </td>
       <% end %>
     </tr>
