@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.all.destroy_all
 User.restore(1)
+Book.all.destroy_all
 b1 = Book.create!(name:  "Nỗi Nhớ Mùa Hè",
                   describe: "Truyện lấy bối cảnh Việt Nam những năm 1990. Thành phố trong truyện là một thành phố biển hư cấu. Có nhiều chi tiết không sát thực tế.",
                   price: 36000,
