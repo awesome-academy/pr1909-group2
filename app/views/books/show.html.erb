@@ -19,6 +19,10 @@
     </div>
     <div id="tab-image">
       <hr>
+        <h5>Tác giả:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to @author.name , @author %></h5>
+      <hr>
+        <h5>Nhà xuất bản:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to @publisher.name, @publisher %></h5>
+      <hr>
         <h5>Giá tiền:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= @book.price %></h5>
       <hr>
       <% if current_user.try(:admin?) %>
