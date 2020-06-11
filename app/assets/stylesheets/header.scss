@@ -13,7 +13,7 @@ textarea { resize: vertical; }
  padding-top: 9px;
  font-weight: bold;
  line-height: 56px;
- margin-left: 5px;
+ margin-left: -3px;
 }
 
 #logo:hover {
@@ -129,9 +129,9 @@ textarea { resize: vertical; }
 }
 .iconlogo {
   margin-bottom: 10px;
-  width: 1.5em;
-  height: 1.5em;
-  color: #fff;
+  width: 2.5em;
+  height: 2.5em;
+  color: red;
 }
 .iconlogo-2 {
   width: 1.1em;
@@ -150,4 +150,30 @@ textarea { resize: vertical; }
   color: #fff;
   margin-bottom: 4px;
   margin-right: 3px;
+}
+.tab-1 {
+  height: 500px;
+}
+#text-1 {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 15px;
+  font-family: 'Roboto',Tahoma,Helvetica,Arial,sans-serif;
+  font-weight: 500;
+  font-weight: bold;
+}
+.tab-2 {
+  background-color: #0057a3;
+}
+.tab-3 {
+  background-color: #0057a3;
+}
+#text-2 {
+  color: #fff;
+  font-size: 13.4px;
+  font-family: 'Roboto',Tahoma,Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+a:hover{
+  text-decoration: none;
 }
