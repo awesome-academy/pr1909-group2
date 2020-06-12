@@ -31,6 +31,10 @@ gem 'mysql2', '>= 0.4.4'
 gem 'rubocop-airbnb', require: false
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'devise'
+gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
