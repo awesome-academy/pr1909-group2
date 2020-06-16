@@ -177,3 +177,60 @@ textarea { resize: vertical; }
 a:hover{
   text-decoration: none;
 }
+.signup {
+  margin-left: 35px;
+}
+
+.edit{
+  margin-left: 35px;
+}
+.container {
+  min-height:100%;
+  position:relative;
+}
+.field {
+  width:30%;
+}
+/* Dropdown Button */
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: #0057A3;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: #003666;
+}
+
+.tab-4 {
+  background-color: #0057A3;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.tab-4:hover {
+  background-color: #003666;
+}
