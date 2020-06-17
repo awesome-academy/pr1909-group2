@@ -1,6 +1,16 @@
 class Player < ApplicationRecord
   mount_uploader :image, ImageUploader
   mount_uploader :diagram, DiagramUploader
+  validates :name, presence: true
+  validates :nationality, presence: true
+  validates :height, presence: true
+  validates :weight, presence: true
+  validates :shirt_number, presence: true
+  validates :image, presence: true
+  validates :diagram, presence: true
+  validates :strengths, presence: true
+  validates :weaknesses, presence: true
+  validates :age, presence: true
   enum preferred_foot: { Right: 0, Left: 1, Both: 2 }
   enum nationality: {
     Belgium: 0, France: 1, Brazil: 2, England: 3, Uruguay: 4, Croatia: 5, Portugal: 6, Spain: 7,
