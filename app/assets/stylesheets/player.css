@@ -1,0 +1,110 @@
+.tab-left {
+  background-color: #fff;
+}
+.tab-right {
+  background-color: #76B69A;
+  height: 530px;
+  border-radius: 5px 5px 5px 5px;
+}
+.warp {
+  background-color: #F1F2F5;
+}
+.content {
+  margin-top: 25px;
+  height: 570px;
+  margin-right: 85px;
+}
+.type {
+  background-color: #F1F2F5;
+  height: 250px;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 15px;
+}
+#team-player {
+  margin-left: 40px;
+  padding-top: 20px;
+}
+#home {
+  margin-left: 30px;
+  color: #0057A3;
+}
+#name {
+  color: #0057A3;
+}
+#name-player {
+  font-size: 25px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.grade {
+  background-color: #fff;
+  height: 550px;
+  width: 1200px;
+}
+.team-name {
+  height: 40px;
+  width: 270px;
+  margin-left: 20px;
+  margin-top: 20px
+}
+.information {
+  height: 140px;
+  width: 300px;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+#text-player-show-1 {
+  color: #404040;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.information-1 {
+  height: 70px;
+  width: 300px;
+}
+.information-2 {
+  height: 70px;
+  width: 300px;
+}
+.information-1-1 {
+  width: 100px;
+  height: 70px;
+  float: left;
+}
+#height-player {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+#text-player-show-2 {
+  text-align: center;
+  font-size: 12px;
+  color: #808080;
+}
+#image {
+  margin-top: 10px;
+}
+#image-player img {
+  border-radius: 50px;
+}
+.information-3 {
+  width: 230px;
+  height: 150px;
+  float: left;
+}
+.information-4 {
+  width: 140px;
+  height: 150px;
+  float: right;
+  padding-top: 50px;
+}
+#diagram-player img {
+  margin-top: 55px;
+  margin-left: 25px;
+}
+#text-player-show-3 {
+  font-weight: bold;
+}
+#text-player-show-4 {
+  color: #808080;
+}
