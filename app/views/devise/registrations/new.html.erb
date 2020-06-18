@@ -1,8 +1,11 @@
-<h2 class="nolinks">Sign up</h2>
+<div>Sign up</h2>
  
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {multipart: :true}) do |f| %>
   <%= devise_error_messages! %>
- 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true  %>
+  </div>
   <div class="field">
     <%= f.label :email %><br>
     <%= f.email_field :email, autofocus: true %>
@@ -20,7 +23,14 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+ 
+  <div class="field">
+    <%= f.label :avatar do %>
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+    <% end %>
+  </div>
+ 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

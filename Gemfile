@@ -27,7 +27,6 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'mysql2', '>= 0.4.4'
 gem 'rubocop-airbnb', require: false
 gem 'bootstrap-sass'
 gem 'jquery-rails'
@@ -35,7 +34,9 @@ gem 'devise'
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
-
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
