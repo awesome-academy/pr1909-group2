@@ -3,9 +3,6 @@
     <%= form_for(@player) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
-      <%= f.label :nationality %>
-      <%= f.select(:nationality, options_for_select(Player.nationalities.keys)) %>
-      <br>
       <%= f.label :avatar %>
       <%= f.file_field :image %>
       <%= f.label :diagram %>
