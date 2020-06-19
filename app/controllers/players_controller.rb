@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
+    api_nationalitys
   end
 
   def create
@@ -21,7 +22,7 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:name, :height, :weight, :shirt_number, :preferred_foot,
+    params.require(:player).permit(:name, :nationality, :height, :weight, :shirt_number, :preferred_foot,
     :image, :diagram, :strengths, :weaknesses, :age)
   end
 end
