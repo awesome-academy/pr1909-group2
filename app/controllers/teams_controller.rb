@@ -45,6 +45,6 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:name, :image, :country)
+    params.require(:team).permit(:name, :logo, :country)
   end
 end
