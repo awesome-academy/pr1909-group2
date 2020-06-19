@@ -1,0 +1,71 @@
+<% provide(:title, @player.name) %>
+<div class="container-fluid warp">
+  <%= link_to "Livescore", root_path , id: "home" %>
+  >>
+  <%= link_to @player.name, @player , id: "name" %>
+  <div class="container content">
+    <div class="row grade">
+      <div class="col-sm-8 tab-left">
+        <div id="image">
+          <%= link_to image_tag(@player.image.url), @player , id: "image-player"%>
+          <span id="name-player"><%= @player.name %></span>
+        </div>
+        <div class="type">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="team-name">
+                <img src="https://www.sofascore.com/images/team-logo/football_38.png" alt="chelsea" width="36" height="36" title="chelsea">
+                <span id="text-player-show-1">Chelsea</span>
+              </div>
+              <div class="information">
+                <div class="information-1">
+                  <div class="information-1-1">
+                    <div id="height-player"><%= @player.nationality %></div>
+                    <div id="text-player-show-2">nationality</div>
+                  </div>
+                  <div class="information-1-1">
+                    <div id="height-player"><%= @player.age %></div>
+                    <div id="text-player-show-2"><%= Date.today %></div>
+                  </div>
+                  <div class="information-1-1">
+                    <div id="height-player"><%= @player.height %>&nbspcm</div>
+                    <div id="text-player-show-2">height</div>
+                  </div>
+                </div>
+                <div class="information-2">
+                  <div class="information-1-1">
+                    <div id="height-player"><%= @player.weight %></div>
+                    <div id="text-player-show-2">weight</div>
+                  </div>
+                  <div class="information-1-1">
+                    <div id="height-player"><%= @player.preferred_foot %></div>
+                    <div id="text-player-show-2">Preferred foot</div>
+                  </div>
+                  <div class="information-1-1">
+                    <div id="height-player"><%= @player.shirt_number %></div>
+                    <div id="text-player-show-2">shirt_number</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="border-left:1px solid #BBBBBB;height:250px"></div>
+            <div class="col-sm-6">
+              <div class="information-3">
+                <%= link_to image_tag(@player.diagram.url), @player , id: "diagram-player"%>
+              </div>
+              <div class="information-4">
+                <div id="text-player-show-3">Strengths</div>
+                <div id="text-player-show-4"><%= @player.strengths %></div>
+                <div id="text-player-show-3">Weaknesses</div>
+                <div id="text-player-show-4"><%= @player.weaknesses %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 tab-right">
+        <h2>Top Player</h2>
+      </div>
+    </div>
+  </div>
+</div>

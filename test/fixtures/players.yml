@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nationality: 1
+  height: 1.5
+  weight: 1.5
+  shirt_number: 1
+  preferred_foot: 1
+
+two:
+  name: MyString
+  nationality: 1
+  height: 1.5
+  weight: 1.5
+  shirt_number: 1
+  preferred_foot: 1
