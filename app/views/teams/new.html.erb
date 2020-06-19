@@ -1,0 +1,13 @@
+<% provide(:title,"Tạo đội bóng" ) %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @team do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :country %>
+      <%= f.text_field :country, class: "form-control" %>
+       <%= f.file_field :image %>
+      <%= f.submit "Create team ", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
