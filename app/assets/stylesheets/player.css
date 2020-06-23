@@ -2,7 +2,7 @@
   background-color: #fff;
 }
 .tab-right {
-  background-color: #76B69A;
+  background-color: #DCDCDC;
   height: 530px;
   border-radius: 5px 5px 5px 5px;
 }
@@ -112,4 +112,36 @@
 #logo-player img {
   width: 36px;
   height: 36px;
+}
+#top-player {
+  font-size: 15px;
+  margin-top: 15px;
+  text-transform: uppercase;
+  color: #404040;
+  font-weight: bold;
+}
+.top_player li{
+  list-style-type: decimal;
+  margin-top: 10px;
+}
+.top_player li img{
+  width: 50px;
+  height: 50px;
+}
+#name-top-player {
+  font-weight: bold;
+  margin-left: 5px;
+  color: #404040;
+}
+#point-top-player {
+  float: right;
+  margin-top: 10px;
+}
+.point {
+  width: 25px;
+  float: right;
+  margin-top: 12px;
+}
+.point-2 {
+  padding: 0;
 }

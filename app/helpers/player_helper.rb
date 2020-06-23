@@ -13,6 +13,6 @@ module PlayerHelper
     response = http.request(request)
     api = response.read_body
     nationality = JSON.parse(api)
-    @name_nationality = nationality.map{|x| x["name"]}
+    @name_nationality = nationality.map{ |x| x["name"] }
   end
 end
