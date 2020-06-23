@@ -5,6 +5,7 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    api_nationalitys
   end
 
   def create
