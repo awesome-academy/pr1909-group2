@@ -5,6 +5,7 @@ class Team < ApplicationRecord
   mount_uploader :logo, LogoUploader
   validates_integrity_of  :logo
   validates_processing_of :logo
+  has_many :players, dependent: :destroy
 
   private
     def avatar_size_validation

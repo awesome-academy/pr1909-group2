@@ -6,6 +6,12 @@
       <%= f.label :nationality %>
       <%= f.select(:nationality, @name_nationality.map { |c| c }) %>
       <br>
+         <div class="form-group">
+           <%= f.label :team_id %>
+           <%= f.select :team_id, options_for_select(@teams.map{|key, value|
+             [key, value]}), {include_blank: true}, {class: "chosen-select", multiple: "true"} %>
+         </div>
+      <br>
       <%= f.label :avatar %>
       <%= f.file_field :image %>
       <%= f.label :diagram %>
