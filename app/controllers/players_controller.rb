@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
-  before_action :list_teams, only: %i(new edit)
+  before_action :list_teams, only: %i(new edit create)
+  before_action :api_nationalitys, only: %i(new edit create)
   def show
     @player = Player.find_by id: params[:id]
   end
@@ -7,7 +8,6 @@ class PlayersController < ApplicationController
   def new
     @player = Player.new
     @player.build_team
-    api_nationalitys
   end
 
   def create
@@ -29,6 +29,6 @@ class PlayersController < ApplicationController
   end
 
   def list_teams
-    @teams = Team.all.select(:id, :name).map{|team| [team.name, team.id]}
+    @teams = Team.all.select(:id, :name).map{ |team| [team.name, team.id] }
   end
 end

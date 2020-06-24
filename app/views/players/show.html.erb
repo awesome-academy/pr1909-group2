@@ -14,8 +14,8 @@
           <div class="row">
             <div class="col-sm-5">
               <div class="team-name">
-                <img src="https://www.sofascore.com/images/team-logo/football_38.png" alt="chelsea" width="36" height="36" title="chelsea">
-                <span id="text-player-show-1">Chelsea</span>
+                <span id="logo-player"><%= image_tag @player.team.logo.url if @player.team.logo? %></span>
+                <span id="text-player-show-1"><%= @player.team.name %></span>
               </div>
               <div class="information">
                 <div class="information-1">

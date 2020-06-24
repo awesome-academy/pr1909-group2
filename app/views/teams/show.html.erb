@@ -13,6 +13,18 @@
         </div>
         <div class="type-2">
           <div id="player-team">Players</div>
+          <div id="box-list-player">
+            <% @players.each do |player| %>
+              <div id="from-player">
+                <div id="image-player-2"><%= link_to image_tag(player.image.url), player %></div>
+                <div id="name-player-2"><%= link_to player.name, player %></div>
+                <div id="tab-bottom">
+                  <span id="preferred_foot-player-2"><%= player.preferred_foot %></span>
+                  <span id="nationality-player-2"><%= player.nationality %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="col-sm-4 tab-right">
