@@ -1,33 +1,10 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  layout:
+    footer:
+      preface: "Football live scores on SofaScore livescore has live coverage from more than 500 worldwide soccer leagues, cups and tournaments with live updated results, statistics, league tables, video highlights, fixtures and live streaming."
+      introduce: "Live matches from all football leagues have fast and accurate updates for minutes, scores, halftime and full time soccer results, goal scorers and assistants, cards, substitutions, match statistics and live stream. Video highlights are available for most popular football leagues: Spain La Liga BBVA league and Copa del Rey , Italy Serie and Coppa Italia, German Bundesliga and DFB pokal, France Ligue 1 and UEFA Champions League, Europa league and International tournaments like World Championship, European Championship. SofaScore live score has details for each team where you can see last 10 soccer matches, tables, fixtures, results, statistics and much more. In match details you can find dropping/rising odds. Also, all scores on SofaScore.com livescore are automatically updated and you don't need to refresh it manually. With adding football matches or teams you want to follow in favorites, following your matches or teams livescores, results and statistics will be even more simple. There is an option to select All or Live football matches."
+
+
+  header:
+      signup: "Signup"
+      profile: "Profile"
