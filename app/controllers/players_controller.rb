@@ -29,6 +29,6 @@ class PlayersController < ApplicationController
   end
 
   def list_teams
-    @teams = Team.all.select(:id, :name).map{ |team| [team.name, team.id] }
+    @teams = Team.all.map{ |team| [team.name, team.id] }
   end
 end
