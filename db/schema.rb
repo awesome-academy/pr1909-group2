@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_19_114354) do
+ActiveRecord::Schema.define(version: 2020_06_24_073719) do
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(version: 2020_06_19_114354) do
     t.string "weaknesses"
     t.integer "age"
     t.string "nationality"
-    t.bigint "team_id", null: false
-    t.index ["team_id"], name: "index_players_on_team_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
