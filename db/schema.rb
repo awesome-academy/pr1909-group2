@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2020_06_24_073719) do
     t.string "weaknesses"
     t.integer "age"
     t.string "nationality"
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_players_on_team_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

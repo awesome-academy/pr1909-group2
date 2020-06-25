@@ -83,6 +83,7 @@
 }
 #image {
   margin-top: 10px;
+  padding-left: 10px;
 }
 #image-player img {
   border-radius: 50px;
@@ -107,4 +108,8 @@
 }
 #text-player-show-4 {
   color: #808080;
+}
+#logo-player img {
+  width: 36px;
+  height: 36px;
 }

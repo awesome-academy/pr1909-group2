@@ -11,4 +11,6 @@ class Player < ApplicationRecord
   validates :weaknesses, presence: true
   validates :age, presence: true
   enum preferred_foot: { Right: 0, Left: 1, Both: 2 }
+  belongs_to :team
+  accepts_nested_attributes_for :team
 end

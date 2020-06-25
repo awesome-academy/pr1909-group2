@@ -11,6 +11,7 @@ require("packs/home")
 
 require("bootstrap");
 require("jquery");
+require("chosen-jquery");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -18,3 +19,8 @@ require("jquery");
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+function chosen_init() {
+  $(".chosen-select").chosen().change();
+}
+
+$(document).on('turbolinks:load', function(){chosen_init()});
