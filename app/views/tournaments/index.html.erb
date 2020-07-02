@@ -1,0 +1,9 @@
+<h1>All tournaments</h1>
+<ul>
+ <% @tournaments.each do |tournament| %>
+   <li>
+     <%= link_to tournament.name, tournament %>
+     | <%= link_to "delete", tournament, method: :delete %>
+   </li>
+ <% end %>
+</ul>

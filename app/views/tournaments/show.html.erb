@@ -1,0 +1,6 @@
+<% provide(:title, @tournament.name) %>
+<div>
+<%= link_to @tournament.name, @tournament %>
+</div>
+<%= @tournament.country %>
+<%= link_to image_tag(@tournament.picture.url), @tournament %>

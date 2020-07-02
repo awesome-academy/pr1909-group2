@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :players
   resources :teams
   scope '/:locale', locale: Regexp.new(I18n.available_locales.join('|')) do
-	  devise_for :users, skip: :omniauth_callbacks
-	end
-end	
+    devise_for :users, skip: :omniauth_callbacks
+  end
+  resources :tournaments 
+end

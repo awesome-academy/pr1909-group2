@@ -31,6 +31,7 @@ class TeamsController < ApplicationController
   end
 
   def edit
+    api_nationalitys
     @team = Team.find(params[:id])
   end
 
