@@ -1,0 +1,33 @@
+<div>
+  <table class="table table-hover table-admin">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Created_at</th>
+      </tr>
+    </thead>
+    <% @tournaments.each do |tournament| %>
+      <tr>
+        <td>
+          <%= tournament.id %>
+        </td>
+        <td>
+          <%= tournament.name %>
+        </td>
+        <td>
+          <%= tournament.country %>
+        </td>
+        <td>
+          <%= tournament.created_at %>
+        </td>
+        <td>
+          <%= link_to "View", tournament_path(tournament) %>
+          <%= link_to "Edit", edit_admin_tournament_path(tournament) %>
+          <%= link_to "Delete", admin_tournament_path(tournament), method: :delete, data: {confirm: "You sure?"} %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
