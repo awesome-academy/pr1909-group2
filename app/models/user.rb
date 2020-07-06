@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :name, length: { maximum: 30 }
+  validates :name, presence: true, length: { maximum: 30 }
   validates :email, presence: true, uniqueness: true, length: { maximum: 50 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
@@ -10,4 +10,5 @@ class User < ApplicationRecord
       user.email = auth.info.email
     end
   end
+  scope :not_admin, -> { where(admin: false) }
 end

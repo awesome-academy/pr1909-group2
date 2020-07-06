@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <div class="container-admin-signup">
+    <div>
+      <%= form_for :user, url: {action: :create, controller: :users}, method: :post do |f| %>
+        <div class="imgcontainer">
+          <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX25066784.jpg" alt="Avatar" class="avatar">
+        </div>
+        <div id="text-admin-1">
+          <%= f.label :name %>
+        </div>
+        <%= f.text_field :name, class: "form-1" %>
+        <div id="text-admin-1">
+          <%= f.label :email %>
+        </div>
+        <%= f.email_field :email, class: "form-1" %>
+        <div id="text-admin-1">
+          <%= f.label :password %>
+        </div>
+        <div>
+          <%= f.password_field :password, class: "form-1" %>
+        </div>
+        <div id="text-admin-1">
+          <%= f.label :password_confirmation %>
+        </div>
+        <div>
+          <%= f.password_field :password_confirmation, class: "form-1" %>
+        </div>
+        <%= f.submit "Sign up", class: "btn btn-primary login-admin" %>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>
