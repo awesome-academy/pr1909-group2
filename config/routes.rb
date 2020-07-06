@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/", to: "base#index"
     resources :users
+    resources :players
+    resources :teams
     devise_scope :user do
       get "/login", to: "sessions#new"
       post "/login", to: "sessions#create"

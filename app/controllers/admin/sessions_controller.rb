@@ -1,6 +1,5 @@
 class Admin::SessionsController < ApplicationController
   layout false, only: [:new]
-
   def create
     @user = User.where("admin", true).find_by email: params[:session][:email].downcase
     if @user && @user.admin?

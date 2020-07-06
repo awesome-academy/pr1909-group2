@@ -23,4 +23,12 @@ class ApplicationController < ActionController::Base
    { locale: I18n.locale }
   end
 
+  def check_admin
+    byebug
+    unless current_user.admin?
+      redirect_to root_path
+      flash[:alert] = "You cannot access this page"
+    end
+  end
+
 end

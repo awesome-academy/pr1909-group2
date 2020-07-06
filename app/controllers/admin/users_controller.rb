@@ -1,7 +1,6 @@
 class Admin::UsersController < ApplicationController
-  layout false, only: [:index]
+  layout false, only: [:index, :edit, :new]
   before_action :get_user, only: [:show, :update, :destroy, :edit]
-
   def new
     @user = User.new
   end
@@ -31,9 +30,9 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    if @user.update(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @admin_user_url
+      redirect_to admin_users_path
     else
       render 'edit'
     end
