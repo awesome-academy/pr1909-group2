@@ -1,5 +1,6 @@
 class Admin::BaseController < ApplicationController
-  layout false, only: [:index]
+  layout false
+  layout "admin"
   def index
   end
 end

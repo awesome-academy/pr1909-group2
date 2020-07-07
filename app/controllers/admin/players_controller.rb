@@ -1,9 +1,9 @@
-class Admin::PlayersController < ApplicationController
-  layout false, only: [:index, :new, :edit]
+class Admin::PlayersController < Admin::BaseController
   before_action :list_teams, only: %i(new edit create)
   before_action :api_nationalitys, only: %i(new edit create edit)
   def index
-    @players = Player.paginate(page: params[:page])
+    @q = Player.ransack(params[:q])
+    @players = @q.result(distinct: true).paginate(page: params[:page])
   end
 
   def destroy

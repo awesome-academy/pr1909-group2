@@ -86,7 +86,7 @@ img.avatar {
   font-weight: bold;
 }
 .banner-user {
-  height: 70px;
+  height: 74px;
   background-color: #DCDCDC;
 }
 #text-admin-6 {
@@ -109,7 +109,7 @@ img.avatar {
   line-height: 30px;
   color: #959899;
   font-weight: bold;
-  margin-left: 24px;
+  margin-left: 45px;
   font-size: 11px;
 }
 .table-admin {
@@ -126,4 +126,30 @@ img.avatar {
 }
 .col-md-offset-3-edit-user {
   margin-left: 16%;
+}
+i {
+  width: 20px;
+}
+.filter {
+  background-color: #DCDCDC;
+  margin-top: 28px;
+}
+#text-admin-8 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 15px;
+  line-height: 0;
+}
+.text-filter {
+  height: 0px;
+}
+th a{
+  color: #000000;
+}
+#input-player {
+  width: 135px;
+  height: 30px;
+}
+#label-nationality {
+  margin-left: 93px;
 }

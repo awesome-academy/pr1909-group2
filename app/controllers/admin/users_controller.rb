@@ -1,5 +1,4 @@
-class Admin::UsersController < ApplicationController
-  layout false, only: [:index, :edit, :new]
+class Admin::UsersController < Admin::BaseController
   before_action :get_user, only: [:show, :update, :destroy, :edit]
   def new
     @user = User.new
@@ -22,7 +21,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def index
-    @users = User.not_admin.paginate(page: params[:page])
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).paginate(page: params[:page])
   end
 
   def edit

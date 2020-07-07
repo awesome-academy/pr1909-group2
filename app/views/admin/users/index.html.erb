@@ -1,15 +1,68 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %> | Admin</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <%= render "admin/base/header" %>
-    <%= render "admin/users/banner" %>
-    <%= render "admin/users/main" %>
-  </body>
-</html>
+<%= render "admin/users/banner" %>
+<div class="row">
+  <div class="col-sm-9">
+    <table class="table table-hover table-admin">
+      <thead>
+        <tr>
+          <th><%= sort_link(@q, :id, default_order: :desc) %></th>
+          <th><%= sort_link(@q, :name) %></th>
+          <th><%= sort_link(@q, :email) %></th>
+          <th>Is_admin</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= user.id %>
+          </td>
+          <td>
+            <%= user.name %>
+          </td>
+          <td>
+            <%= user.email %>
+          </td>
+          <td>
+            <%= user.admin %>
+          </td>
+          <td>
+            <%= link_to admin_user_path(user) do %>
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to edit_admin_user_path(user) do %>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>
+            <%= link_to admin_user_path(user), method: :delete, data: {confirm: "You sure?"} do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-sm-3 filter" style="padding: 0;">
+    <div class="text-filter">
+      <h3 id="text-admin-8">Filter</h3>
+    </div>
+    <hr>
+    <%= search_form_for @q, url: admin_users_path, method: :get do |f| %>
+      <div>
+        <%= f.label :id, 'Id: ' %>
+        <%= f.number_field :id_eq, id: "input-player" %>
+      </div>
+      <div>
+        <%= f.label :name_cont, 'User Name:' %>
+        <%= f.text_field :name_cont, id: "input-player" %>
+      </div>
+      <div>
+        <%= f.label :email, 'Email:' %>
+        <%= f.text_field :email_cont, id: "input-player" %>
+      </div>
+      <div>
+        <%= f.label :admin, 'Is admin: ' %><br>
+        <%= f.select(:admin_eq, [['True', :true], ['False', :false]], include_blank: true) %>
+      </div>
+      <%= f.submit 'Search' %>
+    <% end %>
+  </div>
+</div>

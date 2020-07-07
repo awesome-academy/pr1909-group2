@@ -1,8 +1,8 @@
-class Admin::TeamsController < ApplicationController
-  layout false, only: [:index, :new, :edit]
+class Admin::TeamsController < Admin::BaseController
   before_action :api_nationalitys, only: %i(new edit create show)
   def index
-    @teams = Team.paginate(page: params[:page])
+    @q = Team.ransack(params[:q])
+    @teams = @q.result(distinct: true).paginate(page: params[:page])
   end
 
   def new

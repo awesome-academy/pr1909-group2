@@ -1,8 +1,8 @@
-class Admin::TournamentsController < ApplicationController
-  layout false, only: [:index, :new, :edit]
+class Admin::TournamentsController < Admin::BaseController
   before_action :api_nationalitys, only: %i(new edit create show)
   def index
-    @tournaments = Tournament.paginate(page: params[:page])
+    @q = Tournament.ransack(params[:q])
+    @tournaments = @q.result(distinct: true).paginate(page: params[:page])
   end
 
   def new

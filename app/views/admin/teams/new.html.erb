@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %> | Admin</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <%= render "admin/base/header" %>
-    <%= render "admin/teams/banner" %>
-    <%= render "admin/teams/new" %>
-  </body>
-</html>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3-edit-user">
+    <%= form_for :team, url: {action: :create, controller: :teams}, method: :post do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :nationality %>
+      <%= f.select(:country, @name_nationality.map { |c| c }) %>
+       <%= f.file_field :logo %>
+      <%= f.submit "Update team ", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
