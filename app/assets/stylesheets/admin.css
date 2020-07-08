@@ -1,0 +1,155 @@
+.container-admin {
+  width: 445px;
+  height: 420px;
+  margin-left: 33%;
+  margin-top: 4%;
+  border: 1px solid #A5ABA9;
+  border-radius: 20px 20px 20px 20px;
+}
+.text-center {
+  font-weight: bold;
+}
+#text-admin-1 {
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.imgcontainer {
+  text-align: center;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+#text-admin-2 {
+  margin-top: -20px;
+}
+.form-1 {
+  margin-left: 10px;
+  width: 423px;
+  display: block;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.login-admin {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 424px;
+}
+.header-admin {
+  height: 60px;
+  background-color: #4E4E4E;
+}
+.text-admin-3 {
+  margin-left: 30px;
+  line-height: 60px;
+  color: #959899;
+  font-weight: bold;
+}
+.logo-admin {
+  width: 100px;
+  float: left;
+}
+.logout-admin {
+  float: right;
+}
+.text-admin-4 {
+  line-height: 60px;
+  color: #959899;
+  font-weight: bold;
+  margin-right: 40px;
+}
+.header-admin-2 li {
+  list-style-type: none;
+}
+.header-admin-2 {
+  list-style: inline;
+}
+#menu-admin ul {
+  list-style-type: none;
+  margin-left: 70px;
+}
+#menu-admin li {
+  display: inline-block;
+  line-height: 59px;
+  width: 80px;
+}
+#text-admin-5 {
+  color: #959899;
+  font-weight: bold;
+}
+.banner-user {
+  height: 74px;
+  background-color: #DCDCDC;
+}
+#text-admin-6 {
+  line-height: 64px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 140px;
+  float: left;
+}
+#text-admin-7 {
+  width: 135px;
+  height: 30px;
+  border-radius: 20px 20px 20px 20px;
+  background-color: #fff;
+  float: right;
+  margin-top: 17px;
+  margin-right: 50px;
+}
+#text-admin-7 a {
+  line-height: 30px;
+  color: #959899;
+  font-weight: bold;
+  margin-left: 45px;
+  font-size: 11px;
+}
+.table-admin {
+  margin-top: 30px;
+}
+.container-admin-signup {
+  width: 445px;
+  height: 505px;
+  margin-left: 33%;
+  margin-top: 4%;
+  border: 1px solid #A5ABA9;
+  border-radius: 20px 20px 20px 20px;
+  margin-bottom: 4%;
+}
+.col-md-offset-3-edit-user {
+  margin-left: 16%;
+}
+i {
+  width: 20px;
+}
+.filter {
+  background-color: #DCDCDC;
+  margin-top: 28px;
+}
+#text-admin-8 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 15px;
+  line-height: 0;
+}
+.text-filter {
+  height: 0px;
+}
+th a{
+  color: #000000;
+}
+#input-player {
+  width: 135px;
+  height: 30px;
+}
+#label-nationality {
+  margin-left: 93px;
+}

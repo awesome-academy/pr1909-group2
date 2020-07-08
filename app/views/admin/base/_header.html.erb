@@ -1,0 +1,16 @@
+<div class="header-admin">
+  <div class="logo-admin">
+    <p class="text-admin-3">Admin</p>
+  </div>
+  <div class="logout-admin">
+    <%= link_to "Logout", admin_logout_path, class: "text-admin-4" %>
+  </div>
+  <div id="menu-admin">
+    <ul>
+      <li><%= link_to "Users", admin_users_path, id: "text-admin-5" %></li>
+      <li><%= link_to "Players", admin_players_path, id: "text-admin-5" %></li>
+      <li><%= link_to "Teams", admin_teams_path, id: "text-admin-5" %></li>
+      <li><%= link_to "Leagues", admin_tournaments_path, id: "text-admin-5" %></li>
+    </ul>
+  </div>
+</div>

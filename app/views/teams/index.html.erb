@@ -1,9 +1,0 @@
-<h1>All teams</h1>
-<ul>
- <% @teams.each do |team| %>
-   <li>
-     <%= link_to team.name, team %>
-     | <%= link_to "delete", team, method: :delete %>
-   </li>
- <% end %>
-</ul>

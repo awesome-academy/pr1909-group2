@@ -1,13 +1,12 @@
-<% provide(:title,"Sửa đội bóng" ) %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for @team do |f| %>
+  <div class="col-md-6 col-md-offset-3-edit-user">
+    <%= form_for :team, url: {action: :update, controller: :teams}, method: :put do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
       <%= f.label :nationality %>
       <%= f.select(:country, @name_nationality.map { |c| c }) %>
        <%= f.file_field :logo %>
-      <%= f.submit "Update my team ", class: "btn btn-primary" %>
+      <%= f.submit "Update team ", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,59 @@
+<%= render "admin/players/banner" %>
+<p><b>Filter</b></p>
+<%= search_form_for @q, url: admin_players_path, method: :get do |f| %>
+    <%= f.label :id, 'Id: ' %>
+    <%= f.number_field :id_eq, id: "input-player" %>
+    <%= f.label :name_cont, 'Name:' %>
+    <%= f.text_field :name_cont, id: "input-player" %>
+    <%= f.label :nationality, ' Nationality:' %>
+    <%= f.text_field :nationality_cont, id: "input-player" %>
+      <%= f.label :age, 'Age: ' %>
+      <%= f.text_field :age, id: "input-player" %>
+  <%= f.submit 'Search' %>
+<% end %>
+<table class="table table-hover table-admin">
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :id, default_order: :desc) %></th>
+      <th><%= sort_link(@q, :name) %></th>
+      <th><%= sort_link(@q, :age) %></th>
+      <th><%= sort_link(@q, :nationality) %></th>
+      <th><%= sort_link(@q, :team_id) %></th>
+      <th><%= sort_link(@q, :shirt_number) %></th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <% @players.each do |player| %>
+    <tr>
+      <td>
+        <%= player.id %>
+      </td>
+      <td>
+        <%= player.name %>
+      </td>
+      <td>
+        <%= player.age %>
+      </td>
+      <td>
+        <%= player.nationality %>
+      </td>
+      <td>
+        <%= player.team.name %>
+      </td>
+      <td>
+        <%= player.shirt_number %>
+      </td>
+      <td>
+        <%= link_to player_path(player) do %>
+          <i class="fa fa-eye" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to edit_admin_player_path(player) do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to admin_player_path(player), method: :delete, data: {confirm: "You sure?"} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>

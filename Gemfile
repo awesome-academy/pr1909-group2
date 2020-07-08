@@ -41,6 +41,8 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem "chosen-rails"
 gem 'will_paginate'
+gem 'font-awesome-sass'
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
