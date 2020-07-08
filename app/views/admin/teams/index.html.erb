@@ -1,60 +1,45 @@
 <%= render "admin/teams/banner" %>
-<div class="row">
-  <div class="col-sm-9">
-    <table class="table table-hover table-admin">
-      <thead>
-        <tr>
-          <th><%= sort_link(@q, :id, default_order: :desc) %></th>
-          <th><%= sort_link(@q, :name) %></th>
-          <th><%= sort_link(@q, :country) %></th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <% @teams.each do |team| %>
-        <tr>
-          <td>
-            <%= team.id %>
-          </td>
-          <td>
-            <%= team.name %>
-          </td>
-          <td>
-            <%= team.country %>
-          </td>
-          <td>
-            <%= link_to team_path(team) do %>
-              <i class="fa fa-eye" aria-hidden="true"></i>
-            <% end %>
-            <%= link_to edit_admin_team_path(team) do %>
-              <i class="fas fa-pencil-alt"></i>
-            <% end %>
-            <%= link_to admin_team_path(team), method: :delete, data: {confirm: "You sure?"} do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </td>
-        </tr>
+<p><b>Filter</b></p>
+<%= search_form_for @q, url: admin_teams_path, method: :get do |f| %>
+  <%= f.label :id, 'Id: ' %>
+  <%= f.number_field :id_eq, id: "input-player" %>
+  <%= f.label :name_cont, 'Name:' %>
+  <%= f.text_field :name_cont, id: "input-player" %>
+  <%= f.label :country, 'Country:' %>
+  <%= f.text_field :country_cont, id: "input-player" %>
+  <%= f.submit 'Search' %>
+<% end %>
+<table class="table table-hover table-admin">
+<thead>
+  <tr>
+    <th><%= sort_link(@q, :id, default_order: :desc) %></th>
+    <th><%= sort_link(@q, :name) %></th>
+    <th><%= sort_link(@q, :country) %></th>
+    <th>Action</th>
+  </tr>
+</thead>
+<% @teams.each do |team| %>
+  <tr>
+    <td>
+      <%= team.id %>
+    </td>
+    <td>
+      <%= team.name %>
+    </td>
+    <td>
+      <%= team.country %>
+    </td>
+    <td>
+      <%= link_to team_path(team) do %>
+        <i class="fa fa-eye" aria-hidden="true"></i>
       <% end %>
-    </table>
-  </div>
-    <div class="col-sm-3 filter" style="padding: 0;">
-      <div class="text-filter">
-        <h3 id="text-admin-8">Filter</h3>
-      </div>
-      <hr>
-      <%= search_form_for @q, url: admin_teams_path, method: :get do |f| %>
-        <div>
-          <%= f.label :id, 'Id: ' %>
-          <%= f.number_field :id_eq, id: "input-player" %>
-        </div>
-        <div>
-          <%= f.label :name_cont, 'Name:' %>
-          <%= f.text_field :name_cont, id: "input-player" %>
-        </div>
-        <div>
-          <%= f.label :country, 'Country:' %>
-          <%= f.text_field :country_cont, id: "input-player" %>
-        </div>
-        <%= f.submit 'Search' %>
+      <%= link_to edit_admin_team_path(team) do %>
+        <i class="fas fa-pencil-alt"></i>
       <% end %>
-  </div>
-</div>
+      <%= link_to admin_team_path(team), method: :delete, data: {confirm: "You sure?"} do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>

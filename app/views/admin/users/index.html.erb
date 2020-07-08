@@ -1,68 +1,52 @@
 <%= render "admin/users/banner" %>
-<div class="row">
-  <div class="col-sm-9">
-    <table class="table table-hover table-admin">
-      <thead>
-        <tr>
-          <th><%= sort_link(@q, :id, default_order: :desc) %></th>
-          <th><%= sort_link(@q, :name) %></th>
-          <th><%= sort_link(@q, :email) %></th>
-          <th>Is_admin</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <% @users.each do |user| %>
-        <tr>
-          <td>
-            <%= user.id %>
-          </td>
-          <td>
-            <%= user.name %>
-          </td>
-          <td>
-            <%= user.email %>
-          </td>
-          <td>
-            <%= user.admin %>
-          </td>
-          <td>
-            <%= link_to admin_user_path(user) do %>
-              <i class="fa fa-eye" aria-hidden="true"></i>
-            <% end %>
-            <%= link_to edit_admin_user_path(user) do %>
-              <i class="fas fa-pencil-alt"></i>
-            <% end %>
-            <%= link_to admin_user_path(user), method: :delete, data: {confirm: "You sure?"} do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-  <div class="col-sm-3 filter" style="padding: 0;">
-    <div class="text-filter">
-      <h3 id="text-admin-8">Filter</h3>
-    </div>
-    <hr>
-    <%= search_form_for @q, url: admin_users_path, method: :get do |f| %>
-      <div>
-        <%= f.label :id, 'Id: ' %>
-        <%= f.number_field :id_eq, id: "input-player" %>
-      </div>
-      <div>
-        <%= f.label :name_cont, 'User Name:' %>
-        <%= f.text_field :name_cont, id: "input-player" %>
-      </div>
-      <div>
-        <%= f.label :email, 'Email:' %>
-        <%= f.text_field :email_cont, id: "input-player" %>
-      </div>
-      <div>
-        <%= f.label :admin, 'Is admin: ' %><br>
-        <%= f.select(:admin_eq, [['True', :true], ['False', :false]], include_blank: true) %>
-      </div>
-      <%= f.submit 'Search' %>
-    <% end %>
-  </div>
-</div>
+<p><b>Filter</b></p>
+<%= search_form_for @q, url: admin_users_path, method: :get do |f| %>
+  <%= f.label :id, 'Id: ' %>
+  <%= f.number_field :id_eq, id: "input-player" %>
+  <%= f.label :name_cont, 'User Name:' %>
+  <%= f.text_field :name_cont, id: "input-player" %>
+  <%= f.label :email, 'Email:' %>
+  <%= f.text_field :email_cont, id: "input-player" %>
+  <%= f.label :admin, 'Is admin: ' %>
+  <%= f.select(:admin_eq, [['True', :true], ['False', :false]], include_blank: true) %>
+  <%= f.submit 'Search' %>
+<% end %>
+<table class="table table-hover table-admin">
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :id, default_order: :desc) %></th>
+      <th><%= sort_link(@q, :name) %></th>
+      <th><%= sort_link(@q, :email) %></th>
+      <th>Is_admin</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.id %>
+      </td>
+      <td>
+        <%= user.name %>
+      </td>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <%= user.admin %>
+      </td>
+      <td>
+        <%= link_to admin_user_path(user) do %>
+          <i class="fa fa-eye" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to edit_admin_user_path(user) do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to admin_user_path(user), method: :delete, data: {confirm: "You sure?"} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
