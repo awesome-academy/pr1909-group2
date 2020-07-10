@@ -8,6 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def generic_callback(provider)
+    # byebug
     @user = User.from_omniauth(request.env["omniauth.auth"])
     sign_in_and_redirect @user, :event => :authentication
   end
