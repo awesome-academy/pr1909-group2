@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_07_02_115631) do
 
-  create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.float "height"
     t.float "weight"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_115631) do
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
-  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "country"
     t.datetime "created_at", precision: 6, null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_115631) do
     t.string "logo"
   end
 
-  create_table "tournaments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tournaments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "country"
     t.string "picture"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_115631) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_115631) do
     t.string "uid"
     t.string "avatar"
     t.boolean "admin", default: false
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
