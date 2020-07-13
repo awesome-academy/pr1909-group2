@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_115631) do
+ActiveRecord::Schema.define(version: 2020_07_11_010515) do
+
+  create_table "awayteams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_awayteams_on_team_id"
+  end
+
+  create_table "hometeams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_hometeams_on_team_id"
+  end
+
+  create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "hometeam_id", null: false
+    t.bigint "awayteam_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["awayteam_id"], name: "index_matches_on_awayteam_id"
+    t.index ["hometeam_id"], name: "index_matches_on_hometeam_id"
+  end
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -58,11 +81,14 @@ ActiveRecord::Schema.define(version: 2020_07_02_115631) do
     t.string "name"
     t.string "provider"
     t.string "uid"
-    t.string "avatar"
-    t.boolean "admin", default: false
     t.string "image"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "awayteams", "teams"
+  add_foreign_key "hometeams", "teams"
+  add_foreign_key "matches", "awayteams"
+  add_foreign_key "matches", "hometeams"
 end

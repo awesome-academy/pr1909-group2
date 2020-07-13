@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :tournaments
   resources :teams
   resources :players
+  resources :hometeams
+  resources :awayteams
+  resources :matches
   namespace :admin do
     get "/", to: "base#index"
     resources :users

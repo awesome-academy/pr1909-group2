@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3-edit-user">
+    <%= form_for :match, url: {action: :create, controller: :matches}, method: :post do |f| %>
+      <%= f.fields_for :hometeam do |hometeam| %>
+        <%= hometeam.label :team_id %>
+        <%= hometeam.select :team_id, options_for_select(@teams.map{|key, value|
+          [key, value]}), {class: "chosen-select"} %>
+      <% end %>
+      <%= f.fields_for :awayteam do |awayteam| %>
+        <%= awayteam.label :team_id %>
+        <%= awayteam.select :team_id, options_for_select(@teams.map{|key, value|
+          [key, value]}),  {class: "chosen-select"} %>
+      <% end %>
+      <%= f.submit "Create Match", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

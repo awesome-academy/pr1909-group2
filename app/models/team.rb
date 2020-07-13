@@ -6,6 +6,9 @@ class Team < ApplicationRecord
   validates_integrity_of  :logo
   validates_processing_of :logo
   has_many :players, dependent: :destroy
+  has_many :matches, dependent: :destroy
+  has_many :hometeams, dependent: :destroy
+  has_many :awayteams, dependent: :destroy
 
   private
 
