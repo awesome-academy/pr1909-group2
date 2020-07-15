@@ -1,8 +1,5 @@
 class MatchesController < ApplicationController
   before_action :list_teams, only: %i(new edit create)
-  before_action :update_match_lives, only: %i(show)
-  before_action :update_match_wait, only: %i(show)
-  before_action :update_match_started, only: %i(show)
   def new
     @match = Match.new
   end
