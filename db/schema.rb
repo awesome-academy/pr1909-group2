@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_115631) do
+ActiveRecord::Schema.define(version: 2020_07_13_074740) do
+
+  create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "home_team_id"
+    t.integer "away_team_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "score_home"
+    t.integer "score_away"
+    t.datetime "start_match"
+    t.datetime "end_match"
+    t.integer "status"
+  end
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -58,9 +70,8 @@ ActiveRecord::Schema.define(version: 2020_07_02_115631) do
     t.string "name"
     t.string "provider"
     t.string "uid"
-    t.string "avatar"
-    t.boolean "admin", default: false
     t.string "image"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

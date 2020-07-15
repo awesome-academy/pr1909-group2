@@ -6,6 +6,11 @@ class Team < ApplicationRecord
   validates_integrity_of  :logo
   validates_processing_of :logo
   has_many :players, dependent: :destroy
+  has_many :home_matches, class_name: "Match", foreign_key: "home_team_id"
+  has_many :away_matches, class_name: "Match", foreign_key: "away_team_id"
+  def matches
+    self.home_matches + self.away_matches
+  end
 
   private
 

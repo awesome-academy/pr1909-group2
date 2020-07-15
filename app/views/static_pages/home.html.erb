@@ -1,3 +1,6 @@
 <% provide :title, "Home" %>
-<div class="home-page">
-</div>
+  <% @match_waits.each do |match_waits| %>
+    <%= match_waits.start_match%>
+    <%= match_waits.home_team.name%>
+    <%= match_waits.away_team.name%>
+  <% end %>
