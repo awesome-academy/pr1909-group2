@@ -1,6 +1,64 @@
 <% provide :title, "Home" %>
-  <% @match_waits.each do |match_waits| %>
-    <%= match_waits.start_match%>
-    <%= match_waits.home_team.name%>
-    <%= match_waits.away_team.name%>
-  <% end %>
+<div class="container-main-home">
+  <p id="text-home-1">Football LiveScore</p>
+  <div class="content-home">
+    <div class="col-sm-3">
+      <div class="calender">calender</div>
+      <hr>
+      <h5 id="text-home-2">Featured league</h5>
+      <div>
+      <% @tournaments.each do |tournament| %>
+      <ul class="list-team">
+        <li>
+          <%= link_to image_tag(tournament.picture.url), tournament, id: "img-home"%>
+          <%= link_to tournament.name , tournament, id: "team-list-home-1" %>
+        </li>
+      </ul>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-sm-5 main-match">
+      <% @match_waits.each do |match_wait| %>
+        <div class="col-sm-12">
+          <div class="start-match">
+            <h5 id="start-match"><%= match_wait.start_match %></h5>
+          </div>
+          <div class="col-sm-6">
+            <div class="img-home-team">
+              <%= link_to image_tag(match_wait.home_team.logo.url), match_wait.home_team, id: "img-home-team" %>
+              <i class="fa fa-window-minimize score-home" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h4 id="name-home-team"><%= link_to match_wait.home_team.name, match_wait.home_team %></h4>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="img-home-team">
+              <i class="fa fa-window-minimize score-away" aria-hidden="true"></i>
+              <%= link_to image_tag(match_wait.away_team.logo.url), match_wait.away_team, id: "img-home-team" %>
+            </div>
+            <div>
+              <h4 id="name-away-team"><%= link_to match_wait.away_team.name, match_wait.away_team %></h4>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-sm-4 top-player-home">
+      <span id="top_player-home">Top Players</span>
+      <ul class="top_player">
+        <% @top_players.each do |player| %>
+          <li>
+            <%= link_to image_tag(player.image.url), player , id: "image-player"%>
+            <%= link_to image_tag(player.team.logo.url), player , id: "image-team-home"%>
+            <span><%= link_to player.name, player , id: "name-top-player" %></span>
+            <span class="card bg-success text-white point">
+              <span class="card-body point-2"><%= player.point %></span>
+            </span>
+          </li>
+        <% end %>
+        <%= will_paginate @top_players %>
+      </ul>
+  </div>
+  </div>
+</div>

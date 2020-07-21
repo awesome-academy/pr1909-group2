@@ -5,6 +5,7 @@ class Tournament < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validates_integrity_of  :picture
   validates_processing_of :picture
+  has_many :teams
 
   private
     def avatar_size_validation
