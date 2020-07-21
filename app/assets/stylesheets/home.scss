@@ -24,7 +24,7 @@
 }
 .calender {
   width: 236px;
-  height: 250px;
+  height: 425px;
 }
 #text-home-2 {
   text-align: center;
@@ -47,11 +47,10 @@
 }
 .img-home-team {
   margin-top: 15px;
-  margin-left: 30px;
+  margin-left: 15px;
 }
 #name-home-team {
   font-weight: bold;
-  margin-left: 30px;
   margin-top: 20px;
   color: #000000;
 }
@@ -59,16 +58,16 @@
   color: #000000;
 }
 .score-home {
-  margin-left: 30px;
+  margin-left: 25px;
 }
 .score-away {
-  margin-right: 25px;
+  margin-right: 19px;
 }
 #name-away-team {
   margin-top: 20px;
   font-weight: bold;
-  padding-left: 85px;
   color: #000000;
+  text-align: end;
 }
 #name-away-team a {
   color: #000000;
@@ -97,4 +96,9 @@
   height: 15px;
   margin-top: 37px;
   margin-left: -18px;
+}
+#match-featured {
+  margin-top: 21px;
+  font-weight: bold;
+  font-size: 12px;
 }
