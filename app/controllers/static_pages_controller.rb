@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @match_waits = Match.wait
+    @match_waits = Match.wait.paginate(:page => params[:page], :per_page => 7).order(start_match: :ASC)
     @tournaments = Tournament.all
     @top_players = Player.paginate(:page => params[:page], :per_page => 7).order(point: :DESC)
   end
