@@ -22,7 +22,14 @@
           <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
           <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
         </svg>
-        <%= link_to t("header.profile"), '#', id: "tool" %>
+        <div class="dropdown">
+            <img src="https://lh3.googleusercontent.com/ogw/ADGmqu9TD42eFCV9Ljau4r7SVmhPSMDLanzr_4A8tGZi=s32-c-mo" alt="Cinque Terre" >
+        <div class="dropdown-content">
+          <a><%= link_to "Hồ Sơ", "#" %></a>
+          <a><%= link_to "Đăng xuất", destroy_user_session_path %></a>
+        </div>
+</div>
+
       </div>
     </div>
   </div>
@@ -58,4 +65,5 @@
     </div>
     <div class="col-sm-3 none"></div>
   </div>
+
 </div>

@@ -11,3 +11,6 @@ vi:
   header:
       signup: "Đăng kí"
       profile: "Hồ sơ"
+
+  teams:
+    players: "Cầu Thủ"

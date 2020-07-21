@@ -8,3 +8,6 @@ en:
   header:
       signup: "Signup"
       profile: "Profile"
+
+  teams:
+    players: "Players"
