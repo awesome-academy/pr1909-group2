@@ -1,5 +1,5 @@
 <%= render "admin/tournaments/banner" %>
-<p><b>Filter</b></p>
+<p><b>Search</b></p>
 <%= search_form_for @q, url: admin_tournaments_path, method: :get do |f| %>
     <%= f.label :id, 'Id: ' %>
     <%= f.number_field :id_eq, id: "input-player" %>
@@ -7,7 +7,9 @@
     <%= f.text_field :name_cont, id: "input-player" %>
     <%= f.label :country, 'Country:' %>
     <%= f.text_field :country_cont, id: "input-player" %>
-  <%= f.submit 'Search' %>
+    <%= button_tag( :class => "button_green") do %>
+      <i class="fa fa-search" aria-hidden="true"></i></i>
+    <% end %>
 <% end %>
 <table class="table table-hover table-admin">
   <thead>

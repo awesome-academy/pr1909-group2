@@ -49,8 +49,6 @@ ActiveRecord::Schema.define(version: 2020_07_13_074740) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "logo"
-    t.bigint "tournament_id", null: false
-    t.index ["tournament_id"], name: "index_teams_on_tournament_id"
   end
 
   create_table "tournaments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|

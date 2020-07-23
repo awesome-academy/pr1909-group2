@@ -1,5 +1,5 @@
 <%= render "admin/users/banner" %>
-<p><b>Filter</b></p>
+<p><b>Search</b></p>
 <%= search_form_for @q, url: admin_users_path, method: :get do |f| %>
   <%= f.label :id, 'Id: ' %>
   <%= f.number_field :id_eq, id: "input-player" %>
@@ -9,7 +9,9 @@
   <%= f.text_field :email_cont, id: "input-player" %>
   <%= f.label :admin, 'Is admin: ' %>
   <%= f.select(:admin_eq, [['True', :true], ['False', :false]], include_blank: true) %>
-  <%= f.submit 'Search' %>
+  <%= button_tag( :class => "button_green") do %>
+    <i class="fa fa-search" aria-hidden="true"></i></i>
+  <% end %>
 <% end %>
 <table class="table table-hover table-admin">
   <thead>

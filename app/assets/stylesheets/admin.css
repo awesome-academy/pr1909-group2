@@ -95,6 +95,7 @@ img.avatar {
   font-weight: bold;
   width: 140px;
   float: left;
+  padding-left: 10px;
 }
 #text-admin-7 {
   width: 135px;
@@ -161,6 +162,37 @@ th a{
 #user-admin-ph{
 font-size: 15px;
 }
-.active{
-  background-color: red;
+.icon-bar {
+  font-size: 16px;
+  color: #fff;
+  margin-left: 10px;
+}
+#text-sidebar-admin {
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+}
+.sidebar-first {
+  height: 50px;
+}
+.font-weight-light {
+  margin-left: 8px;
+  line-height: 3;
+}
+.nav-link i{
+  padding-left: 15px;
+}
+.nav-link a{
+  padding-left: 15px;
+}
+.logout-admin{
+  margin-left: 870px;
+}
+.header-icon i {
+  margin-top: 18px;
+  font-size: 15px;
+}
+.d-sm-inline-block a{
+  margin-bottom: 12px;
+  font-size: 15px;
 }
