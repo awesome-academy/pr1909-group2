@@ -1,0 +1,119 @@
+.container-main-home {
+  background-color: #DCDCDC;
+  height: 1000px;
+}
+#text-home-1 {
+  margin-left: 90px;
+  padding-top: 5px;
+  color: #9D9C9C;
+  font-weight: bold;
+  font-size: 13px;
+}
+.content-home {
+  width: 83%;
+  margin-left: 90px;
+  background-color: #fff;
+  height: 950px;
+  margin-top: 8px;
+}
+.vl {
+  border-left: 1px solid #DCDCDC;
+  height: 1000px;
+  position: absolute;
+  left: 28%;
+  top: 23%;
+}
+.calender {
+  width: 236px;
+  height: 425px;
+}
+#text-home-2 {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.list-team li{
+  height: 40px
+}
+#team-list-home-1 {
+  color: #000000;
+}
+#img-home img {
+  width: 20px;
+}
+#start-match {
+  text-align: center;
+  font-weight: bold;
+   background-color: #DCDCDC;
+}
+.img-home-team {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+#name-home-team {
+  font-weight: bold;
+  margin-top: 20px;
+  color: #000000;
+}
+#name-home-team a {
+  color: #000000;
+}
+.score-home {
+  margin-left: 25px;
+}
+.score-away {
+  margin-right: 19px;
+}
+#name-away-team {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #000000;
+  text-align: end;
+}
+#name-away-team a {
+  color: #000000;
+}
+#top_player-home {
+  font-size: 13px;
+  margin-top: 8px;
+  text-transform: uppercase;
+  color: #404040;
+  font-weight: bold;
+}
+#img-home-team img{
+  width: 40px;
+}
+.main-match {
+  border: 1px solid #DCDCDC;
+  border-bottom-style: none;
+  border-top-style: none;
+  height: 100%;
+}
+.top-player-home {
+  padding-top: 6px;
+}
+#image-team-home img {
+  width: 15px;
+  height: 15px;
+  margin-top: 37px;
+  margin-left: -18px;
+}
+#match-featured {
+  margin-top: 21px;
+  font-weight: bold;
+  font-size: 12px;
+}
+.selete-match {
+  float: right;
+  width: 100px;
+  height: 29px;
+  margin-top: -5px;
+  margin-right: 127px;
+  background-color: #f1f2f5;
+}
+#live-home {
+      text-align: center;
+    margin-top: 5px;
+    color: red;
+    font-size: 13px;
+}

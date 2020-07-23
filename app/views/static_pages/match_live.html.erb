@@ -1,0 +1,8 @@
+<% provide :title, "Home" %>
+  <% @match_lives.each do |match_live| %>
+    <%= match_live.start_match%>
+    <%= match_live.home_team.name%>
+    <%= match_live.score_home%>
+    <%= match_live.away_team.name%>
+    <%= match_live.score_away%>
+  <% end %>

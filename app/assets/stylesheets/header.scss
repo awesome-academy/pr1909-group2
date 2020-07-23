@@ -75,49 +75,41 @@ textarea { resize: vertical; }
   line-height: 56px;
   color: #C9C6C6;
   font-weight: bold;
-  padding-left: 20px;
 }
 #tool-2 {
   line-height: 56px;
   color: #C9C6C6;
   font-weight: bold;
-  padding-left: 17px;
 }
 #tool-3 {
   line-height: 56px;
   color: #C9C6C6;
   font-weight: bold;
-  padding-left: 3px;
 }
 #tool-4 {
   line-height: 56px;
   color: #C9C6C6;
   font-weight: bold;
-  padding-left: 15px;
 }
 #tool-5 {
   line-height: 56px;
   color: #C9C6C6;
   font-weight: bold;
-  padding-left: 15px;
 }
 #tool-6 {
   line-height: 56px;
   color: #C9C6C6;
   font-weight: bold;
-  padding-left: 15px;
 }
 #tool-7 {
   line-height: 56px;
   color: #C9C6C6;
   font-weight: bold;
-  padding-left: 15px;
 }
 #tool-8 {
   line-height: 56px;
   color: #C9C6C6;
   font-weight: bold;
-  padding-left: 9px;
 }
 .NHA {
   background-color:#004c8f;
@@ -180,4 +172,10 @@ textarea { resize: vertical; }
 }
 a:hover{
   text-decoration: none;
+}
+.header-none {
+  width: 75px;
+}
+.header-row {
+  background-color: #004c8f;
 }

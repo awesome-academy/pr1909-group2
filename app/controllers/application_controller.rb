@@ -2,8 +2,32 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
+  before_action :update_match_lives
+  before_action :update_match_wait
+  before_action :update_match_started
   include PlayerHelper
   include AdminHelper
+
+  def update_match_lives
+    today = DateTime.now
+    @match_lives = Match.all.select { |x| x["start_match"] <= today && today <= x["end_match"] }
+    @match_score_nil = @match_lives.select { |x| x["score_home"].nil? }
+    @match_score_nil.map { |e| e.update(score_home: rand(1..6), score_away: rand(1..6), status: 1) }
+  end
+
+  def update_match_wait
+    today = DateTime.now
+    @match_score_nil = Match.all.select { |x| x["score_home"].nil? }
+    @match_wait = @match_score_nil.select { |x| x["start_match"] > today }
+    @match_wait.map { |e| e.update(status: 0) }
+  end
+
+  def update_match_started
+    today = DateTime.now
+    @match_score_present = Match.all.select { |x| x["score_home"].present? }
+    @match_started = @match_score_present.select { |x| x["end_match"] < today }
+    @match_started.map { |e| e.update(status: 2) }
+  end
 
   protected
 
@@ -16,19 +40,17 @@ class ApplicationController < ActionController::Base
   def set_locale
     locale = params[:locale].to_s.strip.to_sym
     I18n.locale = I18n.available_locales.include?(locale) ?
-      locale : I18n.default_locale
+    locale : I18n.default_locale
   end
 
   def default_url_options
-   { locale: I18n.locale }
+    { locale: I18n.locale }
   end
 
   def check_admin
-    byebug
     unless current_user.admin?
       redirect_to root_path
       flash[:alert] = "You cannot access this page"
     end
   end
-
 end

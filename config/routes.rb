@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get "static_pages/home"
+  get "static_pages/match_live"
+  get "static_pages/match_started"
   root "static_pages#home"
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :players
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   resources :tournaments
   resources :teams
   resources :players
+  resources :matches
   namespace :admin do
     get "/", to: "base#index"
     resources :users
