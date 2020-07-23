@@ -1,55 +1,47 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
+  <a href="index3.html" class="brand-link sidebar-first">
     <span class="brand-text font-weight-light">
-      <%= link_to "Admin Home", admin_path, id: "admin-home" %>
+      <span class="brand-text font-weight-light">Admin Page</span>
     </span>
   </a>
   <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 652px;"><div class="sidebar" style="min-height: 652px; overflow: hidden; width: auto; height: 652px;">
-    <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
         <img src="http://placehold.it/160x160" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">User Name</a>
+        <a class="d-block"><%= current_user.name %></a>
       </div>
     </div>
-<!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <!-- Add icons to the links using the .nav-icon class
-             with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview menu-open">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Activity
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <span>
-                <i class="fa fa-address-book" aria-hidden="true"></i>
+              <i class="fa fa-bars icon-bar" aria-hidden="true"></i>
+              <span id="text-sidebar-admin">Action</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <p><%= link_to "User", admin_users_path , id: "user-admin-ph" %></p>
               </span>
             </li>
             <li class="nav-item">
-              <span class="nav-link active">
-                <i class="far fa-circle nav-icon"></i>
+              <span class="nav-link">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <p><%= link_to "Player", admin_players_path , id: "user-admin-ph" %></p>
               </span>
             </li>
-                        <li class="nav-item">
-              <span class="nav-link active">
-                <i class="far fa-circle nav-icon"></i>
+            <li class="nav-item">
+              <span class="nav-link">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <p><%= link_to "Team", admin_teams_path , id: "user-admin-ph" %></p>
               </span>
             </li>
-                        <li class="nav-item">
-              <span class="nav-link active">
-                <i class="far fa-circle nav-icon"></i>
+            <li class="nav-item">
+              <span class="nav-link">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <p><%= link_to "League", admin_tournaments_path , id: "user-admin-ph" %></p>
               </span>
             </li>

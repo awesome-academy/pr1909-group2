@@ -1,5 +1,5 @@
 <%= render "admin/players/banner" %>
-<p><b>Filter</b></p>
+<p><b>Search</b></p>
 <%= search_form_for @q, url: admin_players_path, method: :get do |f| %>
     <%= f.label :id, 'Id: ' %>
     <%= f.number_field :id_eq, id: "input-player" %>
@@ -7,9 +7,11 @@
     <%= f.text_field :name_cont, id: "input-player" %>
     <%= f.label :nationality, ' Nationality:' %>
     <%= f.text_field :nationality_cont, id: "input-player" %>
-      <%= f.label :age, 'Age: ' %>
-      <%= f.text_field :age, id: "input-player" %>
-  <%= f.submit 'Search' %>
+    <%= f.label :age, 'Age: ' %>
+    <%= f.text_field :age, id: "input-player" %>
+    <%= button_tag( :class => "button_green") do %>
+      <i class="fa fa-search" aria-hidden="true"></i></i>
+    <% end %>
 <% end %>
 <table class="table table-hover table-admin">
   <thead>
