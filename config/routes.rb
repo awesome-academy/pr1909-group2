@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :players
     resources :teams
     resources :tournaments
+    resources :matches
     devise_scope :user do
       get "/login", to: "sessions#new"
       post "/login", to: "sessions#create"
