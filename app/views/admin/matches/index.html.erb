@@ -1,0 +1,62 @@
+<%= render "admin/matches/banner" %>
+<p><b>Search</b></p>
+<%= search_form_for @q, url: admin_matches_path, method: :get do |f| %>
+    <%= f.label :id, 'Id: ' %>
+    <%= f.number_field :id_eq, id: "input-player" %>
+    <%= f.label :home_team, 'Home_team: ' %>
+    <%= f.select :home_team_id_eq, options_for_select(@teams.map{|key, value|
+      [key, value]}), {include_blank: true}, {class: "chosen-select"} %>
+    <%= f.label :away_team, 'Away_team: ' %>
+    <%= f.select :away_team_id_eq, options_for_select(@teams.map{|key, value|
+      [key, value]}), {include_blank: true}, {class: "chosen-select"} %>
+    <%= f.label :start_match, 'Start Match: ' %>
+    <%= f.date_field :start_match_eq, id: "input-player" %>
+    <%= f.label :end_match, 'End Match: ' %>
+    <%= f.date_field :end_match_eq, id: "input-player" %>
+    <%= button_tag( :class => "button_green") do %>
+      <i class="fa fa-search" aria-hidden="true"></i></i>
+    <% end %>
+<% end %>
+<table class="table table-hover table-admin">
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :id, default_order: :desc) %></th>
+      <th><%= sort_link(@q, :home_team) %></th>
+      <th><%= sort_link(@q, :away_team) %></th>
+      <th><%= sort_link(@q, :start_match) %></th>
+      <th><%= sort_link(@q, :end_match) %></th>
+      <th><%= sort_link(@q, :status) %></th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <% @matches.each do |match| %>
+    <tr>
+      <td>
+        <%= match.id %>
+      </td>
+      <td>
+        <%= match.home_team.name %>
+      </td>
+      <td>
+        <%= match.away_team.name %>
+      </td>
+      <td>
+        <%= match.start_match %>
+      </td>
+      <td>
+        <%= match.end_match %>
+      </td>
+      <td>
+        <%= match.status %>
+      </td>
+      <td>
+        <%= link_to edit_admin_match_path(match) do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to admin_match_path(match), method: :delete, data: {confirm: "You sure?"} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
