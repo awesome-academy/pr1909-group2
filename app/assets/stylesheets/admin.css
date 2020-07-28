@@ -196,3 +196,35 @@ font-size: 15px;
   margin-bottom: 12px;
   font-size: 15px;
 }
+.users-base {
+  background-color: #28DFD2;
+  height: 100px;
+  border-radius: 10px 0px 0px 10px;
+  margin-top: 8px;
+}
+#user-count {
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+}
+#user-text-base {
+  color: #fff;
+  font-size: 17px;
+}
+.icon-base i{
+  font-size: 45px;
+  color: #3D4E4D;
+  margin-top: 10px;
+}
+.right-base {
+  background-color: #3D4E4D;
+  height: 100px;
+  padding-top: 46px;
+  padding-left: 5px;
+  color: #fff;
+  border-radius: 0px 10px 10px 0px;
+  margin-top: 8px;
+}
+.btn:not(:disabled):not(.disabled)  {
+  border-radius: 20px;
+}

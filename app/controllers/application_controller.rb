@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     today = DateTime.now
     @match_lives = Match.all.select { |x| x["start_match"] <= today && today <= x["end_match"] }
     @match_score_nil = @match_lives.select { |x| x["score_home"].nil? }
-    @match_score_nil.map { |e| e.update(score_home: rand(1..6), score_away: rand(1..6), status: 1) }
+    @match_score_nil.map { |e| e.update(score_home: rand(1..10), score_away: rand(1..10), status: 1) }
   end
 
   def update_match_wait
@@ -26,7 +26,35 @@ class ApplicationController < ActionController::Base
     today = DateTime.now
     @match_score_present = Match.all.select { |x| x["score_home"].present? }
     @match_started = @match_score_present.select { |x| x["end_match"] < today }
-    @match_started.map { |e| e.update(status: 2) }
+    @match_started.each do |match|
+      if match.status != "started"
+        home_team = Team.find(match.home_team_id)
+        away_team = Team.find(match.away_team_id)
+        home_w = home_team.w
+        away_w = away_team.w
+        home_d = home_team.d
+        away_d = away_team.d
+        home_l = home_team.l
+        away_l = away_team.l
+        home_team.update(w: home_w+1) if match.score_home > match.score_away
+        away_team.update(w: away_w+1) if match.score_home < match.score_away
+        home_team.update(l: home_l+1) if match.score_home < match.score_away
+        away_team.update(l: away_l+1) if match.score_home > match.score_away
+        home_team.update(d: home_d+1) if match.score_home == match.score_away
+        away_team.update(d: away_d+1) if match.score_home == match.score_away
+        home_team.update(point: home_team.w * 3)
+        away_team.update(point: away_team.w * 3)
+        if home_team.d != 0
+          home_team.update(point: home_team.d * 1)
+        end
+        if away_team.d != 0
+          away_team.update(point: away_team.d * 1)
+        end
+        home_team.update(goals: home_team.goals + match.score_home)
+        away_team.update(goals: away_team.goals + match.score_away)
+      end
+      match.update(status: 2)
+    end
   end
 
   protected

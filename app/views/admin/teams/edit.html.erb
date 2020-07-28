@@ -6,6 +6,11 @@
       <%= f.label :nationality %>
       <%= f.select(:country, @name_nationality.map { |c| c }) %>
        <%= f.file_field :logo %>
+      <div class="form-group">
+        <%= f.label :tournament_id %>
+        <%= f.select :tournament_id, options_for_select(@tournaments.map{|key, value|
+          [key, value]}), {include_blank: true}, {class: "chosen-select"} %>
+      </div>
       <%= f.submit "Update team ", class: "btn btn-primary" %>
     <% end %>
   </div>

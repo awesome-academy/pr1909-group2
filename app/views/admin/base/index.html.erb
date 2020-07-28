@@ -2,21 +2,77 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Some Page</h1>
+        <h1 class="m-0 text-dark">Dashboard v3</h1>
       </div>
     </div>
   </div>
 </div>
-<section class="content">
+<div class="content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-body">
-            <span>Stuff</span>
-          </div>
+      <div class="col-lg-4 users-base">
+        <div class="col-lg-9">
+          <h3 id="user-count"><%= @users.count %></h3>
+          <p id="user-text-base">User</p>
         </div>
-      </div
+        <div class="col-lg-3 icon-base">
+          <i class="fa fa-users" aria-hidden="true"></i>
+        </div>
+      </div>
+      <%= link_to admin_users_path do %>
+        <i class="fa fa-arrow-circle-right right-base" aria-hidden="true"></i>
+      <% end %>
+      <div class="ml-2"></div>
+      <div class="col-lg-4 users-base">
+        <div class="col-lg-9">
+          <h3 id="user-count"><%= @players.count %></h3>
+          <p id="user-text-base">Player</p>
+        </div>
+        <div class="col-lg-3 icon-base">
+          <i class="fa fa-users" aria-hidden="true"></i>
+        </div>
+      </div>
+      <%= link_to admin_players_path do %>
+        <i class="fa fa-arrow-circle-right right-base" aria-hidden="true"></i>
+      <% end %>
+      <div class="col-lg-4 users-base">
+        <div class="col-lg-9">
+          <h3 id="user-count"><%= @teams.count %></h3>
+          <p id="user-text-base">Team</p>
+        </div>
+        <div class="col-lg-3 icon-base">
+          <i class="fa fa-users" aria-hidden="true"></i>
+        </div>
+      </div>
+      <%= link_to admin_teams_path do %>
+        <i class="fa fa-arrow-circle-right right-base" aria-hidden="true"></i>
+      <% end %>
+      <div class="ml-2"></div>
+      <div class="col-lg-4 users-base">
+        <div class="col-lg-9">
+          <h3 id="user-count"><%= @tournaments.count %></h3>
+          <p id="user-text-base">League</p>
+        </div>
+        <div class="col-lg-3 icon-base">
+          <i class="fa fa-users" aria-hidden="true"></i>
+        </div>
+      </div>
+      <%= link_to admin_tournaments_path do %>
+        <i class="fa fa-arrow-circle-right right-base" aria-hidden="true"></i>
+      <% end %>
+      <div class="col-lg-4 users-base">
+        <div class="col-lg-9">
+          <h3 id="user-count"><%= @matchs.count %></h3>
+          <p id="user-text-base">Match</p>
+        </div>
+        <div class="col-lg-3 icon-base">
+          <i class="fa fa-users" aria-hidden="true"></i>
+        </div>
+      </div>
+      <%= link_to admin_matches_path do %>
+        <i class="fa fa-arrow-circle-right right-base" aria-hidden="true"></i>
+      <% end %>
+      </div>
     </div>
   </div>
-</section>
+</div>

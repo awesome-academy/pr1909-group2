@@ -1,98 +1,22 @@
 <% provide :title, "Home" %>
 <div class="container-main-home">
-  <div>
-    <div id="text-home-1">
-    Football LiveScore
-  </div>
+  <div class="row">
+    <div class="col-sm-4 text-home-1">
+      Football LiveScore
+    </div>
+    <div class="col-sm-5">
+    </div>
+    <div class="col-sm-1 Live">
+      <span id="results-live"><%= link_to "Result", static_pages_match_started_path %></span>
+      <span>(<%= Match.started.size %>)</span>
+    </div>
+    <div class="col-sm-1 Live">
+      <span id="results-live"><%= link_to "Lives", static_pages_match_live_path %></span>
+      <span>(<%= Match.live.size %>)</span>
+    </div>
   </div>
   <div class="content-home">
     <div class="col-sm-4">
-      <div>
-        <div>
-          <h3 class="card-header" id="monthAndYear"></h3>
-          <table class="table table-bordered table-responsive-sm" id="calendar">
-            <thead>
-              <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-              </tr>
-            </thead>
-          <tbody id="calendar-body">
-          </tbody>
-        </table>
-        <div class="form-inline">
-          <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-          <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-        </div>
-        <br/>
-        <form class="form-inline">
-            <div  name="month" id="month" onchange="jump()">
-            </div>
-          <label for="year"></label><div name="year" id="year" onchange="jump()">
-          </div>
-        </form>
-      </div>
-    </div>
-    <script type="text/javascript">
-      let today = new Date();
-      let currentMonth = today.getMonth();
-      let currentYear = today.getFullYear();
-      let selectYear = document.getElementById("year");
-      let selectMonth = document.getElementById("month");
-      let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-      let monthAndYear = document.getElementById("monthAndYear");
-      showCalendar(currentMonth, currentYear);
-      function next() {
-          currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
-          currentMonth = (currentMonth + 1) % 12;
-          showCalendar(currentMonth, currentYear);
-      }
-      function previous() {
-          currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
-          currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-          showCalendar(currentMonth, currentYear);
-      }
-      function showCalendar(month, year) {
-          let firstDay = (new Date(year, month)).getDay();
-          let daysInMonth = 32 - new Date(year, month, 32).getDate();
-          let tbl = document.getElementById("calendar-body");
-          tbl.innerHTML = "";
-          monthAndYear.innerHTML = months[month] + " " + year;
-          selectYear.value = year;
-          selectMonth.value = month;
-          let date = 1;
-          for (let i = 0; i < 6; i++) {
-              let row = document.createElement("tr");
-              for (let j = 0; j < 7; j++) {
-                  if (i === 0 && j < firstDay) {
-                    let cell = document.createElement("td");
-                    let cellText = document.createTextNode("");
-                    cell.appendChild(cellText);
-                    row.appendChild(cell);
-                  }
-                  else if (date > daysInMonth) {
-                      break;
-                  }
-                  else {
-                    let cell = document.createElement("td");
-                    let cellText = document.createTextNode(date);
-                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                        cell.classList.add("bg-info");
-                    }
-                    cell.appendChild(cellText);
-                    row.appendChild(cell);
-                    date++;
-                  }
-              }
-              tbl.appendChild(row);
-          }
-      }
-    </script>
       <hr>
       <h5 id="text-home-2">Featured league</h5>
       <div>
@@ -135,20 +59,20 @@
       <% end %>
     </div>
     <div class="col-sm-4 top-player-home">
-      <span id="top_player-home">Top Players</span>
-      <ul class="top_player">
-        <% @top_players.each do |player| %>
-          <li>
-            <%= link_to image_tag(player.image.url), player , id: "image-player"%>
-            <%= link_to image_tag(player.team.logo.url), player , id: "image-team-home"%>
-            <span><%= link_to player.name, player , id: "name-top-player" %></span>
-            <span class="card bg-success text-white point">
-              <span class="card-body point-2"><%= player.point %></span>
-            </span>
-          </li>
-        <% end %>
-        <%= will_paginate @top_players %>
-      </ul>
-  </div>
+      <div id="top-player">Top Players</div>
+        <ul class="top_player">
+          <% @top_players.each do |player| %>
+            <li>
+              <%= link_to image_tag(player.image.url), @player , id: "image-player"%>
+              <span><%= link_to player.name, @player , id: "name-top-player" %></span>
+              <span class="card bg-success text-white point">
+                <span class="card-body point-2"><%= player.point %></span>
+              </span>
+            </li>
+          <% end %>
+          <%= will_paginate @top_players %>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

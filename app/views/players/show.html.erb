@@ -68,8 +68,8 @@
         <ul class="top_player">
           <% @top_players.each do |player| %>
             <li>
-              <%= link_to image_tag(player.image.url), @player , id: "image-player"%>
-              <span><%= link_to player.name, @player , id: "name-top-player" %></span>
+              <%= link_to image_tag(player.image.url), player , id: "image-player"%>
+              <span><%= link_to player.name, player , id: "name-top-player" %></span>
               <span class="card bg-success text-white point">
                 <span class="card-body point-2"><%= player.point %></span>
               </span>

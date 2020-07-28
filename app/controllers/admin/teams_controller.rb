@@ -1,5 +1,6 @@
 class Admin::TeamsController < Admin::BaseController
   before_action :api_nationalitys, only: %i(new edit create show)
+  before_action :list_tournaments, only: %i(new edit create edit)
   def index
     @q = Team.ransack(params[:q])
     @teams = @q.result(distinct: true).paginate(page: params[:page])
@@ -41,8 +42,10 @@ class Admin::TeamsController < Admin::BaseController
   end
 
   private
-
+  def list_tournaments
+    @tournaments = Tournament.all.map { |tournament| [tournament.name, tournament.id] }
+  end
   def team_params
-    params.require(:team).permit(:name, :logo, :country)
+    params.require(:team).permit(:name, :logo, :country, :tournament_id)
   end
 end

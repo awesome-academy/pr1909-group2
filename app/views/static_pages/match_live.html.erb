@@ -1,8 +1,78 @@
 <% provide :title, "Home" %>
-  <% @match_lives.each do |match_live| %>
-    <%= match_live.start_match%>
-    <%= match_live.home_team.name%>
-    <%= match_live.score_home%>
-    <%= match_live.away_team.name%>
-    <%= match_live.score_away%>
-  <% end %>
+<div class="container-main-home">
+  <div class="row">
+    <div class="col-sm-4 text-home-1">
+      Football LiveScore
+    </div>
+    <div class="col-sm-5">
+    </div>
+    <div class="col-sm-1 Live">
+      <span id="results-live"><%= link_to "Result", static_pages_match_started_path %></span>
+      <span>(<%= Match.started.size %>)</span>
+    </div>
+    <div class="col-sm-1 Live">
+      <span id="results-live"><%= link_to "Lives", static_pages_match_live_path %></span>
+      <span>(<%= Match.live.size %>)</span>
+    </div>
+  </div>
+  <div class="content-home">
+    <div class="col-sm-4">
+      <hr>
+      <h5 id="text-home-2">Featured league</h5>
+      <div>
+      <% @tournaments.each do |tournament| %>
+      <ul class="list-team">
+        <li>
+          <%= link_to image_tag(tournament.picture.url), tournament, id: "img-home"%>
+          <%= link_to tournament.name , tournament, id: "team-list-home-1" %>
+        </li>
+      </ul>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-sm-4 main-match">
+      <h4 id="match-featured">Present Live </h4>
+      <% @match_lives.each do |match_live| %>
+        <div class="col-sm-12">
+          <div class="start-match">
+            <h5 id="start-match"><%= match_live.start_match %></h5>
+          </div>
+          <div class="col-sm-6">
+            <div class="img-home-team">
+              <%= link_to image_tag(match_live.home_team.logo.url), match_live.home_team, id: "img-home-team" %>
+              <i class="fa fa-window-minimize score-home" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h4 id="name-home-team"><%= link_to match_live.home_team.name, match_live.home_team %></h4>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="img-home-team">
+              <i class="fa fa-window-minimize score-away" aria-hidden="true"></i>
+              <%= link_to image_tag(match_live.away_team.logo.url), match_live.away_team, id: "img-home-team" %>
+            </div>
+            <div>
+              <h4 id="name-away-team"><%= link_to match_live.away_team.name, match_live.away_team %></h4>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-sm-4 top-player-home">
+      <div id="top-player">Top Players</div>
+        <ul class="top_player">
+          <% @top_players.each do |player| %>
+            <li>
+              <%= link_to image_tag(player.image.url), @player , id: "image-player"%>
+              <span><%= link_to player.name, @player , id: "name-top-player" %></span>
+              <span class="card bg-success text-white point">
+                <span class="card-body point-2"><%= player.point %></span>
+              </span>
+            </li>
+          <% end %>
+          <%= will_paginate @top_players %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

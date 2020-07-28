@@ -34,9 +34,15 @@
       <td>
         <%= user.email %>
       </td>
-      <td>
-        <%= user.admin %>
-      </td>
+      <% if user.admin? == true %>
+        <td>
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+        </td>
+      <% else %>
+        <td>
+          <i class="fa fa-square-o" aria-hidden="true"></i>
+        </td>
+      <% end %>
       <td>
         <%= link_to admin_user_path(user) do %>
           <i class="fa fa-eye" aria-hidden="true"></i>

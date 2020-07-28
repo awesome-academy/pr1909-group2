@@ -27,28 +27,31 @@
           </div>
         </div>
       <div id="player-team">Matchs</div>
-      <div>
+      <div class="col-sm-6">
+      </div>
+      <div class="col-sm-6">
         <% @matchs.each do |matchs| %>
-        <div class="col-sm-12">
+        <div class="col-sm-12 team-home-show">
           <div class="start-match">
             <h5 id="start-match"><%= matchs.start_match %></h5>
           </div>
-          <div class="col-sm-6">
-            <div class="img-team">
-              <%= link_to image_tag(matchs.home_team.logo.url), matchs.home_team, id: "img-home-team" %>
-              <i class="fa fa-window-minimize score-home" aria-hidden="true"></i>
+          <div class="col-sm-4">
+            <div class="img-team-show">
+              <%= link_to image_tag(matchs.home_team.logo.url), matchs.home_team, id: "img-show-team" %>
             </div>
-            <div>
-              <h4 id="name-home-team"><%= link_to matchs.home_team.name, matchs.home_team %></h4>
+            <div class="name-team-show-div">
+              <h4 id="name-home-team-show"><%= link_to matchs.home_team.name, matchs.home_team %></h4>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="img-team">
-              <i class="fa fa-window-minimize score-away" aria-hidden="true"></i>
-              <%= link_to image_tag(matchs.away_team.logo.url), matchs.away_team, id: "img-home-team" %>
+          <div class="col-sm-2 upcomming">
+            Upcomming
+          </div>
+          <div class="col-sm-4">
+            <div class="img-team-away-show">
+              <%= link_to image_tag(matchs.away_team.logo.url), matchs.away_team, id: "img-show-team" %>
             </div>
-            <div>
-              <h4 id="name-away-team"><%= link_to matchs.away_team.name, matchs.away_team %></h4>
+            <div class="name-team-show-div">
+              <h4 id="name-away-team-show"><%= link_to matchs.away_team.name, matchs.away_team %></h4>
             </div>
           </div>
         </div>
