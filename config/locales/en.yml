@@ -8,3 +8,31 @@ en:
   header:
       signup: "Signup"
       profile: "Profile"
+      login: "Login"
+      logout: "Logout"
+      language: "Language"
+      forgot_yourpassword: "Forgot your password?"
+      edit: "Edit"
+
+  home:
+    featured_league: "Featured league"
+    find_the_match: "Find the match"
+    in_day: "In day:"
+    upcoming_today: "Upcoming(Today)"
+    result: "Result"
+    lives: "Lives"
+    top_players: "TOP PLAYERS"
+    football_livescore: "Football LiveScore"
+
+  team:
+    standings: "STANDINGS"
+    players: "Players"
+
+  players:
+    nationality: "Nationality"
+    height: "Height"
+    weight: "Weight"
+    preferred_foot: "Preferred foot"
+    shirt_number: "Shirt number"
+    strengths: "Strengths"
+    weaknesses: "Weaknesses"

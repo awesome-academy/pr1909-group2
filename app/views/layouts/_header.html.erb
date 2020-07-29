@@ -20,7 +20,7 @@
       </div>
       <div class="col-sm-2 logout" style="background-color:#0057a3;height: 56px;">
         <i class="fa fa-sign-out" aria-hidden="true"></i>
-        <%= link_to "Logout", destroy_user_session_path, id: "tool" %>
+        <%= link_to t("header.logout"), destroy_user_session_path, id: "tool" %>
       </div>
       <% else %>
       <div class="col-sm-2" style="background-color:#0057a3;height: 56px;padding-left: 25px;">
@@ -32,7 +32,7 @@
       </div>
       <div class="col-sm-2 signin" style="background-color:#0057a3;height: 56px;">
         <i class="fa fa-sign-in" aria-hidden="true"></i>
-        <%= link_to "Đăng Nhập", user_session_path, id: "tool" %>
+        <%= link_to t("header.login"), user_session_path, id: "tool" %>
       </div>
       <% end %>
     </div>
@@ -51,7 +51,7 @@
             <i class="fa fa-cog" aria-hidden="true"></i>
           </a>
           <div class="dropdown-menu setting-icon" aria-labelledby="dropdownMenuLink">
-            <h5 id="language">LANGUAGE</h5>
+            <h5 id="language"><%= t("header.language") %></h5>
             <hr>
             <div class="vietnam"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Flag_of_North_Vietnam_%281955%E2%80%931975%29.svg/220px-Flag_of_North_Vietnam_%281955%E2%80%931975%29.svg.png" alt="Trulli" width="15" height="15" magrin-left="5px"><%= link_to "Vietnamese", locale:"vi" %></div>
             <div class="vietnam"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAMAAABThUXgAAAAOVBMVEXIEC7///8BIWnz9fiRn76AkLTv8fYYNXcTMXTVR17wv8fyx87XUGb99/jpn6vOKUTlj52FlbfnmKWRIUdAAAAEMElEQVR4nO3d3XbaMBAEYLX0B0LTlLz/w5YWUpIi29rd2Rlxzs5Frhp79EWmATtSOzx9Ws/uy/fPWbmdpa3m9u/Squy/fns7x/PPl16Jw9PfLzKuabBGqK4lZVyTYI1R/Ssp4poCa5TqXUkJ1wRY41QfSgq45FgWqv9K0rnEWDaqu5JkLimWlapT8nAkcgmx3lO99qnuJAY8E7lkWPZZtViSxiXC8lGdS45OwRQuCZbnAryWtNmCuQRY3ll1wXJ80xvXaf9oWPvTzk11wQpwBWcXGSsyq25YKi4qVpTqXDIyLS9cgYuRiBW7AC8jbXHvwOyiYWFG2VAHmhkLNcKGPNicWLjRNfQBZ8NCjqxlHHQeLOyoWtaBZ8BCj6hlHlyLhR9Nyz6BCitjJI1xEj5WzijusKhcSVhZI+hgEblSsPLad7FoXAlYmc0XsEhccKzc1otYFC4wVnbjFSwCFxQr/4e7ipVeAIjFeNnYwEouAcPi/Ie0iZVaBITF+lVnACuxDASL90v0EFZaIQAW8+3ZIFZSqTAW943/MFZKsSAW+yMlA1ZCuRAW/8NKExa8YABL8TG4EQtc0o2lucFixoIWdWKpbt05sIBlXVi6m8IuLFhhB5bycQMnFojLjqV8MsOPBeGyYwmpQlhQLhuW6OG7EBaQy4Ilewo2iAXjGscSPjDceTmQxDKzZJmmR2GNp7AMKSxDCsuQwjKksAwpLEMKy5DHwKpUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCrqx3iueYyS6gLXFJYhhWVIYRlSWIYUliGFZUhhGVJYhjwGFvDPfhdy/NEb/8uv5w89olibZ0H82e8UVJCZlc+FWqogRgW6DLO5MItgRKlgr1m5XIjlVfzF7ViIs7KXV4FQRRfuoXNFl4SKFXZgAc/OwAKWdWHpuCLL2MWLOrFUXP4FEhEl3VgaLu/Sm5iCASwFl29RV1S5EBafy7NcMK5YEIvNZV+IGlkqjMXlsi5xji0EwGJy2RbPR5eBYPG4LNsy4IuAsFhc4xt+ZJSAYXG4RreSySkAxGJwjW1SlPWzgmLlNx7Z/iqLKnf7q4TW2xur5VFlb6wGb761ZV8mVf6WfeD265tB5lIxNoOEjmBtm9FsKs42o8BRLG9gm0/F2sAWNpKlrZEZVLytkUGj6W+6zaFibroNGVFvO3cWFXc7d8CompCKgIUdWRNSUbCQo2vKm5YcLNwIm/J2OAsLxdV24YOc9s4RELHOXKf4SDee5kl+4omIhZhdq1jpz9JRseJcK1ipF6AEK3oxLmIxHmjlY8Vm1wLW8dD9hlcolQRriGth9F0syqz6EwmWf3Z1sGhUMiw3l5BKiOXkElJJsVxcQioxloNLSCXHMnMJqSbAMnIJqabAMnEJqSbBMnAJqabBGuYivbHpZxqssTdBvwG8MNt/pFCMYQAAAABJRU5ErkJggg==" alt="Trulli" width="15" height="15" magrin-left="5px"><%= link_to "English", locale:"en" %></div>

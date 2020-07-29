@@ -21,7 +21,7 @@
                 <div class="information-1">
                   <div class="information-1-1">
                     <div id="height-player"><%= @player.nationality %></div>
-                    <div id="text-player-show-2">nationality</div>
+                    <div id="text-player-show-2"><%= t("players.nationality") %></div>
                   </div>
                   <div class="information-1-1">
                     <div id="height-player"><%= @player.age %></div>
@@ -29,21 +29,21 @@
                   </div>
                   <div class="information-1-1">
                     <div id="height-player"><%= @player.height %>&nbspcm</div>
-                    <div id="text-player-show-2">height</div>
+                    <div id="text-player-show-2"><%= t("players.height")%></div>
                   </div>
                 </div>
                 <div class="information-2">
                   <div class="information-1-1">
                     <div id="height-player"><%= @player.weight %></div>
-                    <div id="text-player-show-2">weight</div>
+                    <div id="text-player-show-2"><%= t("players.weight") %></div>
                   </div>
                   <div class="information-1-1">
                     <div id="height-player"><%= @player.preferred_foot %></div>
-                    <div id="text-player-show-2">Preferred foot</div>
+                    <div id="text-player-show-2"><%= t("players.preferred_foot") %></div>
                   </div>
                   <div class="information-1-1">
                     <div id="height-player"><%= @player.shirt_number %></div>
-                    <div id="text-player-show-2">shirt_number</div>
+                    <div id="text-player-show-2"><%= t("players.shirt_number") %></div>
                   </div>
                 </div>
               </div>
@@ -54,9 +54,9 @@
                 <%= link_to image_tag(@player.diagram.url), @player , id: "diagram-player"%>
               </div>
               <div class="information-4">
-                <div id="text-player-show-3">Strengths</div>
+                <div id="text-player-show-3"><%= t("players.strengths") %></div>
                 <div id="text-player-show-4"><%= @player.strengths %></div>
-                <div id="text-player-show-3">Weaknesses</div>
+                <div id="text-player-show-3"><%= t("players.weaknesses") %></div>
                 <div id="text-player-show-4"><%= @player.weaknesses %></div>
               </div>
             </div>
@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="col-sm-4 tab-right">
-        <div id="top-player">Top Players</div>
+        <div id="top-player"><%= t("home.top_players") %></div>
         <ul class="top_player">
           <% @top_players.each do |player| %>
             <li>
