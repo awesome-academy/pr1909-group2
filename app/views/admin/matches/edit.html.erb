@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3-edit-user">
     <%= form_for :match, url: {action: :update, controller: :matches}, method: :put do |f| %>
+    <h3 id="signup-form-admin">Update Match</h3>
       <div class="form-group">
         <%= f.label :home_team_id %>
         <%= f.select :home_team_id, options_for_select(@teams.map{|key, value|

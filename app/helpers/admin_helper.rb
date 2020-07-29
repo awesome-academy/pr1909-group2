@@ -8,7 +8,7 @@ module AdminHelper
     @current_user = nil
   end
 
-  def current_user
+  def current_user_admin
     @current_user ||= User.find_by id: session[:user_id]
   end
 

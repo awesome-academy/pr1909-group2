@@ -225,6 +225,17 @@ font-size: 15px;
   border-radius: 0px 10px 10px 0px;
   margin-top: 8px;
 }
-.btn:not(:disabled):not(.disabled)  {
+#stt-button {
   border-radius: 20px;
+  height: 25px;
+  margin-top: 3px;
+}
+#results-stated {
+  font-weight: bold;
+  font-size: 13px;
+}
+#signup-form-admin {
+  font-weight: bold;
+  font-size: 20px;
+  color: blue;
 }

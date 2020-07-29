@@ -25,41 +25,61 @@
               </div>
             <% end %>
           </div>
-        </div>
-      <div id="player-team">Matchs</div>
-      <div class="col-sm-6">
-      </div>
-      <div class="col-sm-6">
-        <% @matchs.each do |matchs| %>
-        <div class="col-sm-12 team-home-show">
-          <div class="start-match">
-            <h5 id="start-match"><%= matchs.start_match %></h5>
-          </div>
-          <div class="col-sm-4">
-            <div class="img-team-show">
-              <%= link_to image_tag(matchs.home_team.logo.url), matchs.home_team, id: "img-show-team" %>
-            </div>
-            <div class="name-team-show-div">
-              <h4 id="name-home-team-show"><%= link_to matchs.home_team.name, matchs.home_team %></h4>
-            </div>
-          </div>
-          <div class="col-sm-2 upcomming">
-            Upcomming
-          </div>
-          <div class="col-sm-4">
-            <div class="img-team-away-show">
-              <%= link_to image_tag(matchs.away_team.logo.url), matchs.away_team, id: "img-show-team" %>
-            </div>
-            <div class="name-team-show-div">
-              <h4 id="name-away-team-show"><%= link_to matchs.away_team.name, matchs.away_team %></h4>
-            </div>
-          </div>
-        </div>
-      <% end %>
-      </div>
-      </div>
+    </div>
+  </div>
       <div class="col-sm-4 tab-right">
-        BXH
+        <div id="image">
+          <%= link_to image_tag(@tournament.picture.url), @tournament , id: "image-tournament"%>
+          <span id="name-tournament">
+            <%= @tournament.name %>
+            <span>(<%= @tournament.teams.size %> Team)</span>
+          </span>
+        </div>
+        <div>
+        <div id="standings">STANDINGS</div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th><%= sort_link(@q, :p) %></th>
+              <th><%= sort_link(@q, :w) %></th>
+              <th><%= sort_link(@q, :d) %></th>
+              <th><%= sort_link(@q, :l) %></th>
+              <th><%= sort_link(@q, :goals) %></th>
+              <th><%= sort_link(@q, :point, 'PTS') %></th>
+            </tr>
+          <% @teams.each do |team| %>
+            <tr>
+              <td class="btn btn-success" id="stt-button">
+                <%= @stt = @stt + 1 %>
+              </td>
+              <td class="space-team">
+                <%= link_to image_tag(team.logo.url), team, id: "logo-team-stading" %>
+                <%= link_to team.name, team, id: "name-team-stading" %>
+              </td>
+              <td>
+                <%= team.matches.select {|m| m["status"] == "started"}.size %>
+              </td>
+              <td>
+                <%= team.w %>
+              </td>
+              <td>
+                <%= team.d %>
+              </td>
+              <td>
+                <%= team.l %>
+              </td>
+              <td>
+                <%= team.goals %>
+              </td>
+              <td>
+                <%= team.point %>
+              </td>
+            </tr>
+          <% end %>
+          </thead>
+        </table>
       </div>
     </div>
   </div>

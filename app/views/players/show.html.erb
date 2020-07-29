@@ -14,8 +14,8 @@
           <div class="row">
             <div class="col-sm-5">
               <div class="team-name">
-                <span id="logo-player"><%= image_tag @player.team.logo.url if @player.team.logo? %></span>
-                <span id="text-player-show-1"><%= @player.team.name %></span>
+                <span id="logo-player"><%= image_tag (@player.team.logo.url if @player.team.logo?)%></span>
+                <span id="text-player-show-1"><%= link_to @player.team.name, @player.team  %></span>
               </div>
               <div class="information">
                 <div class="information-1">

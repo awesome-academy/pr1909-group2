@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     today = DateTime.now
     @match_lives = Match.all.select { |x| x["start_match"] <= today && today <= x["end_match"] }
     @match_score_nil = @match_lives.select { |x| x["score_home"].nil? }
-    @match_score_nil.map { |e| e.update(score_home: rand(1..10), score_away: rand(1..10), status: 1) }
+    @match_score_nil.map { |e| e.update(score_home: rand(0..6), score_away: rand(0..6), status: 1) }
   end
 
   def update_match_wait
@@ -45,10 +45,10 @@ class ApplicationController < ActionController::Base
         home_team.update(point: home_team.w * 3)
         away_team.update(point: away_team.w * 3)
         if home_team.d != 0
-          home_team.update(point: home_team.d * 1)
+          home_team.update(point: home_team.point+(home_team.d * 1))
         end
         if away_team.d != 0
-          away_team.update(point: away_team.d * 1)
+          away_team.update(point: away_team.point+(away_team.d * 1))
         end
         home_team.update(goals: home_team.goals + match.score_home)
         away_team.update(goals: away_team.goals + match.score_away)

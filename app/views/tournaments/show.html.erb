@@ -13,23 +13,22 @@
           </span>
         </div>
         <div>
-
         <div id="standings">STANDINGS</div>
         <table class="table table-hover">
           <thead>
             <tr>
               <th></th>
               <th></th>
-              <th><%= sort_link(@q, :p) %></th>
-              <th><%= sort_link(@q, :w) %></th>
-              <th><%= sort_link(@q, :d) %></th>
-              <th><%= sort_link(@q, :l) %></th>
-              <th><%= sort_link(@q, :goals) %></th>
-              <th><%= sort_link(@q, :point, 'PTS') %></th>
+              <th>P</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>Goals</th>
+              <th>Point</th>
             </tr>
           <% @teams.each do |team| %>
             <tr>
-              <td class="btn btn-success rounded-circle">
+              <td class="btn btn-success" id="stt-button">
                 <%= @stt = @stt + 1 %>
               </td>
               <td class="space-team">
@@ -65,8 +64,8 @@
         <ul class="top_player">
           <% @top_players.each do |player| %>
             <li>
-              <%= link_to image_tag(player.image.url), @player , id: "image-player"%>
-              <span><%= link_to player.name, @player , id: "name-top-player" %></span>
+              <%= link_to image_tag(player.image.url), player , id: "image-player"%>
+              <span><%= link_to player.name, player , id: "name-top-player" %></span>
               <span class="card bg-success text-white point">
                 <span class="card-body point-2"><%= player.point %></span>
               </span>
