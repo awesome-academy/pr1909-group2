@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
 
   def match_started
     @q = Match.started.ransack(params[:q])
-    @match_starteds = @q.result(distinct: true).paginate(page: params[:page])
+    @match_starteds = @q.result(distinct: true).paginate(page: params[:page]).order(start_match: :DESC)
     @tournaments = Tournament.all
     @top_players = Player.paginate(:page => params[:page], :per_page => 7).order(point: :DESC)
   end
