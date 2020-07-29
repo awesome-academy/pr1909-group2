@@ -9,4 +9,8 @@ class Match < ApplicationRecord
   def teams
     [self.home_team, self.away_team]
   end
+
+  ransacker :start_match, type: :date do
+    Arel.sql('date(start_match)')
+  end
 end

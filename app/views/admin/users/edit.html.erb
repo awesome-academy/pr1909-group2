@@ -2,6 +2,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3-edit-user">
     <%= form_for :user, url: {action: :update, controller: :users}, method: :put do |f| %>
+        <h3 id="signup-form-admin">Update User</h3>
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
       <%= f.label :email %>
@@ -10,6 +11,8 @@
       <%= f.password_field :password, class: "form-control" %>
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
+      <%= f.label :Admin %>
+      <%= f.select(:admin, [['True', :true], ['False', :false]]) %>
       <%= f.submit "Update user", class: "btn btn-primary" %>
     <% end %>
   </div>

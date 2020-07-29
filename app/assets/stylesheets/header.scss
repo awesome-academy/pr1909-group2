@@ -71,49 +71,10 @@ textarea { resize: vertical; }
   font-size: 1.1em;
   font-weight: bold;
 }
-#tool-1 {
-  line-height: 56px;
-  color: #C9C6C6;
-  font-weight: bold;
-}
-#tool-2 {
-  line-height: 56px;
-  color: #C9C6C6;
-  font-weight: bold;
-}
-#tool-3 {
-  line-height: 56px;
-  color: #C9C6C6;
-  font-weight: bold;
-}
-#tool-4 {
-  line-height: 56px;
-  color: #C9C6C6;
-  font-weight: bold;
-}
-#tool-5 {
-  line-height: 56px;
-  color: #C9C6C6;
-  font-weight: bold;
-}
-#tool-6 {
-  line-height: 56px;
-  color: #C9C6C6;
-  font-weight: bold;
-}
-#tool-7 {
-  line-height: 56px;
-  color: #C9C6C6;
-  font-weight: bold;
-}
-#tool-8 {
-  line-height: 56px;
-  color: #C9C6C6;
-  font-weight: bold;
-}
 .NHA {
   background-color:#004c8f;
   height: 56px;
+  padding-top: 10px;
 }
 .NHA a:hover {
   color: #fff;
@@ -178,4 +139,47 @@ a:hover{
 }
 .header-row {
   background-color: #004c8f;
+}
+#name-league-header{
+  color: #fff;
+  line-height: 35px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#header_adminlte {
+  margin-bottom: 0px;
+}
+#text-find-match{
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#input-inday {
+  width: 140px;
+  border-radius: 5px;
+}
+.Live span{
+  color: red;
+}
+.signin i{
+  font-size: 15px;
+  color: #fff;
+}
+.show i{
+  font-size: 15px;
+  color: #fff;
+}
+#language {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 5px;
+  color: #fff;
+}
+.setting-icon {
+  background-color: #004c8f;
+}
+.vietnam a{
+  color: #fff;
+  margin-left: 5px;
+  font-weight: bold;
 }

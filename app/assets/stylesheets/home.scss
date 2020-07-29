@@ -2,16 +2,16 @@
   background-color: #DCDCDC;
   height: 1000px;
 }
-#text-home-1 {
-  margin-left: 90px;
+.text-home-1 {
+  margin-left: 6%;
   padding-top: 5px;
   color: #9D9C9C;
   font-weight: bold;
   font-size: 13px;
 }
 .content-home {
-  width: 83%;
-  margin-left: 90px;
+  width: 88%;
+  margin-left: 6%;
   background-color: #fff;
   height: 950px;
   margin-top: 8px;
@@ -51,6 +51,7 @@
   margin-left: 15px;
 }
 #name-home-team {
+  margin-left: 25px;
   font-weight: bold;
   margin-top: 20px;
   color: #000000;
@@ -112,8 +113,69 @@
   background-color: #f1f2f5;
 }
 #live-home {
-      text-align: center;
-    margin-top: 5px;
-    color: red;
-    font-size: 13px;
+  text-align: center;
+  margin-top: 5px;
+  color: red;
+  font-size: 13px;
+}
+#results-home {
+  padding-top: 5px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 13px;
+}
+#results-live a{
+  color: red;
+  font-weight: bold;
+  font-size: 13px;
+}
+.Live {
+  padding-top: 5px;
+}
+.Live i {
+  width: 12px;
+  color:red;
+}
+.Results {
+  padding-top: 5px;
+  margin-left: 90px;
+}
+.Results i{
+  color: blue;
+  width: 12px;
+  font-size: 10px;
+}
+.Results span{
+  color: blue;
+}
+.img-home-team span {
+  padding-left: 40px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.img-away-team img{
+  margin-top: 8px;
+  margin-left: 60px;
+}
+.img-away-team span {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 30px;
+  padding-top: 5px;
+}
+.img-away-team {
+  padding-top: 10px;
+}
+#signup-form {
+  font-weight: bold;
+  margin-left: 16%;
+  font-size: 20px;
+  color: blue;
+}
+.logout i {
+  font-size: 15px;
+  color: #fff;
+}
+.img-home-team {
+  margin-left: 42px;
 }

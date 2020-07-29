@@ -1,11 +1,17 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3-edit-user">
     <%= form_for :team, url: {action: :update, controller: :teams}, method: :put do |f| %>
+        <h3 id="signup-form-admin">Update Team</h3>
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
       <%= f.label :nationality %>
       <%= f.select(:country, @name_nationality.map { |c| c }) %>
        <%= f.file_field :logo %>
+      <div class="form-group">
+        <%= f.label :tournament_id %>
+        <%= f.select :tournament_id, options_for_select(@tournaments.map{|key, value|
+          [key, value]}), {include_blank: true}, {class: "chosen-select"} %>
+      </div>
       <%= f.submit "Update team ", class: "btn btn-primary" %>
     <% end %>
   </div>

@@ -9,7 +9,7 @@
   height: 50px;
   padding-top: 15px;
   font-weight: bold;
-  width: 750px;
+  width: 761px;
   background-color: #F1F2F5;
   margin-left: 10px;
 }
@@ -56,4 +56,28 @@
 }
 #nationality-player-2 {
   float: right;
+}
+.team-home-show {
+  height: 160px;
+}
+.img-team-show img {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.img-team-away-show {
+  margin-top: 20px;
+  margin-left: 75px;
+}
+.upcomming{
+  margin-top: 43px;
+  text-align: center;
+  font-weight: bold;
+  padding-left: 12px;
+  font-size: 15px;
+}
+.name-team-show-div {
+  margin-top: 10px;
+}
+.name-home-team-show a{
+  margin-left: 25px;
 }

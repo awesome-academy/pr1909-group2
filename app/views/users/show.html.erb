@@ -1,11 +1,27 @@
-<div class="layout-show-user">
-	<div class="form-show-user">
-		<div class="image-user">
-	    <%= image_tag(@user.image) %>
-		</div>
-		<div class="name-user">
-	    <p><%= @user.name %></p>
-	    <p><%= @user.email %></p>
-		</div>
-	</div>
+<div class="container-show-user">
+  <div class="content-show-user">
+    <% if @user.image.nil? %>
+      <div class="col-sm-2 avata-user">
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+      </div>
+    <% else %>
+      <div col-sm-2>
+        <%= image_tag(@user.image.url) %>
+      </div>
+    <% end %>
+    <div class="col-sm-4 user-tt">
+      <div class="user-icon">
+        <i class="fa fa-user" aria-hidden="true">&nbspName: </i>
+        <span class="name-user"><%= @user.name %></span>
+      </div>
+      <div class="user-icon">
+        <i class="fa fa-envelope-o" aria-hidden="true">&nbspEmail: </i>
+        <span class="name-user"><%= @user.email %></span>
+      </div>
+    </div>
+    <div class="col-sm-5"></div>
+    <div class="col-sm-1">
+      <div class="btn btn-primary edit-user"><%= link_to "Edit", edit_user_registration_path %></div>
+    </div>
+  </div>
 </div>

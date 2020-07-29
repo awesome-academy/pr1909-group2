@@ -1,6 +1,79 @@
-<% provide(:title, @tournament.name) %>
-<div>
-  <%= link_to @tournament.name, @tournament %>
+<div class="container-fluid warp">
+  <%= link_to "Livescore", root_path , id: "home" %>
+  >>
+  <%= link_to @tournament.name, @tournament , id: "name" %>
+  <div class="container content">
+    <div class="row grade">
+      <div class="col-sm-8 tab-left">
+        <div id="image">
+          <%= link_to image_tag(@tournament.picture.url), @tournament , id: "image-tournament"%>
+          <span id="name-tournament">
+            <%= @tournament.name %>
+            <span>(<%= @tournament.teams.size %> Team)</span>
+          </span>
+        </div>
+        <div>
+        <div id="standings">STANDINGS</div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th>P</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>Goals</th>
+              <th>Point</th>
+            </tr>
+          <% @teams.each do |team| %>
+            <tr>
+              <td class="btn btn-success" id="stt-button">
+                <%= @stt = @stt + 1 %>
+              </td>
+              <td class="space-team">
+                <%= link_to image_tag(team.logo.url), team, id: "logo-team-stading" %>
+                <%= link_to team.name, team, id: "name-team-stading" %>
+              </td>
+              <td>
+                <%= team.matches.select {|m| m["status"] == "started"}.size %>
+              </td>
+              <td>
+                <%= team.w %>
+              </td>
+              <td>
+                <%= team.d %>
+              </td>
+              <td>
+                <%= team.l %>
+              </td>
+              <td>
+                <%= team.goals %>
+              </td>
+              <td>
+                <%= team.point %>
+              </td>
+            </tr>
+          <% end %>
+          </thead>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-4 tab-right">
+      <div id="top-player">Top Players</div>
+        <ul class="top_player">
+          <% @top_players.each do |player| %>
+            <li>
+              <%= link_to image_tag(player.image.url), player , id: "image-player"%>
+              <span><%= link_to player.name, player , id: "name-top-player" %></span>
+              <span class="card bg-success text-white point">
+                <span class="card-body point-2"><%= player.point %></span>
+              </span>
+            </li>
+          <% end %>
+          <%= will_paginate @top_players %>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
-<%= @tournament.country %>
-<%= link_to image_tag(@tournament.picture.url), @tournament %>
