@@ -2,33 +2,33 @@
 <div class="container-main-home">
   <div class="row">
     <div class="col-sm-4 text-home-1">
-      Football LiveScore
+      <%= t("home.football_livescore") %>
     </div>
     <div class="col-sm-4">
     </div>
     <div class="col-sm-1 Results">
       <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-      <span id="results-stated"><%= link_to "Result", static_pages_match_started_path %></span>
+      <span id="results-stated"><%= link_to t("home.result"), static_pages_match_started_path %></span>
       <span class="size-live">(<%= Match.started.size %>)</span>
     </div>
     <div class="col-sm-1 Live">
       <i class="fa fa-clock-o" aria-hidden="true"></i>
-      <span id="results-live"><%= link_to "Lives", static_pages_match_live_path %></span>
+      <span id="results-live"><%= link_to t("home.lives"), static_pages_match_live_path %></span>
       <span>(<%= Match.live.size %>)</span>
     </div>
   </div>
   <div class="content-home">
     <div class="col-sm-4">
-      <h5 id="text-find-match">Find the match</h5>
+      <h5 id="text-find-match"><%= t("home.find_the_match") %></h5>
       <%= search_form_for @q, url: static_pages_match_live_path, method: :get do |f| %>
-        <%= f.label :start_match, 'In day: ' %>
+        <%= f.label :start_match, t("home.in_day") %>
         <%= f.date_field(:start_match_date_equals, placeholder: t(:date_format), id: "input-inday") %>
         <%= button_tag( :class => "button_green") do %>
           <i class="fa fa-search" aria-hidden="true"></i></i>
         <% end %>
       <% end %>
       <hr>
-      <h5 id="text-home-2">Featured league</h5>
+      <h5 id="text-home-2"><%= t("home.featured_league") %></h5>
       <div>
       <% @tournaments.each do |tournament| %>
       <ul class="list-team">
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="col-sm-4 main-match">
-      <h4 id="match-featured">Present Live </h4>
+      <h4 id="match-featured"><%= t("home.present_live") %> </h4>
       <% @match_lives.each do |match_live| %>
         <div class="col-sm-12">
           <div class="start-match">
@@ -69,7 +69,7 @@
       <% end %>
     </div>
     <div class="col-sm-4 top-player-home">
-      <div id="top-player">Top Players</div>
+      <div id="top-player"><%= t("home.top_players") %></div>
         <ul class="top_player">
           <% @top_players.each do |player| %>
             <li>

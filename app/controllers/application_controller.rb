@@ -73,6 +73,7 @@ class ApplicationController < ActionController::Base
       player.update(age: today.strftime("%Y").to_i - player.dob.strftime("%Y").to_i)
     end
   end
+
   protected
 
   def configure_permitted_parameters

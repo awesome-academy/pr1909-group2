@@ -28,7 +28,7 @@
         </div>
     </div>
     <div id="standings">
-      MATCHES
+      <%= t("team.matches") %>
     </div>
     <div class="show-league-match">
       <% @match_waits.each do |match_wait| %>
@@ -71,12 +71,12 @@
             <tr>
               <th></th>
               <th></th>
-              <th><%= sort_link(@q, :p) %></th>
-              <th><%= sort_link(@q, :w) %></th>
-              <th><%= sort_link(@q, :d) %></th>
-              <th><%= sort_link(@q, :l) %></th>
-              <th><%= sort_link(@q, :goals) %></th>
-              <th><%= sort_link(@q, :point, 'PTS') %></th>
+              <th>P</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>Goals</th>
+              <th>Point</th>
             </tr>
           <% @teams.each do |team| %>
             <tr>

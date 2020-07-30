@@ -17,17 +17,18 @@ en:
   home:
     featured_league: "Featured league"
     find_the_match: "Find the match"
-    in_day: "In day:"
+    in_day: "In day: "
     upcoming_today: "Upcoming(Today)"
     result: "Result"
     lives: "Lives"
     top_players: "TOP PLAYERS"
-    football_livescore: "Football LiveScore"
-
+    football_livescore: "Football InfoScore"
+    present_live: "Present Live"
+    started: "Started"
   team:
     standings: "STANDINGS"
     players: "Players"
-
+    matches: "Matches"
   players:
     nationality: "Nationality"
     height: "Height"

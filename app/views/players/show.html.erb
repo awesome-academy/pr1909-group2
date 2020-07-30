@@ -1,6 +1,6 @@
 <% provide(:title, @player.name) %>
 <div class="container-fluid warp">
-  <%= link_to "Livescore", root_path , id: "home" %>
+  <%= link_to "Infoscore", root_path , id: "home" %>
   >>
   <%= link_to @player.name, @player , id: "name" %>
   <div class="container content">
@@ -63,7 +63,7 @@
           </div>
         </div>
         <div id="standings">
-          MATCHES
+          <%= t("team.matches") %>
         </div>
         <div class="show-league-match">
       <% @match_waits.each do |match_wait| %>
