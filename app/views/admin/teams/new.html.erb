@@ -1,3 +1,5 @@
+<% provide :title, "Team" %>
+<h3 id="signup-form"><%= t("header.create_team") %></h3>
 <div class="row">
   <div class="col-md-6 col-md-offset-3-edit-user">
     <%= form_for :team, url: {action: :create, controller: :teams}, method: :post do |f| %>
@@ -7,9 +9,10 @@
       <div class="form-group">
         <%= f.label :tournament_id %>
         <%= f.select :tournament_id, options_for_select(@tournaments.map{|key, value|
-          [key, value]}), {include_blank: true}, {class: "chosen-select"} %>
+          [key, value]}),{} , { class: "selectpicker", "data-live-search" => true,
+        "data-live-search-style" => "startsWith" } %>
       </div>
-      <%= f.submit "Update team ", class: "btn btn-primary" %>
+      <%= f.submit t("header.create_team"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

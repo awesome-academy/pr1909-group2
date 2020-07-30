@@ -1,5 +1,5 @@
 class Admin::PlayersController < Admin::BaseController
-  before_action :list_teams, only: %i(new edit create)
+  before_action :list_teams, only: %i(new edit create index)
   before_action :api_nationalitys, only: %i(new edit create edit)
   def index
     @q = Player.ransack(params[:q])
