@@ -1,13 +1,15 @@
+<% provide :title, "League" %>
 <div class="row">
   <div class="col-md-6 col-md-offset-3-edit-user">
     <%= form_for :tournament, url: {action: :update, controller: :tournaments}, method: :put do |f| %>
-      <h3 id="signup-form-admin">Update League</h3>
+      <h3 id="signup-form-admin"><%= t("header.edit-league") %></h3>
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
       <%= f.label :nationality %>
-      <%= f.select(:country, @name_nationality.map { |c| c }) %>
+      <%= f.select(:country, @name_nationality.map { |c| c }, {} , { class: "selectpicker", "data-live-search" => true,
+        "data-live-search-style" => "startsWith" }) %>
       <%= f.file_field :picture %>
-      <%= f.submit "Update tournament", class: "btn btn-primary" %>
+      <%= f.submit t("header.edit-league"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

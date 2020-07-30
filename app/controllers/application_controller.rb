@@ -60,9 +60,9 @@ class ApplicationController < ActionController::Base
   end
 
   def update_point
-    @players = Player.all.select{|v| v["point"] == 0}
+    @players = Player.all
     @players.each do |player|
-      player.update(point: player.point + (player.value_money / player.age))
+      player.update(point: player.value_money / player.age)
     end
   end
 

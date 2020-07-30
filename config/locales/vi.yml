@@ -12,7 +12,14 @@ vi:
       language: "Ngôn ngữ"
       forgot_yourpassword: "Quên mật khẩu?"
       edit: "Chỉnh sửa"
-
+      league: "Tạo Mùa Giải"
+      edit-league: "Cập nhật mùa giải"
+      create_match: "Tạo Trận Đấu"
+      edit_match: "Cập Nhật Trận Đấu"
+      create_team: "Tạo Đội Bóng"
+      edit-team: "Cập Nhật Đội Bóng"
+      create_player: "Tạo Cầu Thủ"
+      edit-player: "Cập Nhật Cầu Thủ"
   home:
      featured_league: "Giải đấu nổi bật"
      find_the_match: "Tìm trận đấu"

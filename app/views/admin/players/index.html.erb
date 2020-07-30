@@ -1,3 +1,4 @@
+<% provide :title, "Player" %>
 <%= render "admin/players/banner" %>
 <p><b>Search</b></p>
 <%= search_form_for @q, url: admin_players_path, method: :get do |f| %>
@@ -5,8 +6,9 @@
     <%= f.number_field :id_eq, id: "input-player" %>
     <%= f.label :name_cont, 'Name:' %>
     <%= f.text_field :name_cont, id: "input-player" %>
-    <%= f.label :nationality, ' Nationality:' %>
-    <%= f.text_field :nationality_cont, id: "input-player" %>
+    <%= f.label :team_id %>
+    <%= f.select :team_id_eq, options_for_select(@teams.map{|key, value|
+      [key, value]}), {class: "chosen-select"} %>
     <%= f.label :age, 'Age: ' %>
     <%= f.text_field :age, id: "input-player" %>
     <%= button_tag( :class => "button_green") do %>

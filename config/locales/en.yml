@@ -13,7 +13,14 @@ en:
       language: "Language"
       forgot_yourpassword: "Forgot your password?"
       edit: "Edit"
-
+      league: "Create League"
+      edit-league: "Update League"
+      create_match: "Create Match"
+      edit_match: "Update Match"
+      create_team: "Create Team"
+      edit-team: "Update Team"
+      create_player: "Create Player"
+      edit-player: "Update Player"
   home:
     featured_league: "Featured league"
     find_the_match: "Find the match"
