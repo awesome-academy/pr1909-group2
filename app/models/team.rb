@@ -1,6 +1,5 @@
 class Team < ApplicationRecord
   validates :name, presence: true, length: { maximum: 30 }
-  validates :country, presence: true
   validates :logo, presence: true
   mount_uploader :logo, LogoUploader
   validates_integrity_of  :logo

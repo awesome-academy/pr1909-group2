@@ -6,6 +6,7 @@ class Tournament < ApplicationRecord
   validates_integrity_of  :picture
   validates_processing_of :picture
   has_many :teams
+  has_many :matches
 
   private
     def avatar_size_validation

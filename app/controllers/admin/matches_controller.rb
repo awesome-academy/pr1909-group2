@@ -1,5 +1,6 @@
 class Admin::MatchesController < Admin::BaseController
   before_action :list_teams, only: %i(new edit create index)
+  before_action :list_tournaments, only: %i(new edit create edit)
   def new
     @match = Match.new
   end
@@ -43,10 +44,15 @@ class Admin::MatchesController < Admin::BaseController
   private
 
   def match_params
-    params.require(:match).permit(:home_team_id, :away_team_id, :start_match, :end_match)
+    params.require(:match).permit(:home_team_id, :away_team_id, :start_match, :end_match, :tournament_id)
   end
 
   def list_teams
     @teams = Team.all.map { |team| [team.name, team.id] }
   end
+
+  def list_tournaments
+    @tournaments = Tournament.all.map { |tournament| [tournament.name, tournament.id] }
+  end
+
 end

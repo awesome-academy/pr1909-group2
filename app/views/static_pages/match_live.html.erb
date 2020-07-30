@@ -1,4 +1,4 @@
-<% provide :title, "Home" %>
+<% provide :title, "Live" %>
 <div class="container-main-home">
   <div class="row">
     <div class="col-sm-4 text-home-1">
@@ -73,8 +73,9 @@
         <ul class="top_player">
           <% @top_players.each do |player| %>
             <li>
-              <%= link_to image_tag(player.image.url), @player , id: "image-player"%>
-              <span><%= link_to player.name, @player , id: "name-top-player" %></span>
+              <%= link_to image_tag(player.image.url), player , id: "image-player"%>
+              <%= link_to image_tag(player.team.logo.url), player , id: "image-player-sala"%>
+              <span><%= link_to player.name, player , id: "name-top-player" %></span>
               <span class="card bg-success text-white point">
                 <span class="card-body point-2"><%= player.point %></span>
               </span>

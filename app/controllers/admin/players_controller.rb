@@ -46,7 +46,7 @@ class Admin::PlayersController < Admin::BaseController
 
   def player_params
     params.require(:player).permit(:name, :nationality, :height, :weight, :shirt_number, :preferred_foot,
-    :image, :diagram, :strengths, :weaknesses, :age, :point, :team_id,
+    :image, :diagram, :strengths, :weaknesses, :age, :point, :value_money, :dob, :team_id,
      team_attributes: [:id, :name, :logo, :country])
   end
 

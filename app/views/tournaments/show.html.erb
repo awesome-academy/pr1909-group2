@@ -58,6 +58,36 @@
           </thead>
         </table>
       </div>
+    <div id="standings">
+      MATCHES
+    </div>
+    <div class="show-league-match">
+      <% @match_waits.each do |match_wait| %>
+        <div class="col-sm-12">
+          <div class="start-match">
+            <h5 id="start-match"><%= match_wait.start_match %></h5>
+          </div>
+          <div class="col-sm-6">
+            <div class="img-home-team-league">
+              <%= link_to image_tag(match_wait.home_team.logo.url), match_wait.home_team, id: "img-home-team-league" %>
+              <i class="fa fa-window-minimize score-home-league" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h4 id="name-home-team-league"><%= link_to match_wait.home_team.name, match_wait.home_team %></h4>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="img-away-team-league">
+              <i class="fa fa-window-minimize score-away" aria-hidden="true"></i>
+              <%= link_to image_tag(match_wait.away_team.logo.url), match_wait.away_team, id: "img-away-team-league" %>
+            </div>
+            <div>
+              <h4 id="name-away-team-league"><%= link_to match_wait.away_team.name, match_wait.away_team %></h4>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
     </div>
     <div class="col-sm-4 tab-right">
       <div id="top-player"><%= t("home.top_players") %></div>
@@ -65,6 +95,7 @@
           <% @top_players.each do |player| %>
             <li>
               <%= link_to image_tag(player.image.url), player , id: "image-player"%>
+              <%= link_to image_tag(player.team.logo.url), player , id: "image-player-sala"%>
               <span><%= link_to player.name, player , id: "name-top-player" %></span>
               <span class="card bg-success text-white point">
                 <span class="card-body point-2"><%= player.point %></span>

@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :update_match_lives
   before_action :update_match_wait
   before_action :update_match_started
+  before_action :update_age
+  before_action :update_point
   include PlayerHelper
   include AdminHelper
 
@@ -57,6 +59,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def update_point
+    @players = Player.all.select{|v| v["point"] == 0}
+    @players.each do |player|
+      player.update(point: player.point + (player.value_money / player.age))
+    end
+  end
+
+  def update_age
+    today = DateTime.now
+    @players = Player.all
+    @players.each do |player|
+      player.update(age: today.strftime("%Y").to_i - player.dob.strftime("%Y").to_i)
+    end
+  end
   protected
 
   def configure_permitted_parameters
