@@ -4,7 +4,7 @@
 #image-tournament img{
   width: 90px;
 }
-#name-tournament {
+#name-tournament a{
   font-size: 25px;
   color: #ac9a57;
   font-weight: bold;
@@ -38,4 +38,52 @@
 .rounded-circle {
   height: 25px;
   margin-top: 3px;
+}
+.show-league-match {
+  margin-top: 10px;
+}
+.img-home-team-league img{
+  width: 40px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.img-home-team-league i{
+  margin-left: 80px;
+}
+#name-home-team-league a{
+  margin-top: 0px;
+  margin-left: 15px;
+  font-weight: bold;
+  color: #000000;
+}
+#name-home-team-league {
+  padding-top: 10px;
+}
+.img-away-team-league i{
+  margin-left: 195px;
+}
+.img-away-team-league img{
+  margin-left: 50px;
+  margin-top: 3px;
+  width: 40px;
+}
+#name-away-team-league {
+  padding-top: 10px;
+}
+#name-away-team-league a{
+  margin-left: 77%;
+  font-weight: bold;
+  margin-top: 0px;
+  color: #000000;
+}
+#standings-team {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 48px;
+  font-weight: bold;
+  background-color: #DCDCDC;
+  border-radius: 5px 5px 5px 5px;
+  color: green;
 }

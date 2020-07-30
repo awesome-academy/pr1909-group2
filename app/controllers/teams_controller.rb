@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find_by id: params[:id]
     @players = @team.players
-    @matchs = @team.matches.select { |x| x["status"] == "wait" }
+    @match_waits = @team.matches.select { |x| x["status"] == "wait" }
     @tournament = @team.tournament
     @q = Team.ransack(params[:q])
     @teams = @q.result(distinct: true).paginate(page: params[:page]).order(point: :DESC)

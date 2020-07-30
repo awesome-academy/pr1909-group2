@@ -46,6 +46,6 @@ class Admin::TeamsController < Admin::BaseController
     @tournaments = Tournament.all.map { |tournament| [tournament.name, tournament.id] }
   end
   def team_params
-    params.require(:team).permit(:name, :logo, :country, :tournament_id)
+    params.require(:team).permit(:name, :logo, :tournament_id)
   end
 end

@@ -11,6 +11,11 @@
         <%= f.select :away_team_id, options_for_select(@teams.map{|key, value|
           [key, value]}), {class: "chosen-select"} %>
       </div>
+      <div class="form-group">
+        <%= f.label :tournament_id %>
+        <%= f.select :tournament_id, options_for_select(@tournaments.map{|key, value|
+          [key, value]}), {include_blank: true}, {class: "chosen-select"} %>
+      </div>
         <%= f.label :start_match %>
         <%= f.datetime_field :start_match  %><br>
         <%= f.label :end_match %>

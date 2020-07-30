@@ -12,7 +12,7 @@
     <%= f.label :start_match, 'Start Match: ' %>
     <%= f.date_field(:start_match_date_equals, placeholder: t(:date_format)) %>
     <%= f.label :end_match, 'End Match: ' %>
-    <%= f.date_field :end_match, id: "input-player" %>
+    <%= f.date_field(:end_match_date_equals, placeholder: t(:date_format)) %>
     <%= button_tag( :class => "button_green") do %>
       <i class="fa fa-search" aria-hidden="true"></i></i>
     <% end %>

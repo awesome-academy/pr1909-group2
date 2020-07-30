@@ -21,12 +21,13 @@ vi:
      result: "Kết quả"
      lives: "Trực tiếp"
      top_players: "Cầu Thủ Hàng Đầu"
-     football_livescore: "Tỷ số bóng đá trực tiếp"
-
+     football_livescore: "Thông Tin Bóng Đá"
+     present_live: "Hiện Tại Đang Trực Tiếp"
+     started: "Đã Kết Thúc"
   team:
     standings: "Bảng Xếp Hạng"
     players: "Cầu Thủ"
-  
+    matches: "Trận Đấu"
   players:
     nationality: "Quốc tịch"
     height: "Chiều cao"

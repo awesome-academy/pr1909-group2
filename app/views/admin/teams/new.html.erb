@@ -3,8 +3,6 @@
     <%= form_for :team, url: {action: :create, controller: :teams}, method: :post do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
-      <%= f.label :nationality %>
-      <%= f.select(:country, @name_nationality.map { |c| c }) %>
        <%= f.file_field :logo %>
       <div class="form-group">
         <%= f.label :tournament_id %>

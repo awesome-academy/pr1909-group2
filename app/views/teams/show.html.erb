@@ -9,13 +9,14 @@
         <div id="image">
           <%= link_to image_tag(@team.logo.url), @team , id: "image-player"%>
         <span id="name-player"><%= @team.name %></span>
-        (<%= @team.country %>)
+        (<%= image_tag(@team.tournament.picture.url) %>)
         </div>
         <div class="type-2">
           <div id="player-team"><%= t("team.players") %></div>
           <div id="box-list-player">
             <% @players.each do |player| %>
               <div id="from-player">
+                <div id="shirt-number" class="btn btn-danger"><%= link_to player.shirt_number, player %></div>
                 <div id="image-player-2"><%= link_to image_tag(player.image.url), player %></div>
                 <div id="name-player-2"><%= link_to player.name, player %></div>
                 <div id="tab-bottom">
@@ -24,30 +25,58 @@
                 </div>
               </div>
             <% end %>
+        </div>
+    </div>
+    <div id="standings">
+      <%= t("team.matches") %>
+    </div>
+    <div class="show-league-match">
+      <% @match_waits.each do |match_wait| %>
+        <div class="col-sm-12">
+          <div class="start-match">
+            <h5 id="start-match"><%= match_wait.start_match %></h5>
           </div>
+          <div class="col-sm-6">
+            <div class="img-home-team-league">
+              <%= link_to image_tag(match_wait.home_team.logo.url), match_wait.home_team, id: "img-home-team-league" %>
+              <i class="fa fa-window-minimize score-home-league" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h4 id="name-home-team-league"><%= link_to match_wait.home_team.name, match_wait.home_team %></h4>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="img-away-team-league">
+              <i class="fa fa-window-minimize score-away" aria-hidden="true"></i>
+              <%= link_to image_tag(match_wait.away_team.logo.url), match_wait.away_team, id: "img-away-team-league" %>
+            </div>
+            <div>
+              <h4 id="name-away-team-league"><%= link_to match_wait.away_team.name, match_wait.away_team %></h4>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
       <div class="col-sm-4 tab-right">
         <div id="image">
           <%= link_to image_tag(@tournament.picture.url), @tournament , id: "image-tournament"%>
           <span id="name-tournament">
-            <%= @tournament.name %>
-            <span>(<%= @tournament.teams.size %> Team)</span>
           </span>
         </div>
         <div>
-        <div id="standings"><%= t("team.standings") %></div>
+        <div id="standings-team"><%= t("team.standings") %></div>
         <table class="table table-hover">
           <thead>
             <tr>
               <th></th>
               <th></th>
-              <th><%= sort_link(@q, :p) %></th>
-              <th><%= sort_link(@q, :w) %></th>
-              <th><%= sort_link(@q, :d) %></th>
-              <th><%= sort_link(@q, :l) %></th>
-              <th><%= sort_link(@q, :goals) %></th>
-              <th><%= sort_link(@q, :point, 'PTS') %></th>
+              <th>P</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>Goals</th>
+              <th>Point</th>
             </tr>
           <% @teams.each do |team| %>
             <tr>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_25_065913) do
+ActiveRecord::Schema.define(version: 2020_07_30_031734) do
 
   create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "home_team_id"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2020_07_25_065913) do
     t.datetime "start_match"
     t.datetime "end_match"
     t.integer "status"
+    t.integer "tournament_id"
+    t.index ["tournament_id"], name: "index_matches_on_tournament_id"
   end
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -36,10 +38,12 @@ ActiveRecord::Schema.define(version: 2020_07_25_065913) do
     t.string "diagram"
     t.string "strengths"
     t.string "weaknesses"
-    t.integer "age"
+    t.integer "age", default: 0
     t.string "nationality"
-    t.float "point"
+    t.float "point", default: 0.0
     t.integer "team_id"
+    t.integer "value_money"
+    t.date "dob"
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 

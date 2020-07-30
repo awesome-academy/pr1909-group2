@@ -1,34 +1,34 @@
-<% provide :title, "Home" %>
+<% provide :title, "Started" %>
 <div class="container-main-home">
   <div class="row">
     <div class="col-sm-4 text-home-1">
-      Football LiveScore
+      <%= t("home.football_livescore") %>
     </div>
     <div class="col-sm-4">
     </div>
     <div class="col-sm-1 Results">
       <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-      <span id="results-stated"><%= link_to "Result", static_pages_match_started_path %></span>
+      <span id="results-stated"><%= link_to t("home.result"), static_pages_match_started_path %></span>
       <span class="size-live">(<%= Match.started.size %>)</span>
     </div>
     <div class="col-sm-1 Live">
       <i class="fa fa-clock-o" aria-hidden="true"></i>
-      <span id="results-live"><%= link_to "Lives", static_pages_match_live_path %></span>
+      <span id="results-live"><%= link_to t("home.lives"), static_pages_match_live_path %></span>
       <span>(<%= Match.live.size %>)</span>
     </div>
   </div>
   <div class="content-home">
     <div class="col-sm-4">
-      <h5 id="text-find-match">Find the match</h5>
+      <h5 id="text-find-match"><%= t("home.find_the_match") %></h5>
       <%= search_form_for @q, url: static_pages_match_started_path, method: :get do |f| %>
-        <%= f.label :start_match, 'In day: ' %>
+        <%= f.label :start_match, t("home.in_day") %>
         <%= f.date_field(:start_match_date_equals, placeholder: t(:date_format), id: "input-inday") %>
         <%= button_tag( :class => "button_green") do %>
           <i class="fa fa-search" aria-hidden="true"></i></i>
         <% end %>
       <% end %>
       <hr>
-      <h5 id="text-home-2">Featured league</h5>
+      <h5 id="text-home-2"><%= t("home.featured_league")%></h5>
       <div>
       <% @tournaments.each do |tournament| %>
       <ul class="list-team">
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="col-sm-4 main-match">
-      <h4 id="match-featured">Started</h4>
+      <h4 id="match-featured"><%= t("home.started") %></h4>
       <% @match_starteds.each do |match_started| %>
         <div class="col-sm-12">
           <div class="start-match">
@@ -70,12 +70,13 @@
       <%= will_paginate @match_starteds %>
     </div>
     <div class="col-sm-4 top-player-home">
-      <div id="top-player">Top Players</div>
+      <div id="top-player"><%= t("home.top_players") %></div>
         <ul class="top_player">
           <% @top_players.each do |player| %>
             <li>
-              <%= link_to image_tag(player.image.url), @player , id: "image-player"%>
-              <span><%= link_to player.name, @player , id: "name-top-player" %></span>
+              <%= link_to image_tag(player.image.url), player , id: "image-player"%>
+              <%= link_to image_tag(player.team.logo.url), player , id: "image-player-sala"%>
+              <span><%= link_to player.name, player , id: "name-top-player" %></span>
               <span class="card bg-success text-white point">
                 <span class="card-body point-2"><%= player.point %></span>
               </span>
