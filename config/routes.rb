@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get "static_pages/home"
   get "static_pages/match_live"
   get "static_pages/match_started"
+  get "static_pages/home_search"
   root "static_pages#home"
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :players
