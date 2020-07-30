@@ -50,15 +50,15 @@
           <div class="col-sm-6">
             <div class="img-home-team">
               <%= link_to image_tag(match_live.home_team.logo.url), match_live.home_team, id: "img-home-team" %>
-              <i class="fa fa-window-minimize score-home" aria-hidden="true"></i>
+              <span><%= match_live.score_home %></span>
             </div>
             <div>
               <h4 id="name-home-team"><%= link_to match_live.home_team.name, match_live.home_team %></h4>
             </div>
           </div>
           <div class="col-sm-6">
-            <div class="img-home-team">
-              <i class="fa fa-window-minimize score-away" aria-hidden="true"></i>
+            <div class="img-away-team">
+              <span><%= match_live.score_away %></span>
               <%= link_to image_tag(match_live.away_team.logo.url), match_live.away_team, id: "img-home-team" %>
             </div>
             <div>
